@@ -57,6 +57,9 @@ android {
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders += [
+            'appAuthRedirectScheme': 'com.quran.reels.orchestrator'
+        ]
     }
 
     if (hasReleaseKeystore) {
