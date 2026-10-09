@@ -68,6 +68,7 @@ jobs:
           keyAlias=quran-reels-release
           storeFile=release-keystore.jks
           PROPS
+            cp -f android/release-keystore.jks android/app/release-keystore.jks 2>/dev/null || true
             echo "✅ Using the permanent release keystore for a signed, updatable APK"
           else
             echo "⚠️ KEYSTORE_PASSWORD secret is not set — building with the debug key (APK works but cannot be updated)"

@@ -18,6 +18,7 @@ android/key.properties
 **/key.properties
 **/*.jks
 !android/release-keystore.jks
+!android/app/release-keystore.jks
 **/*.keystore
 
 # iOS build artifacts
