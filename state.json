@@ -1,6 +1,6 @@
 {
-  "total_generated": 19,
-  "last_reciter_idx": 5,
+  "total_generated": 20,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -194,6 +194,16 @@
       "duration": 31.2,
       "video_id": null,
       "date": "2026-10-09 12:06:53"
+    },
+    {
+      "surah": 42,
+      "surah_name": "الشورى",
+      "start_ayah": 34,
+      "end_ayah": 37,
+      "reciter": "ماهر المعيقلي",
+      "duration": 47.1,
+      "video_id": null,
+      "date": "2026-10-09 21:50:40"
     }
   ]
 }
