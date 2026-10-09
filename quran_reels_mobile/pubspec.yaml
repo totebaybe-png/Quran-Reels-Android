@@ -1,0 +1,43 @@
+name: quran_reels_mobile
+description: "Quran Reels Cloud Mobile Orchestrator - أداة إدارة وأتمتة ريلز القرآن الكريم السحابية مدى الحياة"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Network & REST APIs
+  http: ^1.2.0
+
+  # Google OAuth2 (authorization-code flow) - extracts the long-lived YouTube
+  # refresh token inside the app so the user never needs a desktop computer.
+  flutter_appauth: ^7.0.0
+
+  # Cryptography (Sodium SealedBox for GitHub Secrets) - Pure Dart without NDK hassle
+  # NOTE: >=0.6.0 is required — 0.5.x calls the removed dart:typed_data
+  # `UnmodifiableUint8ListView` and fails to compile on modern Dart 3.x.
+  pinenacl: ^0.6.0
+
+  # Secure Storage on Android (Keystore backed)
+  flutter_secure_storage: ^9.0.0
+
+  # Modern UI & Arabic Typography
+  google_fonts: ^6.1.0
+  intl: ^0.20.3
+
+  # URL Launcher & Deep Links
+  url_launcher: ^6.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

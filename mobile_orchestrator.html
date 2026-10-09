@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>منسق ريلز القرآن السحابي | Quran Reels Cloud Orchestrator</title>
+    <meta name="description" content="إدارة وأتمتة نشر ريلز القرآن الكريم تلقائياً 24/7 مدى الحياة بضغطة زر واحدة">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Libsodium for SealedBox Client-Side Encryption -->
+    <script src="https://unpkg.com/libsodium/dist/modules/libsodium.js"></script>
+    <script src="https://unpkg.com/libsodium-wrappers/dist/modules/libsodium-wrappers.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0A0A12;
+            --bg-secondary: #12121E;
+            --bg-card: #171726;
+            --bg-card-hover: #1E1E32;
+            --gold-primary: #D4AF37;
+            --gold-light: #F4D06F;
+            --gold-dark: #AA8A2E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0C4;
+            --text-muted: #6B6B80;
+            --status-success: #10B981;
+            --status-warning: #F59E0B;
+            --status-error: #EF4444;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --shadow-gold: 0 4px 25px rgba(212, 175, 55, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 16px;
+            overflow-x: hidden;
+        }
+
+        /* Mobile Container Frame */
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 32px);
+        }
+
+        /* Top Header */
+        .app-header {
+            padding: 20px 20px 16px;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .header-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .app-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--gold-light);
+            letter-spacing: -0.5px;
+        }
+
+        .app-subtitle {
+            font-family: 'Amiri', serif;
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        /* Views (Tabs) */
+        .view {
+            display: none;
+            padding: 20px;
+            flex: 1;
+            flex-direction: column;
+        }
+
+        .view.active {
+            display: flex;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        /* Form Inputs */
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 6px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            background: var(--bg-dark);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: var(--radius-md);
+            padding: 12px 14px;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .input-helper {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+            color: var(--bg-dark);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-gold:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        .btn-gold:active {
+            transform: translateY(1px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card-hover);
+            color: var(--gold-light);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            margin-top: 8px;
+        }
+
+        .btn-sm {
+            padding: 8px 12px;
+            font-size: 12px;
+            width: auto;
+        }
+
+        /* Status & Alert Badges */
+        .alert-box {
+            padding: 12px;
+            border-radius: var(--radius-md);
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .alert-info {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--gold-light);
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--status-success);
+        }
+
+        /* Live Indicator */
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--status-success);
+            display: inline-block;
+            box-shadow: 0 0 10px var(--status-success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.85); }
+        }
+
+        /* Step Progress */
+        .stepper-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .step-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .step-item.active .step-circle {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            border-color: var(--gold-light);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .step-item.active {
+            color: var(--gold-light);
+        }
+
+        /* Runs list */
+        .run-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background: var(--bg-dark);
+            border-radius: var(--radius-md);
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .run-title {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .run-time {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        /* Loader Overlay */
+        .overlay-loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 18, 0.9);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(212, 175, 55, 0.2);
+            border-top-color: var(--gold-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+        <span class="header-badge">🌿 صدقة جارية | مصطفى بحيري (قناة البحيري :behiry)</span>
+        <h1 class="app-title">منسق ريلز القرآن السحابي</h1>
+        <p class="app-subtitle">أتمتة النشر على يوتيوب 24/7 مدى الحياة</p>
+        <div style="margin-top: 8px;">
+            <a href="https://youtu.be/ozgBWYtWNLA" target="_blank" style="color: var(--gold-light); font-size: 12px; text-decoration: underline; font-weight: bold;">
+                ▶ شاهد فيديو الشرح والتشغيل خطوة بخطوة
+            </a>
+        </div>
+    </header>
+
+    <!-- Overlay Loader -->
+    <div id="loaderOverlay" class="overlay-loader">
+        <div class="spinner"></div>
+        <h3 id="loaderTitle" style="color: var(--gold-light); font-size: 18px; margin-bottom: 8px;">جاري إطلاق القناة السحابية...</h3>
+        <p id="loaderDesc" style="color: var(--text-secondary); font-size: 13px;">تشفير الأسرار وحقنها بـ Libsodium...</p>
+    </div>
+
+    <!-- VIEW 1: Onboarding / Wizard -->
+    <div id="wizardView" class="view active">
+        <div class="stepper-header">
+            <div id="stepHeader1" class="step-item active">
+                <div class="step-circle">1</div>
+                <span>يوتيوب</span>
+            </div>
+            <div id="stepHeader2" class="step-item">
+                <div class="step-circle">2</div>
+                <span>GitHub</span>
+            </div>
+            <div id="stepHeader3" class="step-item">
+                <div class="step-circle">3</div>
+                <span>الإطلاق</span>
+            </div>
+        </div>
+
+        <!-- Step 1: YouTube -->
+        <div id="stepContent1" class="step-content">
+            <div class="alert-box alert-info">
+                <span>⚠️</span>
+                <span><strong>ضمان العمل مدى الحياة:</strong> تأكد من ضبط شاشة موافقة OAuth في Google Cloud على وضع <strong>"In Production" (نشر التطبيق)</strong> لكي لا تنتهي صلاحية التوكن بعد 7 أيام.</span>
+            </div>
+
+            <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('fileClientSecret').click()" style="flex: 1;">📁 استيراد client_secret.json</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('fileTokenJson').click()" style="flex: 1;">🔑 استيراد token.json</button>
+            </div>
+            <input type="file" id="fileClientSecret" accept=".json" style="display: none;" onchange="handleClientSecretFile(event)">
+            <input type="file" id="fileTokenJson" accept=".json" style="display: none;" onchange="handleTokenJsonFile(event)">
+
+            <div class="input-group">
+                <label>YouTube Client ID</label>
+                <input type="text" id="ytClientId" placeholder="xxxxxx.apps.googleusercontent.com">
+            </div>
+
+            <div class="input-group">
+                <label>YouTube Client Secret</label>
+                <input type="password" id="ytClientSecret" placeholder="GOCSPX-xxxxxx">
+            </div>
+
+            <div class="input-group">
+                <label>YouTube Refresh Token (الرمز الدائم)</label>
+                <input type="password" id="ytRefreshToken" placeholder="1//0xxxxxx">
+                <div class="input-helper">يمكنك استيراد token.json أعلاه، أو إدخاله يدوياً بعد تشغيل setup_youtube.py.</div>
+            </div>
+
+            <button class="btn btn-gold" onclick="goToStep(2)">متابعة لربط GitHub ⬅️</button>
+        </div>
+
+        <!-- Step 2: GitHub -->
+        <div id="stepContent2" class="step-content" style="display: none;">
+            <div class="alert-box alert-info">
+                <span>🔑</span>
+                <span>يتطلب رمز وصول شخصي (Personal Access Token) بصلاحيات <code>repo</code> و <code>workflow</code>.</span>
+            </div>
+
+            <div class="input-group">
+                <label>GitHub Personal Access Token</label>
+                <input type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxx">
+            </div>
+
+            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                <button class="btn btn-secondary btn-sm" onclick="verifyGitHubToken()" style="flex: 1;">🔍 فحص الرمز</button>
+                <a class="btn btn-secondary btn-sm" href="https://github.com/settings/tokens/new?scopes=repo,workflow&description=Quran+Reels+Mobile+Orchestrator" target="_blank" style="flex: 1;">➕ توليد رمز جديد</a>
+            </div>
+
+            <div id="githubUserInfo" style="display: none;" class="alert-box alert-success"></div>
+
+            <div style="display: flex; gap: 8px;">
+                <button class="btn btn-secondary" onclick="goToStep(1)" style="flex: 1;">السابق</button>
+                <button class="btn btn-gold" onclick="goToStep(3)" style="flex: 2;">متابعة للإطلاق ⬅️</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Launch -->
+        <div id="stepContent3" class="step-content" style="display: none;">
+            <div class="input-group">
+                <label>اسم المستودع السحابي في حسابك</label>
+                <input type="text" id="repoName" value="quran-reels-channel-auto">
+            </div>
+
+            <div class="input-group">
+                <label>مفتاح Pexels للصور (اختياري)</label>
+                <input type="text" id="pexelsKey" placeholder="اتركه فارغاً لاستخدام سماء النجوم والشفق التلقائي">
+            </div>
+
+            <div class="card">
+                <div class="card-title">🚀 ماذا سيحدث بضغطة واحدة؟</div>
+                <ul style="font-size: 12px; color: var(--text-secondary); padding-right: 18px; line-height: 1.7;">
+                    <li>إنشاء مستودع سحابي في حسابك (دقائق تشغيل مجانية غير محدودة مدى الحياة).</li>
+                    <li>تشفير بياناتك محلياً بـ <strong>Libsodium SealedBox</strong> وحقنها كـ Secrets مشفّرة.</li>
+                    <li>تفعيل النشر التلقائي 4 مرات يومياً عبر GitHub Actions.</li>
+                    <li>إطلاق أول ريل قرآني تجريبي فوراً على قناتك.</li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-color: rgba(212, 175, 55, 0.25); text-align: center;">
+                <p style="font-size: 12px; color: var(--gold-light); font-weight: 700; margin-bottom: 6px;">
+                    🌿 فكرة وتطوير: مصطفى بحيري (قناة البحيري :behiry)
+                </p>
+                <div style="display: flex; gap: 8px;">
+                    <a href="https://www.youtube.com/@behairy10" target="_blank" class="btn btn-gold btn-sm" style="flex: 1; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; background: #FF0000; border-color: #FF0000; color: #fff;">
+                        <span>🔴</span> اشترك في قناة المطور
+                    </a>
+                    <a href="https://youtu.be/ozgBWYtWNLA" target="_blank" class="btn btn-secondary btn-sm" style="flex: 1; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                        <span>▶️</span> فيديو الشرح
+                    </a>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 8px;">
+                <button class="btn btn-secondary" onclick="goToStep(2)" style="flex: 1;">السابق</button>
+                <button class="btn btn-gold" onclick="launchCloudOrchestrator()" style="flex: 2;">🚀 إطلاق القناة الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 2: Dashboard -->
+    <div id="dashboardView" class="view">
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                <span class="status-dot"></span>
+                <span style="font-size: 16px; font-weight: 800; color: var(--status-success);">الأتمتة نشطة 24/7</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary);" id="dashRepoText">المستودع: جاري التحميل...</p>
+            <div style="margin-top: 10px;">
+                <a id="repoLink" href="#" target="_blank" style="color: var(--gold-light); font-size: 12px; text-decoration: none;">
+                    ↗️ فتح المستودع وسجلات النشر على GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 13px; color: var(--text-secondary);">الفيديو القادم خلال:</span>
+                <span id="countdownTimer" style="font-size: 16px; font-weight: 800; color: var(--gold-light);">00:00:00</span>
+            </div>
+            <hr style="border: none; border-top: 1px solid rgba(212, 175, 55, 0.1); margin: 12px 0;">
+            <div style="font-size: 11px; color: var(--text-muted); line-height: 1.6;">
+                ⏰ <strong>مواعيد النشر الـ 4 اليومية:</strong><br>
+                • 00:22 UTC (~3:22 AM) - ثلث الليل المتأخر<br>
+                • 05:41 UTC (~8:41 AM) - الصباح والضحى<br>
+                • 11:33 UTC (~2:33 PM) - الظهيرة<br>
+                • 17:19 UTC (~8:19 PM) - المساء وذروة التفاعل
+            </div>
+        </div>
+
+        <button class="btn btn-gold" onclick="triggerManualReel()" id="btnManualTrigger">
+            ⚡ نشر ريل قرآني إضافي الآن فوراً
+        </button>
+
+        <div style="margin-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 14px; font-weight: 700; color: var(--gold-light);">آخر عمليات النشر:</span>
+                <button onclick="loadRecentRuns()" class="btn btn-secondary btn-sm" style="padding: 4px 10px;">🔄 تحديث</button>
+            </div>
+            <div id="runsList">
+                <div style="text-align: center; font-size: 12px; color: var(--text-muted); padding: 16px;">
+                    جاري تحميل سجلات الفيديوهات...
+                </div>
+            </div>
+        </div>
+
+        <!-- Developer Credit & Channel Subscription -->
+        <div class="card" style="margin-top: 20px; text-align: center; border-color: rgba(212, 175, 55, 0.3);">
+            <div style="font-size: 13px; font-weight: 700; color: var(--gold-light); margin-bottom: 6px;">
+                🌿 فكرة وتطوير: مصطفى بحيري (قناة البحيري :behiry)
+            </div>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
+                المنسق مجاني 100% بنية صدقة جارية. لمتابعة شروحات الأدوات، دورات الأندرويد، ودعم المطور:
+            </p>
+            <div style="display: flex; gap: 8px;">
+                <a href="https://www.youtube.com/@behairy10" target="_blank" class="btn btn-gold btn-sm" style="flex: 1; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; background: #FF0000; border-color: #FF0000; color: #fff;">
+                    <span>🔴</span> اشترك في قناة المطور
+                </a>
+                <a href="https://youtu.be/ozgBWYtWNLA" target="_blank" class="btn btn-secondary btn-sm" style="flex: 1; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                    <span>▶️</span> فيديو الشرح
+                </a>
+            </div>
+        </div>
+
+        <button onclick="resetAppConfig()" class="btn btn-secondary btn-sm" style="margin-top: 10px; color: var(--text-muted); width: 100%;">
+            ⚙️ إعادة ضبط الإعدادات
+        </button>
+    </div>
+</div>
+
+<script>
+    const TEMPLATE_OWNER = 'kpmbfi-sudo';
+    const TEMPLATE_REPO = 'Quran-Reels-Generator-open-source-';
+    const WORKFLOW_FILE = 'daily_quran_reel.yml';
+
+    let verifiedGithubOwner = null;
+
+    // Initialize state
+    window.addEventListener('DOMContentLoaded', async () => {
+        // Wait for libsodium
+        if (typeof sodium !== 'undefined') {
+            await sodium.ready;
+        }
+
+        const savedUser = localStorage.getItem('sec_github_user');
+        const savedRepo = localStorage.getItem('sec_target_repo');
+        const savedToken = localStorage.getItem('sec_github_token');
+
+        if (savedUser && savedRepo && savedToken) {
+            showDashboard(savedUser, savedRepo);
+        }
+        startCountdown();
+    });
+
+    function goToStep(step) {
+        document.querySelectorAll('.step-content').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.step-item').forEach(el => el.classList.remove('active'));
+
+        document.getElementById(`stepContent${step}`).style.display = 'block';
+        document.getElementById(`stepHeader${step}`).classList.add('active');
+    }
+
+    async function verifyGitHubToken() {
+        const token = document.getElementById('ghToken').value.trim();
+        if (!token) return alert('يرجى إدخال رمز الوصول الشخصي GitHub Token');
+
+        try {
+            const res = await fetch('https://api.github.com/user', {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/vnd.github+json'
+                }
+            });
+
+            if (res.ok) {
+                const user = await res.json();
+                verifiedGithubOwner = user.login;
+                const infoDiv = document.getElementById('githubUserInfo');
+                infoDiv.style.display = 'flex';
+                infoDiv.innerHTML = `✅ تم التحقق بنجاح! مرحباً يا <strong>${user.name || user.login}</strong> (@${user.login})`;
+            } else {
+                alert('فشل التحقق من الرمز! تأكد من صحته وصلاحياته.');
+            }
+        } catch (e) {
+            alert('خطأ في الاتصال بـ GitHub: ' + e.message);
+        }
+    }
+
+    // Handle client_secret.json upload
+    function handleClientSecretFile(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = JSON.parse(e.target.result);
+                const info = data.installed || data.web;
+                if (info && info.client_id) {
+                    document.getElementById('ytClientId').value = info.client_id;
+                    document.getElementById('ytClientSecret').value = info.client_secret || '';
+                    alert('✅ تم استخراج بيانات Client ID و Secret بنجاح من الملف!');
+                } else {
+                    alert('ملف client_secret.json غير صالح!');
+                }
+            } catch (err) {
+                alert('فشل قراءة الملف: ' + err.message);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    // Handle token.json upload
+    function handleTokenJsonFile(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = JSON.parse(e.target.result);
+                if (data.refresh_token) {
+                    document.getElementById('ytRefreshToken').value = data.refresh_token;
+                    alert('✅ تم استخراج Refresh Token بنجاح من ملف token.json!');
+                } else {
+                    alert('لم يتم العثور على refresh_token في هذا الملف!');
+                }
+            } catch (err) {
+                alert('فشل قراءة الملف: ' + err.message);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    // Libsodium SealedBox Encryption
+    async function encryptSecret(plainSecret, base64PublicKey) {
+        await sodium.ready;
+        const bkey = sodium.from_base64(base64PublicKey, sodium.base64_variants.ORIGINAL);
+        const bsec = sodium.from_string(plainSecret);
+        const encBytes = sodium.crypto_box_seal(bsec, bkey);
+        return sodium.to_base64(encBytes, sodium.base64_variants.ORIGINAL);
+    }
+
+    async function launchCloudOrchestrator() {
+        const ytId = document.getElementById('ytClientId').value.trim();
+        const ytSec = document.getElementById('ytClientSecret').value.trim();
+        const ytRef = document.getElementById('ytRefreshToken').value.trim();
+        const token = document.getElementById('ghToken').value.trim();
+        const repo = document.getElementById('repoName').value.trim() || 'quran-reels-channel-auto';
+        const pexels = document.getElementById('pexelsKey').value.trim();
+
+        if (!ytId || !ytSec || !ytRef) {
+            alert('يرجى ملء بيانات يوتيوب أولاً في الخطوة 1');
+            return goToStep(1);
+        }
+        if (!token || !verifiedGithubOwner) {
+            alert('يرجى التحقق من رمز GitHub أولاً في الخطوة 2');
+            return goToStep(2);
+        }
+
+        const overlay = document.getElementById('loaderOverlay');
+        const loaderDesc = document.getElementById('loaderDesc');
+        overlay.style.display = 'flex';
+
+        try {
+            // 1. Create or Fork Repository
+            loaderDesc.textContent = '1/4 تجهيز المستودع السحابي في حسابك (Template أو Fork)...';
+            let repoReady = false;
+            try {
+                const genRes = await fetch(`https://api.github.com/repos/${TEMPLATE_OWNER}/${TEMPLATE_REPO}/generate`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/vnd.github+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: repo,
+                        description: 'مولد ريلز القرآن الكريم السحابي تلقائياً 24/7 - صدقة جارية',
+                        private: false
+                    })
+                });
+                if (genRes.status === 201) repoReady = true;
+            } catch (_) {}
+
+            if (!repoReady) {
+                try {
+                    await fetch(`https://api.github.com/repos/${TEMPLATE_OWNER}/${TEMPLATE_REPO}/forks`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/vnd.github+json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: repo,
+                            default_branch_only: true
+                        })
+                    });
+                } catch (_) {}
+            }
+
+            // 2. Wait for repository provisioning & enable workflows
+            loaderDesc.textContent = '2/4 جلب مفتاح التشفير العام للمستودع وتفعيل المهام...';
+            await new Promise(r => setTimeout(r, 4000));
+
+            // Ensure workflow is enabled
+            try {
+                await fetch(`https://api.github.com/repos/${verifiedGithubOwner}/${repo}/actions/workflows/${WORKFLOW_FILE}/enable`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/vnd.github+json'
+                    }
+                });
+            } catch (_) {}
+
+            // Fetch Public Key
+            const keyRes = await fetch(`https://api.github.com/repos/${verifiedGithubOwner}/${repo}/actions/secrets/public-key`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/vnd.github+json'
+                }
+            });
+            const keyData = await keyRes.json();
+            const keyId = keyData.key_id;
+            const pubKey = keyData.key;
+
+            // 3. Encrypt and inject secrets
+            loaderDesc.textContent = '3/4 تشفير وحقن أسرار يوتيوب و Pexels عبر Libsodium...';
+
+            const secrets = [
+                { name: 'YOUTUBE_CLIENT_ID', val: ytId },
+                { name: 'YOUTUBE_CLIENT_SECRET', val: ytSec },
+                { name: 'YOUTUBE_REFRESH_TOKEN', val: ytRef }
+            ];
+            if (pexels) secrets.push({ name: 'PEXELS_API_KEY', val: pexels });
+
+            for (const s of secrets) {
+                const encVal = await encryptSecret(s.val, pubKey);
+                await fetch(`https://api.github.com/repos/${verifiedGithubOwner}/${repo}/actions/secrets/${s.name}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/vnd.github+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        encrypted_value: encVal,
+                        key_id: keyId
+                    })
+                });
+            }
+
+            // 4. Trigger first workflow dispatch run
+            loaderDesc.textContent = '4/4 تشغيل أول ريل تجريبي وتأكيد الأتمتة...';
+            await fetch(`https://api.github.com/repos/${verifiedGithubOwner}/${repo}/actions/workflows/${WORKFLOW_FILE}/dispatches`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/vnd.github+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ ref: 'main' })
+            });
+
+            // Save state
+            localStorage.setItem('sec_github_user', verifiedGithubOwner);
+            localStorage.setItem('sec_target_repo', repo);
+            localStorage.setItem('sec_github_token', token);
+
+            overlay.style.display = 'none';
+            showDashboard(verifiedGithubOwner, repo);
+
+        } catch (e) {
+            overlay.style.display = 'none';
+            alert('حدث خطأ أثناء الإطلاق: ' + e.message);
+        }
+    }
+
+    function showDashboard(owner, repo) {
+        document.getElementById('wizardView').classList.remove('active');
+        document.getElementById('dashboardView').classList.add('active');
+
+        document.getElementById('dashRepoText').textContent = `المستودع: ${owner}/${repo}`;
+        document.getElementById('repoLink').href = `https://github.com/${owner}/${repo}/actions`;
+
+        loadRecentRuns();
+        setInterval(loadRecentRuns, 30000);
+    }
+
+    async function triggerManualReel() {
+        const owner = localStorage.getItem('sec_github_user');
+        const repo = localStorage.getItem('sec_target_repo');
+        const token = localStorage.getItem('sec_github_token');
+        const btn = document.getElementById('btnManualTrigger');
+
+        btn.disabled = true;
+        btn.textContent = '⏳ جاري إطلاق مهمة التوليد...';
+
+        try {
+            const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${WORKFLOW_FILE}/dispatches`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/vnd.github+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ ref: 'main' })
+            });
+
+            if (res.status === 204) {
+                alert('🚀 تم بدء نشر الريل القرآني بنجاح! سيكتمل الرفع على يوتيوب خلال دقيقة.');
+                setTimeout(loadRecentRuns, 4000);
+            } else {
+                alert('فشل الإطلاق: كود ' + res.status);
+            }
+        } catch (e) {
+            alert('خطأ: ' + e.message);
+        } finally {
+            btn.disabled = false;
+            btn.textContent = '⚡ نشر ريل قرآني إضافي الآن فوراً';
+        }
+    }
+
+    async function loadRecentRuns() {
+        const owner = localStorage.getItem('sec_github_user');
+        const repo = localStorage.getItem('sec_target_repo');
+        const token = localStorage.getItem('sec_github_token');
+        if (!owner || !repo || !token) return;
+
+        try {
+            const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs?per_page=6`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/vnd.github+json'
+                }
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                const list = document.getElementById('runsList');
+                if (!data.workflow_runs || data.workflow_runs.length === 0) {
+                    list.innerHTML = '<div style="text-align: center; color: var(--text-muted); font-size: 12px; padding: 12px;">لا توجد سجلات بعد...</div>';
+                    return;
+                }
+
+                list.innerHTML = data.workflow_runs.map(r => {
+                    const isSuccess = r.conclusion === 'success';
+                    const isRunning = r.status === 'in_progress' || r.status === 'queued';
+                    const icon = isSuccess ? '✅' : isRunning ? '⏳' : '❌';
+                    const statusText = isSuccess ? 'تم النشر بنجاح على يوتيوب' : isRunning ? 'جاري الرندر والرفع الآن' : 'فشل التشغيل';
+                    const time = new Date(r.created_at).toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+
+                    return `
+                        <div class="run-item">
+                            <div>
+                                <div class="run-title">${icon} ${statusText}</div>
+                                <div class="run-time">${time} • #${r.run_number}</div>
+                            </div>
+                            <a href="${r.html_url}" target="_blank" style="color: var(--gold-light); font-size: 12px; text-decoration: none;">عرض السجل ↗️</a>
+                        </div>
+                    `;
+                }).join('');
+            }
+        } catch (_) {}
+    }
+
+    function startCountdown() {
+        setInterval(() => {
+            const now = new Date();
+            const nowUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+
+            // 00:22, 05:41, 11:33, 17:19 UTC
+            const getSched = (h, m, dayOffset = 0) => {
+                return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + dayOffset, h, m, 0);
+            };
+
+            const schedules = [
+                getSched(0, 22),
+                getSched(5, 41),
+                getSched(11, 33),
+                getSched(17, 19),
+                getSched(0, 22, 1)
+            ];
+
+            const next = schedules.find(s => s > nowUtc);
+            const diff = Math.max(0, next - nowUtc);
+
+            const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+            const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+            const timerEl = document.getElementById('countdownTimer');
+            if (timerEl) timerEl.textContent = `${hours}:${minutes}:${seconds}`;
+        }, 1000);
+    }
+
+    function resetAppConfig() {
+        if (confirm('هل أنت متأكد من رغبتك في إعادة ضبط إعدادات القناة؟')) {
+            localStorage.clear();
+            location.reload();
+        }
+    }
+</script>
+</body>
+</html>

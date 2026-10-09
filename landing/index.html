@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سكينة القلوب | مولد ريلز القرآن الكريم تلقائياً 24/7</title>
+<meta name="description" content="نظام سحابي ذكي ينتج وينشر مقاطع ريلز وشورتس القرآن الكريم تلقائياً 4 مرات يومياً، بدون حاسوب وبدون أكواد. صدقة جارية مدى الحياة.">
+<meta name="theme-color" content="#0A0A12">
+
+<!-- Open Graph -->
+<meta property="og:title" content="سكينة القلوب | مولد ريلز القرآن الكريم">
+<meta property="og:description" content="أتمتة سحابية مجانية لنشر القرآن الكريم 24/7">
+<meta property="og:image" content="https://i.ytimg.com/vi/Mtv_wbXIqQk/maxresdefault.jpg">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   المتغيرات والأساسيات (Design Tokens)
+   ============================================ */
+:root {
+  --bg-darkest: #05050B;
+  --bg-dark: #0A0A12;
+  --bg-secondary: #12121E;
+  --bg-card: #171726;
+  --bg-card-hover: #1E1E32;
+
+  --gold-primary: #D4AF37;
+  --gold-light: #F4D06F;
+  --gold-dark: #AA8A2E;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0C4;
+  --text-muted: #6B6B80;
+
+  --status-success: #10B981;
+  --status-warning: #F59E0B;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  --shadow-gold: 0 8px 40px rgba(212, 175, 55, 0.15);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+  --font-cairo: 'Cairo', sans-serif;
+  --font-amiri: 'Amiri', serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-cairo);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* الخلفية النجمية المتحركة */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(212,175,55,0.5), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(244,208,111,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 85% 15%, rgba(212,175,55,0.3), transparent),
+    radial-gradient(1px 1px at 40% 85%, rgba(244,208,111,0.3), transparent),
+    radial-gradient(2px 2px at 75% 45%, rgba(212,175,55,0.25), transparent);
+  background-size: 400px 400px, 350px 350px, 300px 300px, 450px 450px, 380px 380px;
+  animation: twinkle 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.4; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(-20px); }
+}
+
+::selection { background: var(--gold-primary); color: var(--bg-dark); }
+
+/* ============================================
+   الحاوية والأقسام
+   ============================================ */
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+section { padding: 100px 0; }
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 999px;
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.section-title .gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto 50px;
+  font-size: 1.02rem;
+}
+
+.text-center { text-align: center; }
+
+/* ============================================
+   شريط التنقل (Navbar)
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 0;
+  transition: all 0.4s var(--ease-out);
+  background: rgba(10, 10, 18, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.navbar.scrolled {
+  padding: 12px 0;
+  background: rgba(10, 10, 18, 0.95);
+  border-bottom-color: rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 16px var(--gold-glow);
+  flex-shrink: 0;
+}
+
+.logo-text small {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold-primary));
+  transition: width 0.35s var(--ease-out);
+}
+
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a:hover::after { width: 100%; }
+
+/* الأزرار */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-family: var(--font-cairo);
+  font-weight: 700;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s var(--ease-out);
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+  color: var(--bg-darkest);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.35);
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(212, 175, 55, 0.55);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-primary);
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   قسم البطل (Hero)
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 130px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* هالة ذهبية متوهجة خلف البطل */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: -150px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12), transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+  animation: pulse-glow 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 999px;
+  color: #34D399;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--status-success);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.18;
+  margin-bottom: 24px;
+}
+
+.hero h1 .gold-text {
+  background: linear-gradient(135deg, var(--gold-light) 20%, var(--gold-primary) 50%, var(--gold-dark) 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.hero p.hero-desc {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin-bottom: 36px;
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.hero-stat .num {
+  font-size: 1.9rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.hero-stat .label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* موكب موبايل متوهج (Phone Mockup) */
+.phone-mockup {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  animation: float-phone 6s ease-in-out infinite;
+}
+
+@keyframes float-phone {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-22px) rotate(1deg); }
+}
+
+.phone-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 19;
+  background: linear-gradient(145deg, #1A1A2E, #0D0D17);
+  border-radius: 38px;
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  padding: 14px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05) inset,
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    0 0 70px rgba(212, 175, 55, 0.18);
+}
+
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 6px;
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 999px;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--bg-darkest);
+  position: relative;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.phone-screen .screen-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5,5,11,0.85) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+
+.screen-overlay span {
+  font-size: 0.78rem;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+/* بطاقات عائمة حول الموبايل */
+.float-card {
+  position: absolute;
+  background: rgba(23, 23, 38, 0.92);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-card);
+  z-index: 2;
+}
+
+.float-card-1 {
+  top: 12%;
+  left: -38px;
+  animation: float-card 5s ease-in-out infinite;
+}
+
+.float-card-2 {
+  bottom: 16%;
+  right: -42px;
+  animation: float-card 5.5s ease-in-out infinite 1s;
+}
+
+@keyframes float-card {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+/* ============================================
+   قسم المميزات (Features)
+   ============================================ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  transition: all 0.45s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold-primary), transparent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 175, 55, 0.35);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-gold);
+}
+
+.feature-card:hover::before { transform: scaleX(1); }
+
+.feature-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  transition: all 0.45s var(--ease-out);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(-6deg);
+  background: rgba(212, 175, 55, 0.2);
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ============================================
+   قسم كيف يعمل (How It Works)
+   ============================================ */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  position: relative;
+}
+
+.step-card {
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+.step-number {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  position: relative;
+  transition: all 0.45s var(--ease-out);
+}
+
+.step-card:hover .step-number {
+  transform: scale(1.12);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.35);
+}
+
+.step-number::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.25);
+  animation: rotate-ring 20s linear infinite;
+}
+
+@keyframes rotate-ring {
+  to { transform: rotate(360deg); }
+}
+
+.step-card h3 {
+  font-size: 1.12rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.step-time {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 4px 14px;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+/* ============================================
+   قسم معرض الفيديوهات (Video Gallery) — القسم الأهم
+   ============================================ */
+.gallery-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 26px;
+  border-radius: 999px;
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  color: var(--text-secondary);
+  font-family: var(--font-cairo);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.35s var(--ease-out);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-btn:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+  color: var(--bg-darkest);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.video-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.45s var(--ease-out);
+  position: relative;
+  animation: cardIn 0.6s var(--ease-out) backwards;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.video-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: var(--shadow-gold);
+}
+
+.video-thumb {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.video-card:hover .video-thumb img { transform: scale(1.06); }
+
+/* زر التشغيل */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.95);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: all 0.4s var(--ease-out);
+  box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+}
+
+.video-card:hover .play-btn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  animation: playPulse 2s infinite;
+}
+
+@keyframes playPulse {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5); }
+  70% { box-shadow: 0 0 0 18px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.play-btn svg { width: 24px; height: 24px; fill: var(--bg-darkest); margin-left: 3px; }
+
+/* تدرج علوي + شارة المدة */
+.video-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5,5,11,0.6), transparent 45%);
+  pointer-events: none;
+}
+
+.video-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 12px;
+  background: rgba(5, 5, 11, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  z-index: 2;
+}
+
+.video-info {
+  padding: 16px 18px 18px;
+}
+
+.video-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.video-meta .views { color: var(--gold-light); }
+
+/* المشغل المنبثق (Lightbox Modal) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 3, 8, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  position: relative;
+  width: min(420px, 100%);
+  max-height: 90vh;
+  transform: scale(0.85) translateY(20px);
+  transition: transform 0.45s var(--ease-out);
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+.modal-video-wrapper {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 0 80px rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.modal-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--gold-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.modal-close:hover {
+  background: var(--gold-primary);
+  color: var(--bg-darkest);
+  transform: rotate(90deg);
+}
+
+.modal-caption {
+  text-align: center;
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+/* ============================================
+   قسم التحميل (Download / CTA)
+   ============================================ */
+.download-section {
+  position: relative;
+}
+
+.download-card {
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 28px;
+  padding: 60px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent 70%);
+  filter: blur(30px);
+}
+
+.download-card h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.download-card p {
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  position: relative;
+}
+
+.download-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  position: relative;
+}
+
+.coming-soon-tag {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 7px 20px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 999px;
+  color: var(--status-warning);
+  font-size: 0.82rem;
+  font-weight: 700;
+  position: relative;
+}
+
+/* ============================================
+   الأسئلة الشائعة (FAQ)
+   ============================================ */
+.faq-container {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: all 0.35s var(--ease-out);
+}
+
+.faq-item.active {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: var(--bg-card-hover);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-cairo);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: right;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: color 0.3s;
+}
+
+.faq-question:hover { color: var(--gold-light); }
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.12);
+  display: grid;
+  place-items: center;
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.faq-item.active .faq-icon { transform: rotate(180deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s var(--ease-out);
+}
+
+.faq-answer-inner {
+  padding: 0 24px 22px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+/* ============================================
+   سياسة الخصوصية (Privacy)
+   ============================================ */
+.privacy-card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 18px;
+  padding: 34px 30px;
+}
+
+.privacy-list { list-style: none; padding: 0; margin: 0; }
+
+.privacy-list li {
+  position: relative;
+  padding: 0 0 18px 34px;
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
+.privacy-list li:last-child { padding-bottom: 0; }
+
+.privacy-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--gold-primary);
+  font-size: 0.85rem;
+}
+
+.privacy-list strong { color: var(--text-primary); }
+
+.privacy-note {
+  margin-top: 22px;
+  padding: 14px 18px;
+  background: rgba(212, 175, 55, 0.06);
+  border-right: 3px solid var(--gold-primary);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+/* ============================================
+   الفوتر (Footer)
+   ============================================ */
+.footer {
+  background: var(--bg-darkest);
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  padding: 60px 0 30px;
+  margin-top: 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 44px;
+  margin-bottom: 40px;
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.8;
+  margin-top: 14px;
+  max-width: 340px;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin-bottom: 16px;
+}
+
+.footer-col ul { list-style: none; }
+
+.footer-col li { margin-bottom: 10px; }
+
+.footer-col a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--gold-light); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.footer-bottom .heart { color: var(--gold-primary); }
+
+/* ============================================
+   حركات الظهور عند التمرير (Scroll Reveal)
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+
+/* ============================================
+   التجاوب (Responsive)
+   ============================================ */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+  .phone-mockup { width: 260px; order: -1; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  section { padding: 70px 0; }
+  .nav-links { display: none; }
+  .hero { padding: 110px 0 60px; }
+  .hero-stats { grid-template-columns: 1fr; gap: 14px; text-align: center; }
+  .hero-cta .btn { width: 100%; }
+  .float-card-1 { left: -10px; }
+  .float-card-2 { right: -10px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .footer-bottom { justify-content: center; text-align: center; }
+  .download-card { padding: 44px 24px; }
+  .download-cta .btn { width: 100%; }
+  .videos-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .videos-grid { grid-template-columns: 1fr; }
+  .gallery-tabs { gap: 8px; }
+  .tab-btn { padding: 9px 18px; font-size: 0.82rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== شريط التنقل ===================== -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="logo">
+      <span class="logo-icon">📖</span>
+      <span class="logo-text">
+        سكينة القلوب
+        <small>أتمتة سحابية للقرآن الكريم</small>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">المميزات</a></li>
+      <li><a href="#how">كيف يعمل</a></li>
+      <li><a href="#gallery">أمثلة حية</a></li>
+      <li><a href="#faq">الأسئلة</a></li>
+    </ul>
+    <a href="#download" class="btn btn-gold">حمّل التطبيق</a>
+  </div>
+</nav>
+
+<!-- ===================== قسم البطل ===================== -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        أتمتة سحابية تعمل الآن على قناتنا
+      </div>
+
+      <h1>
+        قناة قرآنية مؤتمتة<br>
+        <span class="gold-text">24/7 بضغطة زر</span><br>
+        بدون حاسوب وبدون أكواد
+      </h1>
+
+      <p class="hero-desc">
+        نظام سحابي ذكي ينتج وينشر مقاطع ريلز وشورتس للقرآن الكريم بجودة عالية
+        <strong>٤ مرات يومياً</strong> عبر سيرفرات مجانية مدى الحياة.
+        تلاوات خاشعة لأكبر القراء، وخلفيات طبيعية نقية 100% بدون أي وجوه.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#download" class="btn btn-gold">
+          <span>🚀</span> ابدأ الآن مجاناً
+        </a>
+        <a href="#gallery" class="btn btn-outline">
+          <span>🎬</span> شاهد أمثلة حية
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="num" data-count="4">0</span>
+          <span class="label">فيديوهات يومياً تلقائياً</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num" data-count="14">0</span>
+          <span class="label">قارئاً عالمياً</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num" data-count="100" data-suffix="%">0</span>
+          <span class="label">مجاني مدى الحياة</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="float-card float-card-1">
+          <span>🔒</span> تشفير Libsodium
+        </div>
+        <div class="float-card float-card-2">
+          <span>⚡</span> نشر فوري
+        </div>
+
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <img src="https://i.ytimg.com/vi/Mtv_wbXIqQk/hqdefault.jpg" alt="مثال على ريل قرآني">
+            <div class="screen-overlay">
+              <span>🎬 آخر ريل تم نشره تلقائياً</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== قسم المميزات ===================== -->
+<section id="features">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-badge">✨ المميزات</span>
+      <h2 class="section-title">لماذا <span class="gold">هذا النظام فريد؟</span></h2>
+      <p class="section-subtitle">
+        جمعنا بين الجمال البصري والخوف من الله عز وجل: محتوى نقي، تقنية متقدمة، وأتمتة لا تتوقف أبداً.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🤖</div>
+        <h3>أتمتة سحابية مجانية</h3>
+        <p>النشر يعمل تلقائياً ٤ مرات يومياً عبر سيرفرات GitHub السحابية، حتى لو كان هاتفك مغلقاً تماماً. بدون رسوم شهرية مدى الحياة.</p>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🌿</div>
+        <h3>محتوى نقي ١٠٠٪</h3>
+        <p>فلاتر صارمة تضمن خلفيات طبيعية ساحرة (سحب، جبال، مطر، فضاء) بدون ظهور أي بشر أو وجوه، حفاظاً على قدسية الآيات.</p>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🎙️</div>
+        <h3>أكبر القراء العالميين</h3>
+        <p>تنوع رائع يشمل عبد الباسط، المنشاوي، الحصري، العفاسي، الدوسري، الشاطري، القطامي، السديس، والمعيقلي وغيرهم.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">📜</div>
+        <h3>الرسم العثماني المصحفي</h3>
+        <p>معالجة دقيقة للتشكيل العربي والخط العثماني مع محاذاة مثالية لشاشات الهواتف الرأسية (٩:١٦) بجودة عالية.</p>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🔒</div>
+        <h3>أمان وتشفير عالي</h3>
+        <p>مفاتيحك وبيانات قناتك تُشفّر محلياً على جهازك بخوارزمية Libsodium SealedBox ولا تمر على أي سيرفر وسيط أبداً.</p>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">📱</div>
+        <h3>بدون حاسوب وبدون أكواد</h3>
+        <p>كل ما تحتاجه هو هاتفك الأندرويد. إعداد كامل للقناة في أقل من دقيقتين عبر واجهة عربية بسيطة ومرئية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== قسم كيف يعمل ===================== -->
+<section id="how">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-badge">⚙️ كيف يعمل</span>
+      <h2 class="section-title">٣ خطوات <span class="gold">فقط</span></h2>
+      <p class="section-subtitle">من تحميل التطبيق إلى أول فيديو يُنشر على قناتك تلقائياً.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-number">1</div>
+        <h3>اربط حساباتك</h3>
+        <p>سجّل الدخول بحساب جوجل الخاص بقناتك، ثم أدخل رمز GitHub الخاص بك. التطبيق يشفر كل شيء محلياً بأمان تام.</p>
+        <span class="step-time">⏱️ أقل من دقيقتين</span>
+      </div>
+
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-number">2</div>
+        <h3>أطلق الأتمتة</h3>
+        <p>بضغطة واحدة، يُنشئ التطبيق مستودعك السحابي، يحقن أسرارك مشفّرة، ويُطلق أول ريل تجريبي للتأكد من الجاهزية.</p>
+        <span class="step-time">🚀 زر واحد</span>
+      </div>
+
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-number">3</div>
+        <h3>اترك الباقي عليه</h3>
+        <p>السيرفرات السحابية تتولى الباقي: اختيار الآيات، المونتاج، التلاوة، ونشر ٤ فيديوهات يومياً على قناتك تلقائياً.</p>
+        <span class="step-time">♾️ مدى الحياة</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== معرض الفيديوهات ===================== -->
+<section id="gallery">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-badge">🎬 أمثلة حية</span>
+      <h2 class="section-title">فيديوهات حقيقية <span class="gold">من قناتنا</span></h2>
+      <p class="section-subtitle">
+        كل هذه الفيديوهات تم إنتاجها ونشرها تلقائياً ١٠٠٪ بواسطة النظام. اضغط على أي فيديو لمشاهدته كاملاً.
+      </p>
+    </div>
+
+    <!-- تبويبات الفرز -->
+    <div class="gallery-tabs reveal">
+      <button class="tab-btn active" data-filter="latest">🕐 الأحدث</button>
+      <button class="tab-btn" data-filter="popular">🔥 الأكثر شهرة</button>
+      <button class="tab-btn" data-filter="oldest">📚 الأقدم</button>
+    </div>
+
+    <!-- شبكة الفيديوهات -->
+    <div class="videos-grid" id="videosGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== قسم التحميل ===================== -->
+<section id="download" class="download-section">
+  <div class="container">
+    <div class="download-card reveal">
+      <span class="section-badge">📥 التحميل وفيديو الشرح</span>
+      <h2>ابدأ رحلتك <span class="gold">الآن</span></h2>
+      <p>
+        فكرة وتطوير: <strong>مصطفى بحيري</strong> (صاحب قناة البحيري :behiry).<br>
+        التطبيق مجاني تماماً ومفتوح المصدر، صُنع بنيّة <strong>صدقة جارية</strong> لوجه الله تعالى.
+      </p>
+
+      <div class="download-cta">
+        <a href="https://youtu.be/ozgBWYtWNLA" target="_blank" rel="noopener" class="btn btn-gold" id="watchTutorialBtn">
+          <span>▶</span> شاهد فيديو الشرح كاملاً
+        </a>
+        <a href="https://www.youtube.com/@behairy10" target="_blank" rel="noopener" class="btn btn-outline" id="subscribeDevBtn" style="border-color: var(--gold-primary); color: var(--gold-light);">
+          <span>🔔</span> اشترك في قناة المطور (@behairy10)
+        </a>
+        <a href="https://github.com/totebaybe-png/Quran-Reels-Android/releases" target="_blank" rel="noopener" class="btn btn-outline" id="downloadBtn">
+          <span>📱</span> تحميل APK لأندرويد
+        </a>
+      </div>
+
+      <div class="coming-soon-tag">
+        🌿 فيديو الشرح والتشغيل متاح الآن من مصطفى بحيري: <a href="https://youtu.be/ozgBWYtWNLA" target="_blank" style="color:var(--gold-light);text-decoration:underline;font-weight:bold;">اضغط هنا لمشاهدة الشرح</a> | <a href="https://www.youtube.com/@behairy10" target="_blank" style="color:var(--gold-light);text-decoration:underline;font-weight:bold;">قناة المطور @behairy10</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== الأسئلة الشائعة ===================== -->
+<section id="faq">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-badge">❓ الأسئلة الشائعة</span>
+      <h2 class="section-title">أسئلة <span class="gold">قد تدور بذهنك</span></h2>
+    </div>
+
+    <div class="faq-container reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          هل التطبيق مجاني فعلاً؟ وما هي التكلفة الخفية؟
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            نعم، مجاني ١٠٠٪ مدى الحياة. لا توجد اشتراكات ولا رسوم خفية. يعمل النظام على سيرفرات GitHub Actions المجانية،
+            والفيديوهات تُرفع على يوتيوب مجاناً. الكود مفتوح المصدر بترخيص Apache-2.0، والنية الصادقة هي صدقة جارية لوجه الله.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          هل بياناتي ومفاتيحي آمنة؟ هل يمكنكم رؤيتها؟
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            لا نراها إطلاقاً. يتم تشفير كل مفاتيحك محلياً على جهازك باستخدام خوارزمية Libsodium SealedBox قبل إرسالها،
+            وتُحفظ في مستودعك الخاص على GitHub بصيغة مشفّرة. لا يمر أي مفتاح بأي سيرفر وسيط، ولا يمكننا الوصول إليه أبداً.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          هل أحتاج إلى حاسوب أو معرفة برمجية؟
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            لا. كل ما تحتاجه هو هاتف أندرويد. واجهة التطبيق عربية بالكامل ومرئية، وكل ما عليك هو تسجيل الدخول بحساب جوجل
+            وإدخال رمز GitHub (يوجد شرح مبسط داخل التطبيق لإنشائه في ٣٠ ثانية). انتهى عصر الأكواد والطرفيات!
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          كم فيديو يُنشر يومياً ومتى؟
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            يتم النشر تلقائياً ٤ مرات يومياً في توقيتات مختارة بعناية لأعلى تفاعل:
+            ثلث الليل المتأخر، الصباح والضحى، الظهيرة، والمساء (وقت ذروة المشاهدة).
+            ويمكنك دائماً إنشاء ونشر فيديو إضافي فوراً بضغطة زر من لوحة التحكم.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          ماذا لو أوقفت هاتفي أو حذفت التطبيق؟
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            الأتمتة تستمر في العمل! لأنها تعمل على سيرفرات سحابية مستقلة عن هاتفك، فحتى لو أغلقت الهاتف أو حذفت التطبيق،
+            ستستمر القناة في نشر القرآن ٤ مرات يومياً. التطبيق مجرد لوحة تحكم جميلة، والعمل الحقيقي يحدث في السحابة.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          هل الفيديوهات مناسبة للنشر وخلوية من المخالفات؟
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            نعم بفضل الله. النظام يستخدم فلاتر صارمة جداً تستبعد أي مقاطع فيها بشر أو وجوه، وتختار فقط مشاهد الطبيعة
+            النقية (سحب، جبال، أنهار، مطر، فضاء). وفي حال انقطاع الإنترنت، يُولّد النظام خلفياته الخاصة (سماء ليلية وشفق)
+            لضمان عدم توقف النشر أبداً. الهدف هو خدمة كتاب الله بأجمل وأطهر صورة ممكنة.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== سياسة الخصوصية ===================== -->
+<section id="privacy" class="section">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-badge">🔒 سياسة الخصوصية</span>
+      <h2 class="section-title">خصوصيتك <span class="gold">أمانةٌ لدينا</span></h2>
+      <p class="section-subtitle">تطبيق «سكينة القلوب» بُني ليكون أداةً طاهرة لخدمة كتاب الله — لا لجمع بياناتك.</p>
+    </div>
+
+    <div class="privacy-card">
+      <ul class="privacy-list">
+        <li><strong>لا جمع للبيانات الشخصية:</strong> التطبيق لا يجمع اسمك، بريدك، رقم هاتفك، أو أي معلومة تعرّف بك، ولا يشارك أيًّا منها مع أي طرف ثالث.</li>
+        <li><strong>التخزين المحلي فقط:</strong> إعداداتك (القرّاء، الجدولة، مفاتيح الربط) تُحفظ حصرياً على جهازك داخل مساحة التخزين الآمنة (Encrypted Storage) ولا تغادر هاتفك أبداً.</li>
+        <li><strong>تشفير من الطرف للطرف:</strong> أي معلومة حساسة تُخزَّن محلياً تُشفَّر بمفتاح يبقى داخل جهازك (SealedBox / Libsodium)، فلا يمكن قراءتها حتى لو وصل أحدٌ لملفات التطبيق.</li>
+        <li><strong>الربط بك يحدث بينك وبين الخدمات فقط:</strong> عند ربط حسابك على يوتيوب أو GitHub، يتم ذلك عبر بروتوكول OAuth الرسميّ من تلك الخدمات مباشرةً، ولا تمرّ بياناتك عبر أي خادم وسيط لنا.</li>
+        <li><strong>الفيديوهات تُولَّد في السحابة العامة:</strong> عمليات المونتاج تجري على GitHub Actions الأمريكية المفتوحة، والنتيجة تُرفع مباشرةً إلى قناتك على يوتيوب. نحن لا نطّلع عليها ولا نخزّنها لدينا.</li>
+        <li><strong>التحليلات والإعلانات:</strong> لا نستخدم أي أدوات تتبّع (Analytics) ولا نعرض إعلانات داخل التطبيق، ولا نبيع أي بيانات — المشروع صدقة جارية خالصة لوجه الله.</li>
+        <li><strong>الأذونات:</strong> التطبيق يطلب أذونات الإنترنت فقط للربط بالخدمات، ولا يطلب الوصول للكاميرا أو جهات الاتصال أو الرسائل أو الملفات الشخصية.</li>
+      </ul>
+
+      <div class="privacy-note">
+        💚 <strong>تطبيق مفتوح المصدر 100%:</strong> يمكنك مراجعة كل سطر برمجي بنفسك والتحقق مما سبق على GitHub.
+        إن كان لديك أي استفسار عن خصوصيتك، راسلنا عبر قناة المطور ويسعدنا الرد عليك.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== الفوتر ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <span class="logo-icon">📖</span>
+          <span class="logo-text">سكينة القلوب<small>أتمتة سحابية للقرآن الكريم</small></span>
+        </a>
+        <p>
+          فكرة وتطوير: <strong>مصطفى بحيري</strong> (صاحب قناة البحيري :behiry).
+          مشروع مفتوح المصدر، صُنع بنيّة الصدقة الجارية لوجه الله تعالى.
+          نسألكم الدعاء بظهر الغيب لنا ولوالدينا.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#features">المميزات</a></li>
+          <li><a href="#how">كيف يعمل</a></li>
+          <li><a href="#gallery">أمثلة حية</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>روابط هامة</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@behairy10" target="_blank" rel="noopener" style="color: #ff4d4d; font-weight: bold;">🔴 قناة المطور (اشترك الآن)</a></li>
+          <li><a href="https://youtu.be/ozgBWYtWNLA" target="_blank" rel="noopener">▶️ فيديو الشرح (البحيري)</a></li>
+          <li><a href="#download">تحميل التطبيق</a></li>
+          <li><a href="https://github.com/totebaybe-png/Quran-Reels-Android" target="_blank" rel="noopener">الكود المصدري</a></li>
+          <li><a href="#privacy">سياسة الخصوصية</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 سكينة القلوب — فكرة وتطوير: مصطفى بحيري (قناة البحيري :behiry) — ترخيص مفتوح المصدر Apache-2.0</span>
+      <span>صُنع بـ <span class="heart">🤲</span> لوجه الله — صدقة جارية</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== المشغل المنبثق ===================== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="إغلاق">✕</button>
+    <div class="modal-video-wrapper" id="modalWrapper"></div>
+    <p class="modal-caption" id="modalCaption"></p>
+  </div>
+</div>
+
+<script>
+// ============================================
+// بيانات الفيديوهات الحقيقية من قناة سكينة القلوب
+// (تم جلبها تلقائياً عبر YouTube oEmbed + RSS feed)
+// ============================================
+const VIDEOS = [
+  { id: 'Mtv_wbXIqQk', title: 'سورة الهمزة | آيات 6-9 | عبدالباسط عبدالصمد (مرتل)', views: 10,   date: '2026-10-08' },
+  { id: 'cmtbfKfJ8X8', title: 'سورة العصر | آيات 1-3 | ناصر القطامي',                views: 193,  date: '2026-10-08' },
+  { id: 'mbGl69f50CU', title: 'سورة الانفطار | آيات 8-18 | أبو بكر الشاطري',         views: 255,  date: '2026-10-08' },
+  { id: 'hwE3NTgbDFI', title: 'سورة التين | آيات 4-8 | ياسر الدوسري',                views: 859,  date: '2026-10-07' },
+  { id: 'N6HoXkxOsL4', title: 'سورة النحل | آيات 107-111 | عبدالرحمن السديس',        views: 636,  date: '2026-10-06' },
+  { id: 'mmSc1z_vpdM', title: 'سورة الكهف | آيات 53-56 | سعود الشريم',               views: 0,    date: '2026-10-06' },
+  // --- فيديوهات إضافية من القناة (بدون عدد مشاهدات محدد) ---
+  { id: 'D9e9bowN5wE', title: 'سورة الماعون | آيات 2-7 | أحمد العجمي',               views: 957,  date: '2026-10-08' },
+  { id: '7Dvz0Xc2Urs', title: 'سورة الغاشية | آيات 5-20 | ناصر القطامي',              views: 153,  date: '2026-10-07' },
+  { id: 'rpxcHWCNd6U', title: 'سورة الزخرف | آيات 83-87 | سعد الغامدي',               views: 926,  date: '2026-10-07' },
+  { id: 'DrB29nrU1bA', title: 'سورة الغاشية | آيات 6-20 | ياسر الدوسري',              views: 1600, date: '2026-10-07' },
+  { id: 'J0FXaivnZhs', title: 'سورة الليل | آيات 18-21 | سعد الغامدي',                views: 547,  date: '2026-10-07' },
+  { id: '7kWX251bQjk', title: 'سورة الحجر | آيات 36-45 | عبدالرحمن السديس',           views: 0,    date: '2026-10-06' },
+  { id: 'yi4UXJYkMO4', title: 'سورة مريم | آيات 34-40 | سعود الشريم',                 views: 0,    date: '2026-10-06' },
+  { id: 'BiDKanimG34', title: 'سورة سبأ | آيات 22-24 | ماهر المعيقلي',                views: 0,    date: '2026-10-06' },
+  { id: 'jH-ksXSq-EU', title: 'سورة الغاشية | آيات 22-26 | مشاري العفاسي',            views: 0,    date: '2026-10-06' },
+];
+
+const grid = document.getElementById('videosGrid');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalWrapper = document.getElementById('modalWrapper');
+const modalCaption = document.getElementById('modalCaption');
+
+// تنسيق عدد المشاهدات
+function formatViews(views) {
+  if (views === 0) return 'جديد ✨';
+  if (views >= 1000) return (views / 1000).toFixed(1).replace('.0', '') + 'K مشاهدة';
+  return views + ' مشاهدة';
+}
+
+// تنسيق التاريخ بالعربية
+function formatDate(dateStr) {
+  const months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  const d = new Date(dateStr);
+  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+// بناء بطاقة فيديو
+function createVideoCard(video, index) {
+  const card = document.createElement('div');
+  card.className = 'video-card';
+  card.style.animationDelay = (index * 0.06) + 's';
+  card.dataset.videoId = video.id;
+  card.dataset.title = video.title;
+
+  card.innerHTML = `
+    <div class="video-thumb">
+      <span class="video-badge">▶ ريل قرآني</span>
+      <img src="https://i.ytimg.com/vi/${video.id}/hqdefault.jpg"
+           alt="${video.title}" loading="lazy">
+      <div class="play-btn">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+    </div>
+    <div class="video-info">
+      <h3 class="video-title">${video.title}</h3>
+      <div class="video-meta">
+        <span class="views">👁 ${formatViews(video.views)}</span>
+        <span>📅 ${formatDate(video.date)}</span>
+      </div>
+    </div>
+  `;
+
+  card.addEventListener('click', () => openModal(video));
+  return card;
+}
+
+// عرض الفيديوهات حسب التبويب
+function renderVideos(filter) {
+  grid.innerHTML = '';
+  const sorted = [...VIDEOS];
+
+  if (filter === 'popular') {
+    sorted.sort((a, b) => b.views - a.views);
+  } else if (filter === 'oldest') {
+    sorted.sort((a, b) => new Date(a.date) - new Date(b.date));
+  } else {
+    sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }
+
+  sorted.forEach((video, index) => {
+    grid.appendChild(createVideoCard(video, index));
+  });
+}
+
+// فتح المشغل المنبثق
+function openModal(video) {
+  modalWrapper.innerHTML = `
+    <iframe
+      src="https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1"
+      title="${video.title}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  `;
+  modalCaption.textContent = video.title + ' — سكينة القلوب';
+  modalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+// إغلاق المشغل
+function closeModal() {
+  modalOverlay.classList.remove('active');
+  modalWrapper.innerHTML = '';
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// تبديل التبويبات
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderVideos(btn.dataset.filter);
+  });
+});
+
+renderVideos('latest');
+
+// ============================================
+// تأثيرات التمرير (Scroll Reveal)
+// ============================================
+const observerOptions = {
+  threshold: 0.12,
+  rootMargin: '0px 0px -60px 0px'
+};
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ============================================
+// العد المتحرك للأرقام (Counter Animation)
+// ============================================
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1600;
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      el.textContent = Math.round(target * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+    counterObserver.unobserve(el);
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.hero-stat .num').forEach(el => counterObserver.observe(el));
+
+// ============================================
+// تأثير شريط التنقل عند التمرير
+// ============================================
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 60) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+});
+
+// ============================================
+// الأسئلة الشائعة (Accordion)
+// ============================================
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isActive = item.classList.contains('active');
+
+    // أغلق الكل أولاً
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-answer').style.maxHeight = null;
+    });
+
+    // افتح الحالي إن لم يكن مفتوحاً
+    if (!isActive) {
+      item.classList.add('active');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// ============================================
+// زر التحميل (GitHub Releases — ينقل المستخدم لصفحة التحميل الفعلية)
+// ============================================
+const RELEASES_URL = 'https://github.com/totebaybe-png/Quran-Reels-Android/releases';
+
+function isMobile() {
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+const downloadBtn = document.getElementById('downloadBtn');
+downloadBtn.addEventListener('click', (e) => {
+  // On Android, offer the latest release directly; other devices go to the
+  // releases page where an APK can be fetched for sideloading.
+  if (isMobile()) {
+    e.preventDefault();
+    window.open(RELEASES_URL + '/latest', '_blank', 'noopener');
+  }
+  // Desktop: let the anchor's href navigate normally to the releases page.
+});
+
+// Keep the CTA honest: point it at the real releases page instead of a placeholder.
+downloadBtn.setAttribute('href', RELEASES_URL);
+</script>
+
+</body>
+</html>

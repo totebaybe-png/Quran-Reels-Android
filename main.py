@@ -44,9 +44,40 @@ logging.info(f"Execution Directory: {EXEC_DIR}")
 logging.info(f"Bundled Directory: {BUNDLE_DIR}")
 
 # --- Step: Define Paths ---
+# FFmpeg: use the bundled portable binary when present, otherwise fall back to a
+# system FFmpeg on PATH (the README lists FFmpeg as a prerequisite anyway).
 FFMPEG_EXE = os.path.join(BUNDLE_DIR, "bin", "ffmpeg", "ffmpeg.exe")
+if not os.path.isfile(FFMPEG_EXE):
+    _resolved = shutil.which("ffmpeg") or shutil.which("ffmpeg.exe")
+    if _resolved:
+        FFMPEG_EXE = os.path.abspath(_resolved)
+        logging.info(f"Using system FFmpeg from PATH: {FFMPEG_EXE}")
+    else:
+        logging.error(
+            "FFmpeg not found! Install it (https://ffmpeg.org/download.html) or place a "
+            "portable build at bin/ffmpeg/ffmpeg.exe next to this script."
+        )
+
+FFPROBE_EXE = os.path.join(os.path.dirname(FFMPEG_EXE), "ffprobe.exe")
+if not os.path.isfile(FFPROBE_EXE):
+    _resolved_p = shutil.which("ffprobe") or shutil.which("ffprobe.exe")
+    if _resolved_p:
+        FFPROBE_EXE = os.path.abspath(_resolved_p)
+
+# ImageMagick: optional — text overlays are rendered with Pillow when it is absent.
 IM_MAGICK_EXE = os.path.join(BUNDLE_DIR, "bin", "imagemagick", "magick.exe")
-IM_HOME = os.path.join(BUNDLE_DIR, "bin", "imagemagick")
+IM_HOME = None
+if os.path.isfile(IM_MAGICK_EXE):
+    IM_HOME = os.path.join(BUNDLE_DIR, "bin", "imagemagick")
+else:
+    _resolved_m = shutil.which("magick") or shutil.which("convert")
+    if _resolved_m:
+        IM_MAGICK_EXE = os.path.abspath(_resolved_m)
+        IM_HOME = os.path.dirname(IM_MAGICK_EXE)
+        logging.info(f"Using system ImageMagick from PATH: {IM_MAGICK_EXE}")
+    else:
+        IM_MAGICK_EXE = None
+        logging.warning("ImageMagick not found — text overlays will be rendered with Pillow instead.")
 
 VISION_DIR = os.path.join(BUNDLE_DIR, "vision")
 UI_PATH = os.path.join(BUNDLE_DIR, "UI.html")
@@ -69,34 +100,30 @@ try:
 except Exception as e:
     logging.error(f"Failed to create directories: {e}")
 
-# Validate Bundled Requirements
-if not os.path.isfile(FFMPEG_EXE): logging.error(f"Missing ffmpeg.exe at {FFMPEG_EXE}")
-if not os.path.isfile(IM_MAGICK_EXE): logging.error(f"Missing magick.exe at {IM_MAGICK_EXE}")
-if not os.path.isdir(VISION_DIR): logging.error(f"Missing vision folder at {VISION_DIR}")
-if not os.path.isfile(UI_PATH): logging.error(f"Missing UI.html at {UI_PATH}")
-
 # --- Step: Configure Environment Variables ---
 os.environ["FFMPEG_BINARY"] = FFMPEG_EXE
 os.environ["IMAGEIO_FFMPEG_EXE"] = FFMPEG_EXE
 
-# ImageMagick Environment Setup
-os.environ["IMAGEMAGICK_BINARY"] = IM_MAGICK_EXE
-os.environ["MAGICK_HOME"] = IM_HOME
-os.environ["MAGICK_CONFIGURE_PATH"] = os.path.join(IM_HOME, "config")
-# Pre-flight check: if config dir missing, fallback to root or modules
-if not os.path.exists(os.environ["MAGICK_CONFIGURE_PATH"]):
-    os.environ["MAGICK_CONFIGURE_PATH"] = IM_HOME # Portable versions often have xmls in root
+# ImageMagick Environment Setup (optional — skipped when not installed)
+if IM_MAGICK_EXE:
+    os.environ["IMAGEMAGICK_BINARY"] = IM_MAGICK_EXE
+    if IM_HOME:
+        os.environ["MAGICK_HOME"] = IM_HOME
+        os.environ["MAGICK_CONFIGURE_PATH"] = os.path.join(IM_HOME, "config")
+        # Pre-flight check: if config dir missing, fallback to root or modules
+        if not os.path.exists(os.environ["MAGICK_CONFIGURE_PATH"]):
+            os.environ["MAGICK_CONFIGURE_PATH"] = IM_HOME  # Portable builds keep xmls in root
 
-os.environ["MAGICK_CODER_MODULE_PATH"] = os.path.join(IM_HOME, "modules", "coders") # Typical path
-if not os.path.exists(os.environ["MAGICK_CODER_MODULE_PATH"]):
-    os.environ["MAGICK_CODER_MODULE_PATH"] = os.path.join(IM_HOME, "modules")
+        os.environ["MAGICK_CODER_MODULE_PATH"] = os.path.join(IM_HOME, "modules", "coders")
+        if not os.path.exists(os.environ["MAGICK_CODER_MODULE_PATH"]):
+            os.environ["MAGICK_CODER_MODULE_PATH"] = os.path.join(IM_HOME, "modules")
 
 # Prepend PATH for DLL discovery
-os.environ["PATH"] = os.pathsep.join([
-    os.path.dirname(FFMPEG_EXE),
-    IM_HOME,
-    os.environ.get("PATH", "")
-])
+_path_parts = [os.path.dirname(FFMPEG_EXE)]
+if IM_HOME:
+    _path_parts.append(IM_HOME)
+_path_parts.append(os.environ.get("PATH", ""))
+os.environ["PATH"] = os.pathsep.join(_path_parts)
 
 logging.info("Environment variables set for portable binaries.")
 
@@ -104,11 +131,14 @@ import requests as http_requests
 from pydub import AudioSegment
 AudioSegment.converter = FFMPEG_EXE
 AudioSegment.ffmpeg = FFMPEG_EXE
-AudioSegment.ffprobe = os.path.join(os.path.dirname(FFMPEG_EXE), "ffprobe.exe")
+AudioSegment.ffprobe = FFPROBE_EXE
 
 from moviepy.config import change_settings
 try:
-    change_settings({"FFMPEG_BINARY": FFMPEG_EXE, "IMAGEMAGICK_BINARY": IM_MAGICK_EXE})
+    _settings = {"FFMPEG_BINARY": FFMPEG_EXE}
+    if IM_MAGICK_EXE:
+        _settings["IMAGEMAGICK_BINARY"] = IM_MAGICK_EXE
+    change_settings(_settings)
 except Exception as e:
     logging.error(f"MoviePy config error: {e}")
 
@@ -253,10 +283,13 @@ def create_text_clip(arabic, duration, video_height=1080):
     Create text clip for Arabic only.
     Dynamically adjusts font size and wrapping based on text length to ensure
     it looks organized and fits the screen beautifully.
+
+    Rendering prefers ImageMagick-backed TextClip when available, and otherwise
+    falls back to a Pillow-rendered image clip so the GUI works on any machine.
     """
     words = arabic.split()
     word_count = len(words)
-    
+
     # Dynamic settings based on text length
     if word_count > 60:
         fontsize = 16
@@ -273,33 +306,112 @@ def create_text_clip(arabic, duration, video_height=1080):
     else:
         fontsize = 35
         per_line = 6
-        
+
     wrapped_text = wrap_text(arabic, per_line)
-    
-    # Create the text clip centered on screen
-    # Use TextClip with the correct bundled font path
-    ar_clip = TextClip(
-        wrapped_text, 
-        font=FONT_PATH_ARABIC, 
-        fontsize=fontsize, 
-        color='white', 
-        method='caption', 
-        size=(900, None), # Allow height to expand as needed, constrain width
-        align='center',
-    ).set_duration(duration).set_position('center')
-    
-    return ar_clip
+
+    # Preferred path: ImageMagick-backed TextClip
+    if IM_MAGICK_EXE:
+        try:
+            ar_clip = TextClip(
+                wrapped_text,
+                font=FONT_PATH_ARABIC,
+                fontsize=fontsize,
+                color='white',
+                method='caption',
+                size=(900, None),  # Allow height to expand as needed, constrain width
+                align='center',
+            ).set_duration(duration).set_position('center')
+            return ar_clip
+        except Exception as e:
+            logging.warning(f"ImageMagick TextClip failed ({e}); using Pillow fallback.")
+
+    # Pillow fallback: render the shaped/reshaped Arabic text to an RGBA image.
+    return _create_pillow_text_clip(wrapped_text, duration, fontsize)
+
+
+def _create_pillow_text_clip(wrapped_text, duration, fontsize):
+    """Renders Arabic text with Pillow (RTL aware) and returns an ImageClip."""
+    from PIL import Image, ImageDraw, ImageFont
+
+    # Arabic shaping for correct ligatures + RTL ordering.
+    display_text = wrapped_text
+    try:
+        import arabic_reshaper
+        from bidi.algorithm import get_display
+        shaped_lines = []
+        for line in wrapped_text.split('\n'):
+            reshaped = arabic_reshaper.reshape(line)
+            # On Linux (Raqm builds) Pillow handles bidi itself.
+            try:
+                from PIL import features
+                if features.check('raqm'):
+                    shaped_lines.append(reshaped)
+                else:
+                    shaped_lines.append(get_display(reshaped))
+            except Exception:
+                shaped_lines.append(get_display(reshaped))
+        display_text = '\n'.join(shaped_lines)
+    except ImportError:
+        pass  # Without the libs we still render raw text (better than crashing).
+
+    font = None
+    for candidate in (FONT_PATH_ARABIC, FONT_PATH, FONT_PATH_ENGLISH):
+        if os.path.isfile(candidate):
+            try:
+                font = ImageFont.truetype(candidate, fontsize)
+                break
+            except Exception:
+                continue
+    if font is None:
+        font = ImageFont.load_default()
+
+    # Measure the text so the canvas is exactly the right size.
+    probe = Image.new("RGBA", (1, 1), (0, 0, 0, 0))
+    probe_draw = ImageDraw.Draw(probe)
+    line_spacing = int(fontsize * 0.9)
+    bbox = probe_draw.multiline_textbbox(
+        (0, 0), display_text, font=font, spacing=line_spacing, align='center',
+    )
+    text_w = max(10, bbox[2] - bbox[0] + 60)
+    text_h = max(10, bbox[3] - bbox[1] + 60)
+
+    img = Image.new("RGBA", (text_w, text_h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+
+    # Soft shadow for readability over bright backgrounds.
+    draw.multiline_text(
+        (32, 28), display_text, font=font, fill=(0, 0, 0, 200),
+        spacing=line_spacing, align='center', stroke_width=2, stroke_fill=(0, 0, 0, 200),
+    )
+    # Crisp main text with a dark outline.
+    draw.multiline_text(
+        (28, 24), display_text, font=font, fill=(255, 255, 255, 255),
+        spacing=line_spacing, align='center', stroke_width=2, stroke_fill=(0, 0, 0, 255),
+    )
+
+    import numpy as _np
+    from moviepy.editor import ImageClip
+    return ImageClip(_np.array(img)).set_duration(duration).set_position('center')
 
 
 def pick_bg():
+    """Picks a bundled nature background; generates one locally if the folder
+    is empty so the app never hard-fails."""
     try:
         files = [f for f in os.listdir(VISION_DIR) if f.startswith('nature_part') and f.endswith('.mp4')]
-        if not files: 
-            logging.error("No bg videos found in vision folder!")
-            raise ValueError("No background videos found.")
-        return os.path.join(VISION_DIR, random.choice(files))
+        if files:
+            return os.path.join(VISION_DIR, random.choice(files))
+    except FileNotFoundError:
+        pass
+
+    # vision/ missing or empty -> procedurally generate a pure-nature background.
+    logging.info("vision/ has no background videos — generating a local nature sky...")
+    try:
+        from auto_generate import generate_local_background
+        os.makedirs(AUDIO_DIR, exist_ok=True)
+        return generate_local_background(os.path.join(AUDIO_DIR, "bg_video.mp4"))
     except Exception as e:
-        logging.error(f"Error picking background: {e}")
+        logging.error(f"Error generating local background: {e}")
         raise
 
 def build_video(reciter_id, surah, start_ayah, end_ayah=None):

@@ -273,6 +273,8 @@ def load_state():
         "last_reciter_idx": 0,
         "last_surah": 1,
         "last_ayah": 0,
+        "uploads_today": 0,
+        "uploads_date": "",
         "history": []
     }
 
@@ -840,30 +842,53 @@ def main(test_mode=False):
         logger.error(traceback.format_exc())
         raise
 
-    # YouTube Upload
+    # YouTube Upload (with a daily quota guard so the channel can never burn
+    # through the 10,000-unit daily allowance: each upload costs ~1,600 units,
+    # so we cap at 5 uploads/day and leave headroom for the scheduled 4 runs).
+    MAX_UPLOADS_PER_DAY = 5
     video_id = None
     if not test_mode:
-        try:
-            from youtube_uploader import YouTubeUploader
-            uploader = YouTubeUploader()
-            surah_name = SURAH_NAMES[surah - 1]
-            title = f"سورة {surah_name} | آيات {start_ayah}-{actual_end_ayah} | {reciter['name']} | تلاوة خاشعة 🤲 #shorts"
-            if len(title) > 100:
-                title = f"سورة {surah_name} | {reciter['name']} | تلاوة خاشعة 🤲 #shorts"
+        today = datetime.datetime.now().strftime("%Y-%m-%d")
+        uploads_date = state.get("uploads_date", "")
+        uploads_today = state.get("uploads_today", 0)
+        if uploads_date != today:
+            uploads_date = today
+            uploads_today = 0
 
-            description = f"""📖 سورة {surah_name} ({start_ayah}-{actual_end_ayah})
+        if uploads_today >= MAX_UPLOADS_PER_DAY:
+            logger.warning(
+                f"⏸️ Daily upload cap reached ({uploads_today}/{MAX_UPLOADS_PER_DAY}). "
+                "The reel was produced successfully but its upload was skipped to "
+                "protect today's YouTube quota; it will resume tomorrow."
+            )
+        else:
+            try:
+                from youtube_uploader import YouTubeUploader
+                uploader = YouTubeUploader()
+                surah_name = SURAH_NAMES[surah - 1]
+                title = f"سورة {surah_name} | آيات {start_ayah}-{actual_end_ayah} | {reciter['name']} | تلاوة خاشعة 🤲 #shorts"
+                if len(title) > 100:
+                    title = f"سورة {surah_name} | {reciter['name']} | تلاوة خاشعة 🤲 #shorts"
+
+                description = f"""📖 سورة {surah_name} ({start_ayah}-{actual_end_ayah})
 🎙️ القارئ: {reciter['name']}
 
 هذا العمل صدقة جارية لوجه الله تعالى، نسألكم الدعاء بالمغفرة والرحمة لجميع موتى المسلمين. 🤲
+فكرة وتطوير: مصطفى بحيري (قناة البحيري :behiry)
+قناة المطور: https://www.youtube.com/@behairy10
 
 #قرآن #quran #shorts #تلاوة_خاشعة #سورة_{surah_name.replace(' ', '_')} #صدقة_جارية"""
 
-            tags = ['قرآن', 'quran', 'shorts', reciter['name'], f'سورة {surah_name}', 'صدقة جارية', 'تلاوة']
-            video_id = uploader.upload(video_path, title, description, tags)
-        except Exception as e:
-            import traceback
-            logger.error(f"Upload error: {e}")
-            logger.error(traceback.format_exc())
+                tags = ['قرآن', 'quran', 'shorts', reciter['name'], f'سورة {surah_name}', 'صدقة جارية', 'تلاوة']
+                video_id = uploader.upload(video_path, title, description, tags)
+                # Only count quota-consuming uploads that actually succeeded.
+                if video_id:
+                    state["uploads_today"] = uploads_today + 1
+                    state["uploads_date"] = uploads_date
+            except Exception as e:
+                import traceback
+                logger.error(f"Upload error: {e}")
+                logger.error(traceback.format_exc())
 
     # Update State
     state["total_generated"] = state.get("total_generated", 0) + 1

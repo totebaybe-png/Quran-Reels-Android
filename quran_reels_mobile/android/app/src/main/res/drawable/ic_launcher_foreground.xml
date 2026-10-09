@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Foreground artwork for the adaptive launcher icon.
+     Drawn on a transparent canvas; the background color is supplied by
+     mipmap-anydpi-v26/ic_launcher.xml. Content is kept inside the 66dp
+     diameter safe zone so device masks (circle/squircle) never clip it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Open Quran: left page -->
+    <path
+        android:fillColor="@color/ic_launcher_foreground"
+        android:pathData="M54,83 L27,71 L31,45 L54,57 Z" />
+
+    <!-- Open Quran: right page -->
+    <path
+        android:fillColor="@color/ic_launcher_foreground"
+        android:pathData="M54,83 L81,71 L77,45 L54,57 Z" />
+
+    <!-- Spine -->
+    <path
+        android:fillColor="@color/ic_launcher_shade"
+        android:pathData="M52,58 L56,58 L56,83 L52,83 Z" />
+
+    <!-- Crescent moon above the book (outer circle minus offset inner circle) -->
+    <path
+        android:fillColor="@color/ic_launcher_accent"
+        android:fillType="evenOdd"
+        android:pathData="M54,27 A11,11 0 1 1 54,49 A11,11 0 1 1 54,27 Z M59,25 A10,10 0 1 1 59,45 A10,10 0 1 1 59,25 Z" />
+</vector>

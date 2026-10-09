@@ -37,3 +37,8 @@ __pycache__/
 Thumbs.db
 .DS_Store
 state_backup.json
+
+# Android release signing (keep the password out of git; the keystore file itself
+# is committed because it is useless without this password)
+quran_reels_mobile/android/key.properties
+**/key.properties

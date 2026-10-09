@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Legacy launcher icon for devices below API 26 (no adaptive icons).
+     Newer devices prefer the adaptive icon in mipmap-anydpi-v26.
+     Implemented as a vector so it stays crisp at every density without
+     shipping per-density PNGs. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="@color/ic_launcher_background"
+        android:pathData="M0,0 H108 V108 H0 Z" />
+
+    <path
+        android:fillColor="@color/ic_launcher_foreground"
+        android:pathData="M54,83 L27,71 L31,45 L54,57 Z" />
+
+    <path
+        android:fillColor="@color/ic_launcher_foreground"
+        android:pathData="M54,83 L81,71 L77,45 L54,57 Z" />
+
+    <path
+        android:fillColor="@color/ic_launcher_shade"
+        android:pathData="M52,58 L56,58 L56,83 L52,83 Z" />
+
+    <path
+        android:fillColor="@color/ic_launcher_accent"
+        android:fillType="evenOdd"
+        android:pathData="M54,27 A11,11 0 1 1 54,49 A11,11 0 1 1 54,27 Z M59,25 A10,10 0 1 1 59,45 A10,10 0 1 1 59,25 Z" />
+</vector>
