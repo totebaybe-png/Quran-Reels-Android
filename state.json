@@ -1,6 +1,6 @@
 {
-  "total_generated": 20,
-  "last_reciter_idx": 6,
+  "total_generated": 21,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -204,6 +204,16 @@
       "duration": 47.1,
       "video_id": null,
       "date": "2026-10-09 21:50:40"
+    },
+    {
+      "surah": 99,
+      "surah_name": "الزلزلة",
+      "start_ayah": 2,
+      "end_ayah": 8,
+      "reciter": "سعود الشريم",
+      "duration": 35.9,
+      "video_id": null,
+      "date": "2026-10-10 06:05:39"
     }
   ]
 }
