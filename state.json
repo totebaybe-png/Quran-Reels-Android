@@ -1,6 +1,6 @@
 {
-  "total_generated": 22,
-  "last_reciter_idx": 8,
+  "total_generated": 23,
+  "last_reciter_idx": 9,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -224,6 +224,16 @@
       "duration": 61.4,
       "video_id": null,
       "date": "2026-10-10 11:25:18"
+    },
+    {
+      "surah": 100,
+      "surah_name": "العاديات",
+      "start_ayah": 3,
+      "end_ayah": 11,
+      "reciter": "سعد الغامدي",
+      "duration": 45.6,
+      "video_id": null,
+      "date": "2026-10-10 16:22:48"
     }
   ]
 }
