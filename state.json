@@ -1,6 +1,6 @@
 {
-  "total_generated": 23,
-  "last_reciter_idx": 9,
+  "total_generated": 24,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -234,6 +234,16 @@
       "duration": 45.6,
       "video_id": null,
       "date": "2026-10-10 16:22:48"
+    },
+    {
+      "surah": 96,
+      "surah_name": "العلق",
+      "start_ayah": 9,
+      "end_ayah": 19,
+      "reciter": "ياسر الدوسري",
+      "duration": 43.2,
+      "video_id": null,
+      "date": "2026-10-10 20:38:32"
     }
   ]
 }
