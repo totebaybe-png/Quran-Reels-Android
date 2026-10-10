@@ -1,6 +1,6 @@
 {
-  "total_generated": 21,
-  "last_reciter_idx": 7,
+  "total_generated": 22,
+  "last_reciter_idx": 8,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -214,6 +214,16 @@
       "duration": 35.9,
       "video_id": null,
       "date": "2026-10-10 06:05:39"
+    },
+    {
+      "surah": 83,
+      "surah_name": "المطففين",
+      "start_ayah": 7,
+      "end_ayah": 18,
+      "reciter": "عبدالرحمن السديس",
+      "duration": 61.4,
+      "video_id": null,
+      "date": "2026-10-10 11:25:18"
     }
   ]
 }
