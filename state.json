@@ -1,6 +1,6 @@
 {
-  "total_generated": 27,
-  "last_reciter_idx": 13,
+  "total_generated": 28,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -274,6 +274,16 @@
       "duration": 14.6,
       "video_id": null,
       "date": "2026-10-11 16:44:13"
+    },
+    {
+      "surah": 37,
+      "surah_name": "الصافات",
+      "start_ayah": 72,
+      "end_ayah": 83,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 58.4,
+      "video_id": null,
+      "date": "2026-10-11 21:02:51"
     }
   ]
 }
