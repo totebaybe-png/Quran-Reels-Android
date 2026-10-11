@@ -1,6 +1,6 @@
 {
-  "total_generated": 24,
-  "last_reciter_idx": 10,
+  "total_generated": 25,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -244,6 +244,16 @@
       "duration": 43.2,
       "video_id": null,
       "date": "2026-10-10 20:38:32"
+    },
+    {
+      "surah": 102,
+      "surah_name": "التكاثر",
+      "start_ayah": 1,
+      "end_ayah": 8,
+      "reciter": "ناصر القطامي",
+      "duration": 52.9,
+      "video_id": null,
+      "date": "2026-10-11 06:06:51"
     }
   ]
 }
