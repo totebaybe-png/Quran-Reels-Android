@@ -1,6 +1,6 @@
 {
-  "total_generated": 26,
-  "last_reciter_idx": 12,
+  "total_generated": 27,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -264,6 +264,16 @@
       "duration": 37.8,
       "video_id": null,
       "date": "2026-10-11 11:38:01"
+    },
+    {
+      "surah": 108,
+      "surah_name": "الكوثر",
+      "start_ayah": 1,
+      "end_ayah": 3,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 14.6,
+      "video_id": null,
+      "date": "2026-10-11 16:44:13"
     }
   ]
 }
