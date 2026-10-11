@@ -1,6 +1,6 @@
 {
-  "total_generated": 25,
-  "last_reciter_idx": 11,
+  "total_generated": 26,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -254,6 +254,16 @@
       "duration": 52.9,
       "video_id": null,
       "date": "2026-10-11 06:06:51"
+    },
+    {
+      "surah": 97,
+      "surah_name": "القدر",
+      "start_ayah": 2,
+      "end_ayah": 5,
+      "reciter": "أحمد العجمي",
+      "duration": 37.8,
+      "video_id": null,
+      "date": "2026-10-11 11:38:01"
     }
   ]
 }
