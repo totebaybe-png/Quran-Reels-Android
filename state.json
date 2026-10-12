@@ -1,6 +1,6 @@
 {
-  "total_generated": 29,
-  "last_reciter_idx": 1,
+  "total_generated": 30,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -294,6 +294,16 @@
       "duration": 60.8,
       "video_id": null,
       "date": "2026-10-12 06:17:14"
+    },
+    {
+      "surah": 82,
+      "surah_name": "الانفطار",
+      "start_ayah": 5,
+      "end_ayah": 14,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 60.6,
+      "video_id": null,
+      "date": "2026-10-12 13:35:23"
     }
   ]
 }
