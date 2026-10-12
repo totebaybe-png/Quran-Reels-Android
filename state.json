@@ -1,6 +1,6 @@
 {
-  "total_generated": 31,
-  "last_reciter_idx": 3,
+  "total_generated": 32,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -314,6 +314,16 @@
       "duration": 38.8,
       "video_id": null,
       "date": "2026-10-12 20:26:05"
+    },
+    {
+      "surah": 64,
+      "surah_name": "التغابن",
+      "start_ayah": 14,
+      "end_ayah": 15,
+      "reciter": "محمود خليل الحصري",
+      "duration": 55.6,
+      "video_id": null,
+      "date": "2026-10-12 23:43:01"
     }
   ]
 }
