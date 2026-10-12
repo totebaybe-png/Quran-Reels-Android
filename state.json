@@ -1,6 +1,6 @@
 {
-  "total_generated": 30,
-  "last_reciter_idx": 2,
+  "total_generated": 31,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -304,6 +304,16 @@
       "duration": 60.6,
       "video_id": null,
       "date": "2026-10-12 13:35:23"
+    },
+    {
+      "surah": 111,
+      "surah_name": "المسد",
+      "start_ayah": 2,
+      "end_ayah": 5,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 38.8,
+      "video_id": null,
+      "date": "2026-10-12 20:26:05"
     }
   ]
 }
