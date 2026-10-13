@@ -1,6 +1,6 @@
 {
-  "total_generated": 35,
-  "last_reciter_idx": 7,
+  "total_generated": 36,
+  "last_reciter_idx": 8,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -354,6 +354,16 @@
       "duration": 54.4,
       "video_id": null,
       "date": "2026-10-13 18:31:08"
+    },
+    {
+      "surah": 95,
+      "surah_name": "التين",
+      "start_ayah": 1,
+      "end_ayah": 8,
+      "reciter": "عبدالرحمن السديس",
+      "duration": 36.8,
+      "video_id": null,
+      "date": "2026-10-13 21:56:43"
     }
   ]
 }
