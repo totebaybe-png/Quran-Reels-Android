@@ -1,6 +1,6 @@
 {
-  "total_generated": 34,
-  "last_reciter_idx": 6,
+  "total_generated": 35,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -344,6 +344,16 @@
       "duration": 60.7,
       "video_id": null,
       "date": "2026-10-13 12:58:58"
+    },
+    {
+      "surah": 76,
+      "surah_name": "الإنسان",
+      "start_ayah": 15,
+      "end_ayah": 21,
+      "reciter": "سعود الشريم",
+      "duration": 54.4,
+      "video_id": null,
+      "date": "2026-10-13 18:31:08"
     }
   ]
 }
