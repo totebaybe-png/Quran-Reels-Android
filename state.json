@@ -1,6 +1,6 @@
 {
-  "total_generated": 33,
-  "last_reciter_idx": 5,
+  "total_generated": 34,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -334,6 +334,16 @@
       "duration": 60.5,
       "video_id": null,
       "date": "2026-10-13 06:58:59"
+    },
+    {
+      "surah": 83,
+      "surah_name": "المطففين",
+      "start_ayah": 25,
+      "end_ayah": 34,
+      "reciter": "ماهر المعيقلي",
+      "duration": 60.7,
+      "video_id": null,
+      "date": "2026-10-13 12:58:58"
     }
   ]
 }
