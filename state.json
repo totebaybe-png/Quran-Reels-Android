@@ -1,6 +1,6 @@
 {
-  "total_generated": 37,
-  "last_reciter_idx": 9,
+  "total_generated": 38,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -374,6 +374,16 @@
       "duration": 39.3,
       "video_id": null,
       "date": "2026-10-14 05:06:13"
+    },
+    {
+      "surah": 82,
+      "surah_name": "الانفطار",
+      "start_ayah": 6,
+      "end_ayah": 14,
+      "reciter": "ياسر الدوسري",
+      "duration": 58.6,
+      "video_id": null,
+      "date": "2026-10-14 10:38:06"
     }
   ]
 }
