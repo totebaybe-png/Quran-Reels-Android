@@ -1,6 +1,6 @@
 {
-  "total_generated": 38,
-  "last_reciter_idx": 10,
+  "total_generated": 39,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -384,6 +384,16 @@
       "duration": 58.6,
       "video_id": null,
       "date": "2026-10-14 10:38:06"
+    },
+    {
+      "surah": 100,
+      "surah_name": "العاديات",
+      "start_ayah": 5,
+      "end_ayah": 11,
+      "reciter": "ناصر القطامي",
+      "duration": 46.5,
+      "video_id": null,
+      "date": "2026-10-14 15:58:42"
     }
   ]
 }
