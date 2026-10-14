@@ -1,6 +1,6 @@
 {
-  "total_generated": 39,
-  "last_reciter_idx": 11,
+  "total_generated": 40,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -394,6 +394,16 @@
       "duration": 46.5,
       "video_id": null,
       "date": "2026-10-14 15:58:42"
+    },
+    {
+      "surah": 95,
+      "surah_name": "التين",
+      "start_ayah": 3,
+      "end_ayah": 8,
+      "reciter": "أحمد العجمي",
+      "duration": 39.1,
+      "video_id": null,
+      "date": "2026-10-14 20:48:41"
     }
   ]
 }
