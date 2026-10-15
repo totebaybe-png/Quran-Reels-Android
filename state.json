@@ -1,6 +1,6 @@
 {
-  "total_generated": 43,
-  "last_reciter_idx": 1,
+  "total_generated": 44,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -434,6 +434,16 @@
       "duration": 68.6,
       "video_id": null,
       "date": "2026-10-15 15:46:27"
+    },
+    {
+      "surah": 97,
+      "surah_name": "القدر",
+      "start_ayah": 3,
+      "end_ayah": 5,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 42.6,
+      "video_id": null,
+      "date": "2026-10-15 20:26:32"
     }
   ]
 }
