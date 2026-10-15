@@ -1,6 +1,6 @@
 {
-  "total_generated": 42,
-  "last_reciter_idx": 0,
+  "total_generated": 43,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -424,6 +424,16 @@
       "duration": 40.3,
       "video_id": null,
       "date": "2026-10-15 10:19:49"
+    },
+    {
+      "surah": 98,
+      "surah_name": "البينة",
+      "start_ayah": 3,
+      "end_ayah": 5,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 68.6,
+      "video_id": null,
+      "date": "2026-10-15 15:46:27"
     }
   ]
 }
