@@ -1,6 +1,6 @@
 {
-  "total_generated": 41,
-  "last_reciter_idx": 13,
+  "total_generated": 42,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -414,6 +414,16 @@
       "duration": 30.4,
       "video_id": null,
       "date": "2026-10-15 04:54:16"
+    },
+    {
+      "surah": 91,
+      "surah_name": "الشمس",
+      "start_ayah": 10,
+      "end_ayah": 15,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 40.3,
+      "video_id": null,
+      "date": "2026-10-15 10:19:49"
     }
   ]
 }
