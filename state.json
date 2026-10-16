@@ -1,6 +1,6 @@
 {
-  "total_generated": 45,
-  "last_reciter_idx": 3,
+  "total_generated": 46,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -454,6 +454,16 @@
       "duration": 53.9,
       "video_id": null,
       "date": "2026-10-16 04:46:50"
+    },
+    {
+      "surah": 107,
+      "surah_name": "الماعون",
+      "start_ayah": 5,
+      "end_ayah": 7,
+      "reciter": "محمود خليل الحصري",
+      "duration": 45.2,
+      "video_id": null,
+      "date": "2026-10-16 10:08:28"
     }
   ]
 }
