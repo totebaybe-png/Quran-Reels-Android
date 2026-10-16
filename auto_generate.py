@@ -262,21 +262,26 @@ def to_arabic_numeral(n):
 # State & Reciter Rotation Management
 # ============================================================
 def load_state():
-    if STATE_FILE.exists():
-        try:
-            with open(STATE_FILE, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except Exception:
-            pass
-    return {
+    state = {
         "total_generated": 0,
         "last_reciter_idx": 0,
         "last_surah": 1,
         "last_ayah": 0,
         "uploads_today": 0,
         "uploads_date": "",
+        "used_backgrounds": [],
         "history": []
     }
+    if STATE_FILE.exists():
+        try:
+            with open(STATE_FILE, 'r', encoding='utf-8') as f:
+                loaded = json.load(f)
+                state.update(loaded)
+        except Exception:
+            pass
+    if "used_backgrounds" not in state:
+        state["used_backgrounds"] = []
+    return state
 
 def save_state(state):
     with open(STATE_FILE, 'w', encoding='utf-8') as f:
@@ -632,23 +637,84 @@ def create_pil_text_clip(text, duration, font_size, text_color, font_path=None, 
     )
     return ImageClip(img_arr, ismask=False).set_duration(duration).set_position(pos)
 
+BACKGROUNDS_DIR = SCRIPT_DIR / "backgrounds"
+
+def get_background_asset(state=None, api_key=""):
+    """
+    Selects a 100% Pure Nature background asset for the reel:
+    1. First Priority: ZERO-REPETITION cycle from local library (BACKGROUNDS_DIR).
+       No background is EVER repeated until all available backgrounds (600+) are used.
+       Once all 600 backgrounds are exhausted, the cycle automatically resets.
+    2. Fallback to Pexels if library is missing and an API key is provided.
+    3. Ultimate Failsafe: Procedurally generated animated starry sky + aurora borealis.
+    """
+    if BACKGROUNDS_DIR.exists():
+        all_bgs = sorted([
+            f.name for f in BACKGROUNDS_DIR.iterdir()
+            if f.is_file() and f.suffix.lower() in ('.jpg', '.jpeg', '.png', '.mp4', '.mov')
+        ])
+        if all_bgs:
+            if state is not None:
+                used = set(state.get("used_backgrounds", []))
+                available = [name for name in all_bgs if name not in used]
+
+                # If all 600 backgrounds have been used, start a fresh new round!
+                if not available:
+                    logger.info(f"🔄 All {len(all_bgs)} backgrounds have been used! Resetting cycle for a fresh round.")
+                    state["used_backgrounds"] = []
+                    available = list(all_bgs)
+
+                # Pick randomly from the remaining UNUSED backgrounds
+                chosen_name = random.choice(available)
+                state.setdefault("used_backgrounds", []).append(chosen_name)
+                save_state(state)
+                logger.info(f"🌿 Selected Background: {chosen_name} [{len(state['used_backgrounds'])}/{len(all_bgs)} in current cycle]")
+                return str(BACKGROUNDS_DIR / chosen_name)
+            else:
+                chosen = random.choice(all_bgs)
+                logger.info(f"🌿 Selected Background: {chosen}")
+                return str(BACKGROUNDS_DIR / chosen)
+
+    if api_key:
+        return fetch_pexels_video(api_key)
+
+    logger.warning("🎨 No local backgrounds found and no Pexels key. Using procedural starry sky.")
+    return generate_local_background(str(AUDIO_DIR / "bg_video.mp4"))
+
 def process_background_clip(bg_path, target_duration):
     """
-    Applies Slow-Motion (to stretch duration and add calm aesthetic),
-    crops to 9:16, and loops seamlessly to match target_duration.
+    Processes the background for an Ayah segment:
+    - If STILL IMAGE: applies smooth Ken Burns cinematic slow-zoom (1.0 -> 1.05) and crops to 1080x1920.
+    - If VIDEO: applies speed multiplier (slow-mo), crops to 9:16, and loops seamlessly.
     """
-    from moviepy.editor import VideoFileClip
+    from moviepy.editor import VideoFileClip, ImageClip
     import moviepy.video.fx.all as vfx
 
+    path_obj = Path(bg_path)
+    if path_obj.suffix.lower() in ('.jpg', '.jpeg', '.png'):
+        # Still image -> subtle cinematic motion (Ken Burns effect)
+        img_clip = ImageClip(str(bg_path)).set_duration(target_duration)
+        # 1. Scale image so it covers at least 1080x1920 regardless of input resolution
+        scale_factor = max(VIDEO_WIDTH / img_clip.w, VIDEO_HEIGHT / img_clip.h)
+        base_clip = img_clip.resize(scale_factor)
+        # 2. Slow zoom in: scale 1.00 -> 1.05 over the duration of the ayah
+        zoomed = base_clip.resize(lambda t: 1.0 + 0.05 * (t / target_duration))
+        # 3. Ensure exact 1080x1920 dimensions centered
+        final_bg = zoomed.crop(
+            x_center=zoomed.w / 2,
+            y_center=zoomed.h / 2,
+            width=VIDEO_WIDTH,
+            height=VIDEO_HEIGHT
+        )
+        return final_bg
+
+    # Otherwise treat as video
     raw_clip = VideoFileClip(bg_path)
-    
-    # 1. Apply Slow Motion effect
     try:
         slow_clip = raw_clip.fx(vfx.speedx, BG_SPEED_MULTIPLIER)
     except Exception:
         slow_clip = raw_clip
 
-    # 2. Resize & Crop to 1080x1920
     slow_clip = slow_clip.resize(height=VIDEO_HEIGHT)
     if slow_clip.w > VIDEO_WIDTH:
         slow_clip = slow_clip.crop(x_center=slow_clip.w / 2, y_center=VIDEO_HEIGHT / 2, width=VIDEO_WIDTH, height=VIDEO_HEIGHT)
@@ -657,11 +723,10 @@ def process_background_clip(bg_path, target_duration):
         if slow_clip.h > VIDEO_HEIGHT:
             slow_clip = slow_clip.crop(x_center=VIDEO_WIDTH / 2, y_center=slow_clip.h / 2, width=VIDEO_WIDTH, height=VIDEO_HEIGHT)
 
-    # 3. Loop seamlessly for exact duration
     final_bg = slow_clip.fx(vfx.loop, duration=target_duration).subclip(0, target_duration)
     return final_bg
 
-def build_reel(surah, start_ayah, end_ayah, reciter, pexels_key):
+def build_reel(surah, start_ayah, end_ayah, reciter, pexels_key="", state=None):
     from moviepy.editor import (
         AudioFileClip, CompositeVideoClip, concatenate_videoclips, ColorClip
     )
@@ -674,8 +739,8 @@ def build_reel(surah, start_ayah, end_ayah, reciter, pexels_key):
 
     font_path = get_best_quran_font()
 
-    # Download Background (100% Pure Nature Guaranteed)
-    bg_video_path = fetch_pexels_video(pexels_key)
+    # Select Background (Zero-repetition from 600+ library -> Pexels -> Procedural Aurora)
+    bg_video_path = get_background_asset(state=state, api_key=pexels_key)
 
     # Download Audio & Ayah Data (Target: 35s to 58s duration)
     MIN_DURATION_SHORTS = 35.0
@@ -834,7 +899,9 @@ def main(test_mode=False):
     logger.info(f"🎯 Target: سورة {SURAH_NAMES[surah-1]} | آيات {start_ayah} إلى {end_ayah}")
 
     try:
-        video_path, duration, actual_end_ayah = build_reel(surah, start_ayah, end_ayah, reciter, PEXELS_API_KEY)
+        video_path, duration, actual_end_ayah = build_reel(
+            surah, start_ayah, end_ayah, reciter, PEXELS_API_KEY, state=state
+        )
     except Exception as e:
         # The pipeline must never die silently: log full trace so GitHub Actions
         # artifacts/issue show exactly what happened, then re-raise.

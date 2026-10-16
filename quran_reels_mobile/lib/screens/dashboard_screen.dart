@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -362,6 +364,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
                   // 3. Instant Reel Action Button
                   _buildInstantTriggerButton(),
+                  const SizedBox(height: 16),
+
+                  // 3b. Backgrounds Library & Upload Card
+                  _buildBackgroundsLibraryCard(),
                   const SizedBox(height: 24),
 
                   // 4. Recent Video Upload Runs
@@ -555,6 +561,208 @@ class _DashboardScreenState extends State<DashboardScreen> {
         label: Text(
           _isTriggeringRun ? 'جاري بدء النشر السحابي...' : '⚡ نشر ريل قرآني جديد الآن فوراً',
           style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.bgDark),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBackgroundsLibraryCard() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppTheme.bgCard,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppTheme.goldPrimary.withValues(alpha: 0.2)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.photo_library_rounded, color: AppTheme.goldLight, size: 22),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'مكتبة الخلفيات (600+ خلفية طبيعية)',
+                  style: GoogleFonts.cairo(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: AppTheme.goldLight,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                decoration: BoxDecoration(
+                  color: AppTheme.statusSuccess.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  'مدمجة وجاهزة 🌿',
+                  style: GoogleFonts.cairo(
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                    color: AppTheme.statusSuccess,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'تضم المكتبة أكثر من 600 خلفية طبيعية عذراء فائقة الدقة (غابات خضراء وأشجار خيزران، مروج ورود وأزهار ربيعية، شلالات، أنهار، أعماق البحار، جبال شامخة، سماء ليلية ونجوم وشفق قطبي). '
+            'يتم اختيار خلفية عشوائياً لكل ريل مع حركة زووم سينمائية ناعمة مدى الحياة دون الحاجة لأي مفاتيح خارجية.',
+            style: GoogleFonts.cairo(fontSize: 12, color: AppTheme.textSecondary, height: 1.5),
+          ),
+          const SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton.icon(
+              onPressed: _showUploadBackgroundDialog,
+              style: OutlinedButton.styleFrom(
+                side: BorderSide(color: AppTheme.goldPrimary.withValues(alpha: 0.4)),
+                padding: const EdgeInsets.symmetric(vertical: 10),
+              ),
+              icon: const Icon(Icons.cloud_upload_rounded, color: AppTheme.goldLight, size: 18),
+              label: Text(
+                '➕ إضافة خلفيات مخصصة إلى مستودعك',
+                style: GoogleFonts.cairo(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  color: AppTheme.goldLight,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showUploadBackgroundDialog() {
+    final nameController = TextEditingController();
+    final urlController = TextEditingController();
+    bool isUploading = false;
+
+    showDialog(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (dialogCtx, setDialogState) => AlertDialog(
+          backgroundColor: AppTheme.bgCard,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18),
+            side: BorderSide(color: AppTheme.goldPrimary.withValues(alpha: 0.3)),
+          ),
+          title: Row(
+            children: [
+              const Icon(Icons.add_photo_alternate_rounded, color: AppTheme.goldLight),
+              const SizedBox(width: 8),
+              Text(
+                'إضافة خلفية مخصصة',
+                style: GoogleFonts.cairo(fontWeight: FontWeight.bold, color: AppTheme.goldLight, fontSize: 16),
+              ),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'يمكنك رفع صور طبيعية عمودية جديدة (9:16) إلى مجلد backgrounds في مستودعك لتستخدم تلقائياً في الريلز القادمة.',
+                style: GoogleFonts.cairo(fontSize: 12, color: AppTheme.textSecondary),
+              ),
+              const SizedBox(height: 14),
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(
+                  labelText: 'اسم الصورة (مثال: my_nature.jpg)',
+                  hintText: 'my_nature.jpg',
+                ),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: urlController,
+                decoration: const InputDecoration(
+                  labelText: 'رابط الصورة المباشر',
+                  hintText: 'https://... رابط صورة عمودية',
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: isUploading ? null : () => Navigator.pop(ctx),
+              child: Text('إلغاء', style: GoogleFonts.cairo(color: AppTheme.textMuted)),
+            ),
+            ElevatedButton(
+              onPressed: isUploading
+                  ? null
+                  : () async {
+                      final name = nameController.text.trim();
+                      final url = urlController.text.trim();
+                      if (name.isEmpty || url.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('يرجى إدخال اسم ورابط الصورة', style: GoogleFonts.cairo()),
+                            backgroundColor: AppTheme.statusError,
+                          ),
+                        );
+                        return;
+                      }
+
+                      if (_githubToken == null || _githubUser == null || _githubRepo == null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('بيانات الاعتماد غير مكتملة', style: GoogleFonts.cairo()),
+                            backgroundColor: AppTheme.statusError,
+                          ),
+                        );
+                        return;
+                      }
+
+                      setDialogState(() => isUploading = true);
+                      try {
+                        final imgResp = await http.get(Uri.parse(url));
+                        if (imgResp.statusCode == 200) {
+                          final base64Content = base64.encode(imgResp.bodyBytes);
+                          final ok = await GithubService.uploadBackground(
+                            token: _githubToken!,
+                            owner: _githubUser!,
+                            repo: _githubRepo!,
+                            fileName: name,
+                            base64Content: base64Content,
+                          );
+                          if (ok) {
+                            if (dialogCtx.mounted) Navigator.pop(ctx);
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('✅ تم رفع الخلفية إلى مستودعك بنجاح!', style: GoogleFonts.cairo()),
+                                  backgroundColor: AppTheme.statusSuccess,
+                                ),
+                              );
+                            }
+                            return;
+                          }
+                        }
+                        throw Exception('فشل جلب أو رفع الصورة (رمز ${imgResp.statusCode})');
+                      } catch (e) {
+                        setDialogState(() => isUploading = false);
+                        if (mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('فشل الرفع: $e', style: GoogleFonts.cairo()),
+                              backgroundColor: AppTheme.statusError,
+                            ),
+                          );
+                        }
+                      }
+                    },
+              child: isUploading
+                  ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
+                  : Text('رفع إلى GitHub', style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
+            ),
+          ],
         ),
       ),
     );

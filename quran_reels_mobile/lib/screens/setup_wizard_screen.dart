@@ -867,11 +867,32 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
           ),
         ),
         const SizedBox(height: 12),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          decoration: BoxDecoration(
+            color: AppTheme.bgCard,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppTheme.statusSuccess.withValues(alpha: 0.3)),
+          ),
+          child: Row(
+            children: [
+              const Icon(Icons.check_circle_rounded, color: AppTheme.statusSuccess, size: 20),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  '🌿 تم تضمين مكتبة الطبيعة النقية (600+ خلفية HD مدمجة تعمل تلقائياً دون الحاجة لمفتاح خارجي).',
+                  style: GoogleFonts.cairo(fontSize: 12, color: AppTheme.textSecondary),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 10),
         TextField(
           controller: _pexelsKeyController,
           decoration: const InputDecoration(
-            labelText: 'مفتاح Pexels للصور (اختياري)',
-            hintText: 'في حال تركه فارغاً سيعمل الشفق وسماء النجوم تلقائياً',
+            labelText: 'مفتاح Pexels إضافي (اختياري تماماً)',
+            hintText: 'اتركه فارغاً — المكتبة المدمجة تغنيك عنه بالكامل',
           ),
         ),
         const SizedBox(height: 16),

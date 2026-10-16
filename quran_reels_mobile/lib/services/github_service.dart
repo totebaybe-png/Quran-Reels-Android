@@ -470,4 +470,56 @@ class GithubService {
       return [];
     });
   }
+
+  /// Lists all custom/built-in backgrounds in the repository's backgrounds/ folder
+  static Future<List<String>> listBackgrounds({
+    required String token,
+    required String owner,
+    required String repo,
+    http.Client? client,
+  }) async {
+    return _withClient(client, (c) async {
+      final url = '$_apiBase/repos/$owner/$repo/contents/backgrounds';
+      final response = await c.get(
+        Uri.parse(url),
+        headers: _headers(token),
+      );
+
+      if (response.statusCode == 200) {
+        final List data = json.decode(response.body);
+        return data
+            .where((item) => item['type'] == 'file')
+            .map<String>((item) => item['name'] as String)
+            .toList();
+      }
+      return [];
+    });
+  }
+
+  /// Uploads a new background image directly to backgrounds/{fileName} in the repo
+  static Future<bool> uploadBackground({
+    required String token,
+    required String owner,
+    required String repo,
+    required String fileName,
+    required String base64Content,
+    http.Client? client,
+  }) async {
+    return _withClient(client, (c) async {
+      final safeName = fileName.replaceAll(RegExp(r'[^a-zA-Z0-9._-]'), '_');
+      final url = '$_apiBase/repos/$owner/$repo/contents/backgrounds/$safeName';
+      final body = json.encode({
+        'message': '🌿 إضافة خلفية طبيعية مخصصة: $safeName',
+        'content': base64Content,
+      });
+
+      final response = await c.put(
+        Uri.parse(url),
+        headers: _headers(token),
+        body: body,
+      );
+
+      return response.statusCode == 201 || response.statusCode == 200;
+    });
+  }
 }
