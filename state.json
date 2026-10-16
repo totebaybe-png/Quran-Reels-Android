@@ -1,6 +1,6 @@
 {
-  "total_generated": 44,
-  "last_reciter_idx": 2,
+  "total_generated": 45,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "last_generated": null,
@@ -444,6 +444,16 @@
       "duration": 42.6,
       "video_id": null,
       "date": "2026-10-15 20:26:32"
+    },
+    {
+      "surah": 78,
+      "surah_name": "النبأ",
+      "start_ayah": 12,
+      "end_ayah": 16,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 53.9,
+      "video_id": null,
+      "date": "2026-10-16 04:46:50"
     }
   ]
 }
