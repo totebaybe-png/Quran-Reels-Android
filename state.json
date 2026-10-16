@@ -1,9 +1,13 @@
 {
-  "total_generated": 47,
-  "last_reciter_idx": 5,
+  "total_generated": 48,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
-  "last_generated": null,
+  "uploads_today": 0,
+  "uploads_date": "",
+  "used_backgrounds": [
+    "nature_529.jpg"
+  ],
   "history": [
     {
       "surah": 25,
@@ -474,7 +478,17 @@
       "duration": 57.5,
       "video_id": null,
       "date": "2026-10-16 15:31:44"
+    },
+    {
+      "surah": 45,
+      "surah_name": "الجاثية",
+      "start_ayah": 21,
+      "end_ayah": 22,
+      "reciter": "ماهر المعيقلي",
+      "duration": 40.0,
+      "video_id": null,
+      "date": "2026-10-16 20:03:13"
     }
   ],
-  "used_backgrounds": []
+  "last_generated": null
 }
