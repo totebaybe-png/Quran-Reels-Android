@@ -1,6 +1,6 @@
 {
-  "total_generated": 50,
-  "last_reciter_idx": 8,
+  "total_generated": 51,
+  "last_reciter_idx": 9,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -8,7 +8,8 @@
   "used_backgrounds": [
     "nature_529.jpg",
     "nature_248.jpg",
-    "nature_373.jpg"
+    "nature_373.jpg",
+    "nature_172.jpg"
   ],
   "history": [
     {
@@ -510,6 +511,16 @@
       "duration": 24.8,
       "video_id": null,
       "date": "2026-10-17 09:41:07"
+    },
+    {
+      "surah": 79,
+      "surah_name": "النازعات",
+      "start_ayah": 13,
+      "end_ayah": 26,
+      "reciter": "سعد الغامدي",
+      "duration": 58.0,
+      "video_id": null,
+      "date": "2026-10-17 14:24:33"
     }
   ],
   "last_generated": null
