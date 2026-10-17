@@ -1,6 +1,6 @@
 {
-  "total_generated": 51,
-  "last_reciter_idx": 9,
+  "total_generated": 52,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -9,7 +9,8 @@
     "nature_529.jpg",
     "nature_248.jpg",
     "nature_373.jpg",
-    "nature_172.jpg"
+    "nature_172.jpg",
+    "nature_363.jpg"
   ],
   "history": [
     {
@@ -521,6 +522,16 @@
       "duration": 58.0,
       "video_id": null,
       "date": "2026-10-17 14:24:33"
+    },
+    {
+      "surah": 90,
+      "surah_name": "البلد",
+      "start_ayah": 8,
+      "end_ayah": 20,
+      "reciter": "ياسر الدوسري",
+      "duration": 58.3,
+      "video_id": null,
+      "date": "2026-10-17 19:33:16"
     }
   ],
   "last_generated": null
