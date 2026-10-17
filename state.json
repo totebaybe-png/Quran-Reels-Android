@@ -1,12 +1,13 @@
 {
-  "total_generated": 48,
-  "last_reciter_idx": 6,
+  "total_generated": 49,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
   "uploads_date": "",
   "used_backgrounds": [
-    "nature_529.jpg"
+    "nature_529.jpg",
+    "nature_248.jpg"
   ],
   "history": [
     {
@@ -488,6 +489,16 @@
       "duration": 40.0,
       "video_id": null,
       "date": "2026-10-16 20:03:13"
+    },
+    {
+      "surah": 109,
+      "surah_name": "الكافرون",
+      "start_ayah": 1,
+      "end_ayah": 6,
+      "reciter": "سعود الشريم",
+      "duration": 23.4,
+      "video_id": null,
+      "date": "2026-10-17 04:42:19"
     }
   ],
   "last_generated": null
