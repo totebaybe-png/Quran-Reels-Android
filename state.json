@@ -1,13 +1,14 @@
 {
-  "total_generated": 49,
-  "last_reciter_idx": 7,
+  "total_generated": 50,
+  "last_reciter_idx": 8,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
   "uploads_date": "",
   "used_backgrounds": [
     "nature_529.jpg",
-    "nature_248.jpg"
+    "nature_248.jpg",
+    "nature_373.jpg"
   ],
   "history": [
     {
@@ -499,6 +500,16 @@
       "duration": 23.4,
       "video_id": null,
       "date": "2026-10-17 04:42:19"
+    },
+    {
+      "surah": 113,
+      "surah_name": "الفلق",
+      "start_ayah": 1,
+      "end_ayah": 5,
+      "reciter": "عبدالرحمن السديس",
+      "duration": 24.8,
+      "video_id": null,
+      "date": "2026-10-17 09:41:07"
     }
   ],
   "last_generated": null
