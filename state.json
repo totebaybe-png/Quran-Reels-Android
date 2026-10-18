@@ -1,6 +1,6 @@
 {
-  "total_generated": 54,
-  "last_reciter_idx": 12,
+  "total_generated": 55,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -12,7 +12,8 @@
     "nature_172.jpg",
     "nature_363.jpg",
     "nature_408.jpg",
-    "nature_119.jpg"
+    "nature_119.jpg",
+    "nature_348.jpg"
   ],
   "history": [
     {
@@ -554,6 +555,16 @@
       "duration": 61.0,
       "video_id": null,
       "date": "2026-10-18 09:56:41"
+    },
+    {
+      "surah": 102,
+      "surah_name": "التكاثر",
+      "start_ayah": 2,
+      "end_ayah": 8,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 34.1,
+      "video_id": null,
+      "date": "2026-10-18 14:47:24"
     }
   ],
   "last_generated": null
