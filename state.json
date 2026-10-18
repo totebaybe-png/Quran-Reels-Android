@@ -1,6 +1,6 @@
 {
-  "total_generated": 55,
-  "last_reciter_idx": 13,
+  "total_generated": 56,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -13,7 +13,8 @@
     "nature_363.jpg",
     "nature_408.jpg",
     "nature_119.jpg",
-    "nature_348.jpg"
+    "nature_348.jpg",
+    "nature_070.jpg"
   ],
   "history": [
     {
@@ -565,6 +566,16 @@
       "duration": 34.1,
       "video_id": null,
       "date": "2026-10-18 14:47:24"
+    },
+    {
+      "surah": 41,
+      "surah_name": "فصلت",
+      "start_ayah": 51,
+      "end_ayah": 53,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 64.5,
+      "video_id": null,
+      "date": "2026-10-18 19:34:16"
     }
   ],
   "last_generated": null
