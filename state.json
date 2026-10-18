@@ -1,6 +1,6 @@
 {
-  "total_generated": 52,
-  "last_reciter_idx": 10,
+  "total_generated": 53,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -10,7 +10,8 @@
     "nature_248.jpg",
     "nature_373.jpg",
     "nature_172.jpg",
-    "nature_363.jpg"
+    "nature_363.jpg",
+    "nature_408.jpg"
   ],
   "history": [
     {
@@ -532,6 +533,16 @@
       "duration": 58.3,
       "video_id": null,
       "date": "2026-10-17 19:33:16"
+    },
+    {
+      "surah": 95,
+      "surah_name": "التين",
+      "start_ayah": 6,
+      "end_ayah": 8,
+      "reciter": "ناصر القطامي",
+      "duration": 40.9,
+      "video_id": null,
+      "date": "2026-10-18 04:48:47"
     }
   ],
   "last_generated": null
