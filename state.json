@@ -1,6 +1,6 @@
 {
-  "total_generated": 56,
-  "last_reciter_idx": 0,
+  "total_generated": 57,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -14,7 +14,8 @@
     "nature_408.jpg",
     "nature_119.jpg",
     "nature_348.jpg",
-    "nature_070.jpg"
+    "nature_070.jpg",
+    "nature_163.jpg"
   ],
   "history": [
     {
@@ -576,6 +577,16 @@
       "duration": 64.5,
       "video_id": null,
       "date": "2026-10-18 19:34:16"
+    },
+    {
+      "surah": 90,
+      "surah_name": "البلد",
+      "start_ayah": 1,
+      "end_ayah": 6,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 55.4,
+      "video_id": null,
+      "date": "2026-10-19 04:57:51"
     }
   ],
   "last_generated": null
