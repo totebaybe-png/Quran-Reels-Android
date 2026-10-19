@@ -1,6 +1,6 @@
 {
-  "total_generated": 57,
-  "last_reciter_idx": 1,
+  "total_generated": 58,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -15,7 +15,8 @@
     "nature_119.jpg",
     "nature_348.jpg",
     "nature_070.jpg",
-    "nature_163.jpg"
+    "nature_163.jpg",
+    "nature_009.jpg"
   ],
   "history": [
     {
@@ -587,6 +588,16 @@
       "duration": 55.4,
       "video_id": null,
       "date": "2026-10-19 04:57:51"
+    },
+    {
+      "surah": 81,
+      "surah_name": "التكوير",
+      "start_ayah": 18,
+      "end_ayah": 28,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 60.5,
+      "video_id": null,
+      "date": "2026-10-19 11:17:56"
     }
   ],
   "last_generated": null
