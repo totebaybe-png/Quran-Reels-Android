@@ -1,6 +1,6 @@
 {
-  "total_generated": 59,
-  "last_reciter_idx": 3,
+  "total_generated": 60,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -17,7 +17,8 @@
     "nature_070.jpg",
     "nature_163.jpg",
     "nature_009.jpg",
-    "nature_569.jpg"
+    "nature_569.jpg",
+    "nature_560.jpg"
   ],
   "history": [
     {
@@ -609,6 +610,16 @@
       "duration": 40.1,
       "video_id": null,
       "date": "2026-10-19 17:43:55"
+    },
+    {
+      "surah": 35,
+      "surah_name": "فاطر",
+      "start_ayah": 30,
+      "end_ayah": 31,
+      "reciter": "محمود خليل الحصري",
+      "duration": 41.7,
+      "video_id": null,
+      "date": "2026-10-19 21:38:28"
     }
   ],
   "last_generated": null
