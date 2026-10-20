@@ -1,6 +1,6 @@
 {
-  "total_generated": 61,
-  "last_reciter_idx": 5,
+  "total_generated": 62,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -19,7 +19,8 @@
     "nature_009.jpg",
     "nature_569.jpg",
     "nature_560.jpg",
-    "nature_551.jpg"
+    "nature_551.jpg",
+    "nature_322.jpg"
   ],
   "history": [
     {
@@ -631,6 +632,16 @@
       "duration": 59.2,
       "video_id": null,
       "date": "2026-10-20 05:06:58"
+    },
+    {
+      "surah": 79,
+      "surah_name": "النازعات",
+      "start_ayah": 24,
+      "end_ayah": 35,
+      "reciter": "ماهر المعيقلي",
+      "duration": 59.0,
+      "video_id": null,
+      "date": "2026-10-20 10:29:05"
     }
   ],
   "last_generated": null
