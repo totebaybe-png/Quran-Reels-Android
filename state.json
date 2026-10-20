@@ -1,6 +1,6 @@
 {
-  "total_generated": 63,
-  "last_reciter_idx": 7,
+  "total_generated": 64,
+  "last_reciter_idx": 8,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -21,7 +21,8 @@
     "nature_560.jpg",
     "nature_551.jpg",
     "nature_322.jpg",
-    "nature_292.jpg"
+    "nature_292.jpg",
+    "nature_294.jpg"
   ],
   "history": [
     {
@@ -653,6 +654,16 @@
       "duration": 61.3,
       "video_id": null,
       "date": "2026-10-20 15:50:24"
+    },
+    {
+      "surah": 60,
+      "surah_name": "الممتحنة",
+      "start_ayah": 5,
+      "end_ayah": 7,
+      "reciter": "عبدالرحمن السديس",
+      "duration": 43.9,
+      "video_id": null,
+      "date": "2026-10-20 20:45:13"
     }
   ],
   "last_generated": null
