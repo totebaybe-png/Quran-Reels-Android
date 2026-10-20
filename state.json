@@ -1,6 +1,6 @@
 {
-  "total_generated": 62,
-  "last_reciter_idx": 6,
+  "total_generated": 63,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -20,7 +20,8 @@
     "nature_569.jpg",
     "nature_560.jpg",
     "nature_551.jpg",
-    "nature_322.jpg"
+    "nature_322.jpg",
+    "nature_292.jpg"
   ],
   "history": [
     {
@@ -642,6 +643,16 @@
       "duration": 59.0,
       "video_id": null,
       "date": "2026-10-20 10:29:05"
+    },
+    {
+      "surah": 88,
+      "surah_name": "الغاشية",
+      "start_ayah": 5,
+      "end_ayah": 25,
+      "reciter": "سعود الشريم",
+      "duration": 61.3,
+      "video_id": null,
+      "date": "2026-10-20 15:50:24"
     }
   ],
   "last_generated": null
