@@ -1,6 +1,6 @@
 {
-  "total_generated": 67,
-  "last_reciter_idx": 11,
+  "total_generated": 68,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -25,7 +25,8 @@
     "nature_294.jpg",
     "nature_018.jpg",
     "nature_184.jpg",
-    "nature_564.jpg"
+    "nature_564.jpg",
+    "nature_149.jpg"
   ],
   "history": [
     {
@@ -697,6 +698,16 @@
       "duration": 38.2,
       "video_id": null,
       "date": "2026-10-21 16:06:09"
+    },
+    {
+      "surah": 113,
+      "surah_name": "الفلق",
+      "start_ayah": 2,
+      "end_ayah": 5,
+      "reciter": "أحمد العجمي",
+      "duration": 24.3,
+      "video_id": null,
+      "date": "2026-10-21 20:43:47"
     }
   ],
   "last_generated": null
