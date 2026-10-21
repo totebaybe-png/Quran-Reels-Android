@@ -1,6 +1,6 @@
 {
-  "total_generated": 64,
-  "last_reciter_idx": 8,
+  "total_generated": 65,
+  "last_reciter_idx": 9,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -22,7 +22,8 @@
     "nature_551.jpg",
     "nature_322.jpg",
     "nature_292.jpg",
-    "nature_294.jpg"
+    "nature_294.jpg",
+    "nature_018.jpg"
   ],
   "history": [
     {
@@ -664,6 +665,16 @@
       "duration": 43.9,
       "video_id": null,
       "date": "2026-10-20 20:45:13"
+    },
+    {
+      "surah": 88,
+      "surah_name": "الغاشية",
+      "start_ayah": 8,
+      "end_ayah": 22,
+      "reciter": "سعد الغامدي",
+      "duration": 60.1,
+      "video_id": null,
+      "date": "2026-10-21 05:04:12"
     }
   ],
   "last_generated": null
