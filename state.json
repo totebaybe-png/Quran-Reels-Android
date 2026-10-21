@@ -1,6 +1,6 @@
 {
-  "total_generated": 65,
-  "last_reciter_idx": 9,
+  "total_generated": 66,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -23,7 +23,8 @@
     "nature_322.jpg",
     "nature_292.jpg",
     "nature_294.jpg",
-    "nature_018.jpg"
+    "nature_018.jpg",
+    "nature_184.jpg"
   ],
   "history": [
     {
@@ -675,6 +676,16 @@
       "duration": 60.1,
       "video_id": null,
       "date": "2026-10-21 05:04:12"
+    },
+    {
+      "surah": 67,
+      "surah_name": "الملك",
+      "start_ayah": 1,
+      "end_ayah": 4,
+      "reciter": "ياسر الدوسري",
+      "duration": 48.8,
+      "video_id": null,
+      "date": "2026-10-21 10:37:50"
     }
   ],
   "last_generated": null
