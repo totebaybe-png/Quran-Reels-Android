@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -85,7 +86,7 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
     } catch (e) {
       _showSnackbar(
         'فشل تسجيل الدخول: ${e.toString().replaceAll('Exception: ', '')}\n'
-        'تأكد من إضافة رابط إعادة التوجيه في Google Cloud Console.',
+        'تأكد من إنشاء OAuth Client ID من نوع (Desktop app) في Google Cloud.',
         isError: true,
       );
     } finally {
@@ -450,9 +451,96 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
     );
   }
 
-  void _copyRedirectUri() {
-    Clipboard.setData(const ClipboardData(text: AppConstants.oauthRedirectUri));
-    _showSnackbar('✅ تم نسخ رابط إعادة التوجيه إلى الحافظة بنجاح!');
+  void _showImportJsonDialog() {
+    final textController = TextEditingController();
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppTheme.bgCard,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: BorderSide(color: AppTheme.goldPrimary.withValues(alpha: 0.3)),
+        ),
+        title: Row(
+          children: [
+            const Icon(Icons.code_rounded, color: AppTheme.goldLight),
+            const SizedBox(width: 10),
+            Text(
+              'استيراد من JSON',
+              style: GoogleFonts.cairo(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: AppTheme.goldLight,
+              ),
+            ),
+          ],
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'الصق محتوى ملف client_secret.json أو token.json هنا وسيتم استخراج المفاتيح تلقائياً:',
+              style: GoogleFonts.cairo(fontSize: 12, color: AppTheme.textSecondary),
+            ),
+            const SizedBox(height: 10),
+            TextField(
+              controller: textController,
+              maxLines: 5,
+              style: const TextStyle(fontSize: 11, fontFamily: 'monospace'),
+              decoration: InputDecoration(
+                hintText: '{\n  "installed": {\n    "client_id": "...",\n    "client_secret": "..."\n  }\n}',
+                hintStyle: TextStyle(fontSize: 11, color: AppTheme.textMuted.withValues(alpha: 0.5)),
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text('إلغاء', style: GoogleFonts.cairo(color: AppTheme.textSecondary)),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              final raw = textController.text.trim();
+              if (raw.isEmpty) return;
+              try {
+                final data = jsonDecode(raw);
+                if (data is Map<String, dynamic>) {
+                  bool found = false;
+                  if (data.containsKey('installed') && data['installed'] is Map) {
+                    final inst = data['installed'] as Map;
+                    if (inst['client_id'] != null) _ytClientIdController.text = inst['client_id'].toString();
+                    if (inst['client_secret'] != null) _ytClientSecretController.text = inst['client_secret'].toString();
+                    found = true;
+                  } else if (data.containsKey('web') && data['web'] is Map) {
+                    final web = data['web'] as Map;
+                    if (web['client_id'] != null) _ytClientIdController.text = web['client_id'].toString();
+                    if (web['client_secret'] != null) _ytClientSecretController.text = web['client_secret'].toString();
+                    found = true;
+                  }
+                  if (data.containsKey('refresh_token')) {
+                    _ytRefreshTokenController.text = data['refresh_token'].toString();
+                    if (data['client_id'] != null) _ytClientIdController.text = data['client_id'].toString();
+                    if (data['client_secret'] != null) _ytClientSecretController.text = data['client_secret'].toString();
+                    found = true;
+                  }
+                  if (found) {
+                    Navigator.pop(ctx);
+                    _showSnackbar('✅ تم استخراج البيانات وتعبئة الحقول بنجاح!');
+                    return;
+                  }
+                }
+                _showSnackbar('لم يتم العثور على مفاتيح صالحة داخل الـ JSON.', isError: true);
+              } catch (e) {
+                _showSnackbar('تنسيق JSON غير صالح: $e', isError: true);
+              }
+            },
+            child: Text('استخراج وتعبئة', style: GoogleFonts.cairo(fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    );
   }
 
   void _showGoogleCloudGuideDialog() {
@@ -487,7 +575,7 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
             children: [
               _buildGuideStep('1', 'افتح Google Cloud Console وأنشئ مشروعاً جديداً باسم (Quran Reels).'),
               _buildGuideStep('2', 'ادخل إلى APIs & Services ثم Library وابحث عن (YouTube Data API v3) وقم بتفعيلها.'),
-              _buildGuideStep('3', 'من شاشة Credentials، أنشئ OAuth client ID من نوع Desktop app.'),
+              _buildGuideStep('3', 'من شاشة Credentials، اضغط Create Credentials واختر OAuth client ID من نوع (Desktop app / تطبيق سطح مكتب). لا يلزم كتابة أي روابط!'),
               _buildGuideStep('4', 'في شاشة OAuth Consent Screen، اضغط Publish App ليبقى التوكن نشطاً مدى الحياة دون توقف.'),
               const SizedBox(height: 12),
               Container(
@@ -497,25 +585,15 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(color: AppTheme.goldPrimary.withValues(alpha: 0.2)),
                 ),
-                child: Column(
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('رابط إعادة التوجيه المطلوب إضافته:', style: GoogleFonts.cairo(fontSize: 11, color: AppTheme.goldLight, fontWeight: FontWeight.bold)),
-                    const SizedBox(height: 6),
-                    SelectableText(
-                      AppConstants.oauthRedirectUri,
-                      style: GoogleFonts.cairo(fontSize: 11, color: AppTheme.textSecondary),
-                    ),
-                    const SizedBox(height: 8),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          _copyRedirectUri();
-                          Navigator.pop(ctx);
-                        },
-                        icon: const Icon(Icons.copy_rounded, size: 16, color: AppTheme.bgDark),
-                        label: Text('نسخ الرابط الآن', style: GoogleFonts.cairo(fontSize: 12, fontWeight: FontWeight.bold)),
+                    const Icon(Icons.check_circle_outline_rounded, color: AppTheme.goldLight, size: 20),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        'لا تحتاج لإدخال أي رابط Redirect في Google Cloud! نوع Desktop app يتعامل معه التطبيق تلقائياً عبر المتصفح.',
+                        style: GoogleFonts.cairo(fontSize: 12, color: AppTheme.textSecondary, height: 1.4),
                       ),
                     ),
                   ],
@@ -609,7 +687,7 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
                         padding: const EdgeInsets.symmetric(vertical: 8),
                       ),
                       icon: const Icon(Icons.play_arrow_rounded, size: 18),
-                      label: Text('مشاهدة فيديو الشرح', style: GoogleFonts.cairo(fontSize: 12, fontWeight: FontWeight.bold)),
+                      label: Text('فيديو الشرح', style: GoogleFonts.cairo(fontSize: 12, fontWeight: FontWeight.bold)),
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -622,7 +700,20 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
                         padding: const EdgeInsets.symmetric(vertical: 8),
                       ),
                       icon: const Icon(Icons.help_outline_rounded, size: 16),
-                      label: Text('دليل الـ 4 خطوات', style: GoogleFonts.cairo(fontSize: 12)),
+                      label: Text('دليل الخطوات', style: GoogleFonts.cairo(fontSize: 12)),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: _showImportJsonDialog,
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: AppTheme.goldLight,
+                        side: const BorderSide(color: AppTheme.goldPrimary),
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                      ),
+                      icon: const Icon(Icons.code_rounded, size: 16),
+                      label: Text('استيراد JSON', style: GoogleFonts.cairo(fontSize: 12)),
                     ),
                   ),
                 ],
@@ -676,7 +767,7 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
           ),
         ),
         const SizedBox(height: 14),
-        // Redirect URI the user must whitelist once in Google Cloud Console.
+        // Helper card explaining Desktop app credentials.
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
@@ -684,46 +775,20 @@ class _SetupWizardScreenState extends State<SetupWizardScreen> {
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: AppTheme.goldPrimary.withValues(alpha: 0.15)),
           ),
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'خطوة لمرة واحدة في Google Cloud:',
-                    style: GoogleFonts.cairo(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: AppTheme.goldLight,
-                    ),
+              const Icon(Icons.info_outline_rounded, color: AppTheme.goldLight, size: 20),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  '💡 تأكد أن نوع العميل في Google Cloud هو Desktop app (تطبيق سطح المكتب). '
+                  'لا تحتاج لإدخال أي رابط إعادة توجيه في Google — التطبيق يقوم بالربط تلقائياً عبر المتصفح.',
+                  style: GoogleFonts.cairo(
+                    fontSize: 11,
+                    color: AppTheme.textSecondary,
+                    height: 1.4,
                   ),
-                  TextButton.icon(
-                    onPressed: _copyRedirectUri,
-                    icon: const Icon(Icons.copy_rounded, size: 14, color: AppTheme.goldLight),
-                    label: Text('نسخ الرابط', style: GoogleFonts.cairo(fontSize: 11, color: AppTheme.goldLight)),
-                    style: TextButton.styleFrom(padding: EdgeInsets.zero, minimumSize: const Size(50, 24)),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 4),
-              SelectableText(
-                AppConstants.oauthRedirectUri,
-                style: GoogleFonts.cairo(
-                  fontSize: 11,
-                  color: AppTheme.textSecondary,
-                  decoration: TextDecoration.underline,
-                  decorationColor: AppTheme.goldPrimary.withValues(alpha: 0.5),
-                ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                'أضف هذا الرابط إلى Authorized redirect URIs لعميل OAuth (من نوع Desktop app)، '
-                'واحرص على ضبط شاشة الموافقة على In Production.',
-                style: GoogleFonts.cairo(
-                  fontSize: 11,
-                  color: AppTheme.textMuted,
-                  height: 1.4,
                 ),
               ),
             ],
