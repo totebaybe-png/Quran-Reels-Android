@@ -228,15 +228,18 @@ class GithubService {
         throw Exception('تعذّر جلب محتوى الملف "$path" من القالب.');
       }
 
-      final blobContent = json.decode(blobResp.body)['content'];
+      final rawContent = json.decode(blobResp.body)['content'] as String? ?? '';
+      final cleanContent = rawContent.replaceAll('\n', '').replaceAll('\r', '').trim();
 
       final newBlobResp = await client.post(
         Uri.parse('$_apiBase/repos/$owner/$repoName/git/blobs'),
         headers: headers,
-        body: json.encode({'content': blobContent, 'encoding': 'base64'}),
+        body: json.encode({'content': cleanContent, 'encoding': 'base64'}),
       );
       if (newBlobResp.statusCode != 201) {
-        throw Exception('فشل نسخ الملف "$path" إلى المستودع الجديد.');
+        throw Exception(
+          'فشل نسخ الملف "$path" إلى المستودع الجديد (كود ${newBlobResp.statusCode}): ${newBlobResp.body}',
+        );
       }
 
       newTreeEntries.add({
