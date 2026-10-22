@@ -48,23 +48,39 @@ def main():
 
     # Check for client_secret.json
     if not CLIENT_SECRET_FILE.exists():
-        print("❌ لم يتم العثور على ملف client_secret.json!")
+        print("💡 لم يتم العثور على ملف client_secret.json في المجلد.")
+        print("يمكنك إدخال المفاتيح مباشرة الآن دون الحاجة لتحميل ملف:")
         print()
-        print("📋 خطوات الإعداد:")
-        print("  1. اذهب إلى: https://console.cloud.google.com")
-        print("  2. أنشئ مشروع جديد (أو اختر مشروع موجود)")
-        print("  3. فعّل 'YouTube Data API v3':")
-        print("     APIs & Services → Library → YouTube Data API v3 → Enable")
-        print("  4. أنشئ بيانات اعتماد OAuth:")
-        print("     APIs & Services → Credentials → Create Credentials → OAuth 2.0 Client ID")
-        print("  5. نوع التطبيق: 'Desktop app'")
-        print("  6. حمّل ملف JSON واحفظه باسم 'client_secret.json' في هذا المجلد:")
-        print(f"     {SCRIPT_DIR}")
-        print()
-        print("  7. بعدين شغّل الأمر ده تاني:")
-        print("     python setup_youtube.py")
-        print()
-        sys.exit(1)
+        input_id = input("  الرجاء إدخال Client ID (أو اضغط Enter للمساعدة): ").strip()
+        if input_id and "apps.googleusercontent.com" in input_id:
+            input_secret = input("  الرجاء إدخال Client Secret: ").strip()
+            if input_secret:
+                client_data = {
+                    "installed": {
+                        "client_id": input_id,
+                        "client_secret": input_secret,
+                        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                        "token_uri": "https://oauth2.googleapis.com/token",
+                        "redirect_uris": ["http://localhost"]
+                    }
+                }
+                with open(CLIENT_SECRET_FILE, 'w', encoding='utf-8') as f:
+                    json.dump(client_data, f, indent=2)
+                print(f"✅ تم حفظ المفاتيح بنجاح في ملف: {CLIENT_SECRET_FILE}")
+                print()
+            else:
+                print("❌ لم يتم إدخال Client Secret!")
+                sys.exit(1)
+        else:
+            print()
+            print("📋 خطوات استخراج المفاتيح من Google Cloud:")
+            print("  1. اذهب إلى: https://console.cloud.google.com")
+            print("  2. أنشئ مشروع جديد (أو اختر مشروعك الحالي)")
+            print("  3. فعّل 'YouTube Data API v3' من مكتبة الـ APIs.")
+            print("  4. أنشئ بيانات اعتماد OAuth من نوع 'Desktop app' (تطبيق سطح مكتب).")
+            print("  5. انسخ Client ID و Client Secret أو حمّل ملف client_secret.json.")
+            print()
+            sys.exit(1)
 
     # Load client secret
     with open(CLIENT_SECRET_FILE, 'r', encoding='utf-8') as f:
