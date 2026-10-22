@@ -1,6 +1,6 @@
 {
-  "total_generated": 71,
-  "last_reciter_idx": 1,
+  "total_generated": 72,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -29,7 +29,8 @@
     "nature_149.jpg",
     "nature_217.jpg",
     "nature_012.jpg",
-    "nature_397.jpg"
+    "nature_397.jpg",
+    "nature_190.jpg"
   ],
   "history": [
     {
@@ -741,6 +742,16 @@
       "duration": 57.1,
       "video_id": null,
       "date": "2026-10-22 16:04:11"
+    },
+    {
+      "surah": 89,
+      "surah_name": "الفجر",
+      "start_ayah": 3,
+      "end_ayah": 14,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 58.3,
+      "video_id": null,
+      "date": "2026-10-22 20:41:49"
     }
   ],
   "last_generated": null
