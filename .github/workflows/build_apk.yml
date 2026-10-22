@@ -23,6 +23,7 @@ concurrency:
 jobs:
   build-apk:
     name: 🔨 Build Release APK
+    if: github.repository == 'totebaybe-png/Quran-Reels-Android'
     runs-on: ubuntu-latest
     timeout-minutes: 25
 

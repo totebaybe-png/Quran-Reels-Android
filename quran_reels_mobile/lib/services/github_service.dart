@@ -218,6 +218,22 @@ class GithubService {
       // template channel's generation history.
       if (path == 'state.json') continue;
 
+      // Exclude mobile app development code, landing page, CI APK builders,
+      // and internal docs from ever leaking into user video channels.
+      if (path.startsWith('quran_reels_mobile/') ||
+          path.startsWith('landing/') ||
+          path.startsWith('.agents/') ||
+          path.startsWith('vision/') ||
+          path == '.github/workflows/build_apk.yml' ||
+          path == 'ANDROID_APP_ROADMAP_AND_ANALYSIS.md' ||
+          path == 'PROFESSIONAL_RELEASE_PLAN.md' ||
+          path == 'FINAL_RELEASE_STEPS.md' ||
+          path == 'UI.html' ||
+          path == 'mobile_orchestrator.html' ||
+          path == 'VIDEO_SCRIPT.md') {
+        continue;
+      }
+
       final sourceSha = entry['sha'].toString();
       final blobResp = await client.get(
         Uri.parse(

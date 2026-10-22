@@ -7,9 +7,10 @@ class AppConstants {
   static const String channelUrl = 'https://www.youtube.com/@behairy10';
   static const String tutorialVideoUrl = 'https://youtu.be/ozgBWYtWNLA';
   
-  // GitHub Defaults
-  static const String defaultTemplateOwner = 'totebaybe-png';
-  static const String defaultTemplateRepo = 'Quran-Reels-Android';
+  // GitHub Defaults - points to the pure Quran Reels video generation engine
+  // (contains ONLY Python generator scripts, fonts, and reel workflow - NO mobile app code)
+  static const String defaultTemplateOwner = 'kpmbfi-sudo';
+  static const String defaultTemplateRepo = 'Quran-Reels-Generator-open-source-';
   static const String defaultTargetRepoName = 'quran-reels-channel-auto';
   static const String workflowFileName = 'daily_quran_reel.yml';
 
