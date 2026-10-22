@@ -1,6 +1,6 @@
 {
-  "total_generated": 70,
-  "last_reciter_idx": 0,
+  "total_generated": 71,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -28,7 +28,8 @@
     "nature_564.jpg",
     "nature_149.jpg",
     "nature_217.jpg",
-    "nature_012.jpg"
+    "nature_012.jpg",
+    "nature_397.jpg"
   ],
   "history": [
     {
@@ -730,6 +731,16 @@
       "duration": 45.0,
       "video_id": null,
       "date": "2026-10-22 10:39:29"
+    },
+    {
+      "surah": 86,
+      "surah_name": "الطارق",
+      "start_ayah": 2,
+      "end_ayah": 8,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 57.1,
+      "video_id": null,
+      "date": "2026-10-22 16:04:11"
     }
   ],
   "last_generated": null
