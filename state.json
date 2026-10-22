@@ -1,6 +1,6 @@
 {
-  "total_generated": 68,
-  "last_reciter_idx": 12,
+  "total_generated": 69,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -26,7 +26,8 @@
     "nature_018.jpg",
     "nature_184.jpg",
     "nature_564.jpg",
-    "nature_149.jpg"
+    "nature_149.jpg",
+    "nature_217.jpg"
   ],
   "history": [
     {
@@ -708,6 +709,16 @@
       "duration": 24.3,
       "video_id": null,
       "date": "2026-10-21 20:43:47"
+    },
+    {
+      "surah": 75,
+      "surah_name": "القيامة",
+      "start_ayah": 14,
+      "end_ayah": 27,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 57.0,
+      "video_id": null,
+      "date": "2026-10-22 05:07:35"
     }
   ],
   "last_generated": null
