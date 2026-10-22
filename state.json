@@ -1,6 +1,6 @@
 {
-  "total_generated": 69,
-  "last_reciter_idx": 13,
+  "total_generated": 70,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -27,7 +27,8 @@
     "nature_184.jpg",
     "nature_564.jpg",
     "nature_149.jpg",
-    "nature_217.jpg"
+    "nature_217.jpg",
+    "nature_012.jpg"
   ],
   "history": [
     {
@@ -719,6 +720,16 @@
       "duration": 57.0,
       "video_id": null,
       "date": "2026-10-22 05:07:35"
+    },
+    {
+      "surah": 98,
+      "surah_name": "البينة",
+      "start_ayah": 2,
+      "end_ayah": 5,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 45.0,
+      "video_id": null,
+      "date": "2026-10-22 10:39:29"
     }
   ],
   "last_generated": null
