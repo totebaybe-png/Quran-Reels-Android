@@ -173,8 +173,8 @@ class YouTubeOAuthService {
       );
 
       if (!launched) {
-        await sub?.cancel();
-        await server?.close(force: true);
+        await sub.cancel();
+        await server.close(force: true);
         throw Exception('تعذر فتح متصفح الهاتف لتسجيل الدخول.');
       }
 
