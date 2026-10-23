@@ -1,6 +1,6 @@
 {
-  "total_generated": 72,
-  "last_reciter_idx": 2,
+  "total_generated": 73,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -30,7 +30,8 @@
     "nature_217.jpg",
     "nature_012.jpg",
     "nature_397.jpg",
-    "nature_190.jpg"
+    "nature_190.jpg",
+    "nature_346.jpg"
   ],
   "history": [
     {
@@ -752,6 +753,16 @@
       "duration": 58.3,
       "video_id": null,
       "date": "2026-10-22 20:41:49"
+    },
+    {
+      "surah": 101,
+      "surah_name": "القارعة",
+      "start_ayah": 7,
+      "end_ayah": 11,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 42.1,
+      "video_id": null,
+      "date": "2026-10-23 05:08:21"
     }
   ],
   "last_generated": null
