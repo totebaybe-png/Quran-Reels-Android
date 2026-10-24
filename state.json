@@ -1,6 +1,6 @@
 {
-  "total_generated": 76,
-  "last_reciter_idx": 6,
+  "total_generated": 77,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -34,7 +34,8 @@
     "nature_346.jpg",
     "nature_533.jpg",
     "nature_462.jpg",
-    "nature_598.jpg"
+    "nature_598.jpg",
+    "nature_282.jpg"
   ],
   "history": [
     {
@@ -796,6 +797,16 @@
       "duration": 58.7,
       "video_id": null,
       "date": "2026-10-24 09:53:09"
+    },
+    {
+      "surah": 33,
+      "surah_name": "الأحزاب",
+      "start_ayah": 42,
+      "end_ayah": 48,
+      "reciter": "سعود الشريم",
+      "duration": 56.4,
+      "video_id": null,
+      "date": "2026-10-24 14:52:44"
     }
   ],
   "last_generated": null
