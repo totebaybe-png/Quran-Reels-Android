@@ -1,6 +1,6 @@
 {
-  "total_generated": 75,
-  "last_reciter_idx": 5,
+  "total_generated": 76,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -33,7 +33,8 @@
     "nature_190.jpg",
     "nature_346.jpg",
     "nature_533.jpg",
-    "nature_462.jpg"
+    "nature_462.jpg",
+    "nature_598.jpg"
   ],
   "history": [
     {
@@ -785,6 +786,16 @@
       "duration": 47.0,
       "video_id": null,
       "date": "2026-10-24 04:51:29"
+    },
+    {
+      "surah": 78,
+      "surah_name": "النبأ",
+      "start_ayah": 13,
+      "end_ayah": 24,
+      "reciter": "ماهر المعيقلي",
+      "duration": 58.7,
+      "video_id": null,
+      "date": "2026-10-24 09:53:09"
     }
   ],
   "last_generated": null
