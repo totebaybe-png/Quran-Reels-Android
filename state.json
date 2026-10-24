@@ -1,6 +1,6 @@
 {
-  "total_generated": 74,
-  "last_reciter_idx": 4,
+  "total_generated": 75,
+  "last_reciter_idx": 5,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -32,7 +32,8 @@
     "nature_397.jpg",
     "nature_190.jpg",
     "nature_346.jpg",
-    "nature_533.jpg"
+    "nature_533.jpg",
+    "nature_462.jpg"
   ],
   "history": [
     {
@@ -774,6 +775,16 @@
       "duration": 48.5,
       "video_id": null,
       "date": "2026-10-23 10:32:08"
+    },
+    {
+      "surah": 61,
+      "surah_name": "الصف",
+      "start_ayah": 1,
+      "end_ayah": 4,
+      "reciter": "مشاري العفاسي",
+      "duration": 47.0,
+      "video_id": null,
+      "date": "2026-10-24 04:51:29"
     }
   ],
   "last_generated": null
