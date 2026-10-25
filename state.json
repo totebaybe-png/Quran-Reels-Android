@@ -1,6 +1,6 @@
 {
-  "total_generated": 80,
-  "last_reciter_idx": 10,
+  "total_generated": 81,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -38,7 +38,8 @@
     "nature_282.jpg",
     "nature_559.jpg",
     "nature_416.jpg",
-    "nature_028.jpg"
+    "nature_028.jpg",
+    "nature_371.jpg"
   ],
   "history": [
     {
@@ -840,6 +841,16 @@
       "duration": 59.5,
       "video_id": null,
       "date": "2026-10-25 10:10:04"
+    },
+    {
+      "surah": 6,
+      "surah_name": "الأنعام",
+      "start_ayah": 71,
+      "end_ayah": 72,
+      "reciter": "ناصر القطامي",
+      "duration": 55.5,
+      "video_id": null,
+      "date": "2026-10-25 15:04:52"
     }
   ],
   "last_generated": null
