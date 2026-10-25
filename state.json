@@ -1,6 +1,6 @@
 {
-  "total_generated": 81,
-  "last_reciter_idx": 11,
+  "total_generated": 82,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -39,7 +39,8 @@
     "nature_559.jpg",
     "nature_416.jpg",
     "nature_028.jpg",
-    "nature_371.jpg"
+    "nature_371.jpg",
+    "nature_389.jpg"
   ],
   "history": [
     {
@@ -851,6 +852,16 @@
       "duration": 55.5,
       "video_id": null,
       "date": "2026-10-25 15:04:52"
+    },
+    {
+      "surah": 84,
+      "surah_name": "الانشقاق",
+      "start_ayah": 17,
+      "end_ayah": 25,
+      "reciter": "أحمد العجمي",
+      "duration": 49.2,
+      "video_id": null,
+      "date": "2026-10-25 19:48:19"
     }
   ],
   "last_generated": null
