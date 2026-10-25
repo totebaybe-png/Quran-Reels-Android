@@ -1,6 +1,6 @@
 {
-  "total_generated": 79,
-  "last_reciter_idx": 9,
+  "total_generated": 80,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -37,7 +37,8 @@
     "nature_598.jpg",
     "nature_282.jpg",
     "nature_559.jpg",
-    "nature_416.jpg"
+    "nature_416.jpg",
+    "nature_028.jpg"
   ],
   "history": [
     {
@@ -829,6 +830,16 @@
       "duration": 50.0,
       "video_id": null,
       "date": "2026-10-25 04:59:00"
+    },
+    {
+      "surah": 92,
+      "surah_name": "الليل",
+      "start_ayah": 7,
+      "end_ayah": 20,
+      "reciter": "ياسر الدوسري",
+      "duration": 59.5,
+      "video_id": null,
+      "date": "2026-10-25 10:10:04"
     }
   ],
   "last_generated": null
