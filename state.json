@@ -1,6 +1,6 @@
 {
-  "total_generated": 84,
-  "last_reciter_idx": 0,
+  "total_generated": 85,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -42,7 +42,8 @@
     "nature_371.jpg",
     "nature_389.jpg",
     "nature_175.jpg",
-    "nature_447.jpg"
+    "nature_447.jpg",
+    "nature_017.jpg"
   ],
   "history": [
     {
@@ -884,6 +885,16 @@
       "duration": 55.8,
       "video_id": null,
       "date": "2026-10-26 11:35:39"
+    },
+    {
+      "surah": 91,
+      "surah_name": "الشمس",
+      "start_ayah": 9,
+      "end_ayah": 13,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 44.4,
+      "video_id": null,
+      "date": "2026-10-26 17:36:29"
     }
   ],
   "last_generated": null
