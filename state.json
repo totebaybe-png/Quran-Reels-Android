@@ -1,6 +1,6 @@
 {
-  "total_generated": 85,
-  "last_reciter_idx": 1,
+  "total_generated": 86,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -43,7 +43,8 @@
     "nature_389.jpg",
     "nature_175.jpg",
     "nature_447.jpg",
-    "nature_017.jpg"
+    "nature_017.jpg",
+    "nature_127.jpg"
   ],
   "history": [
     {
@@ -895,6 +896,16 @@
       "duration": 44.4,
       "video_id": null,
       "date": "2026-10-26 17:36:29"
+    },
+    {
+      "surah": 105,
+      "surah_name": "الفيل",
+      "start_ayah": 1,
+      "end_ayah": 5,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 32.4,
+      "video_id": null,
+      "date": "2026-10-26 21:42:54"
     }
   ],
   "last_generated": null
