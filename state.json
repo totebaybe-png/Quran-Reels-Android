@@ -1,6 +1,6 @@
 {
-  "total_generated": 82,
-  "last_reciter_idx": 12,
+  "total_generated": 83,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -40,7 +40,8 @@
     "nature_416.jpg",
     "nature_028.jpg",
     "nature_371.jpg",
-    "nature_389.jpg"
+    "nature_389.jpg",
+    "nature_175.jpg"
   ],
   "history": [
     {
@@ -862,6 +863,16 @@
       "duration": 49.2,
       "video_id": null,
       "date": "2026-10-25 19:48:19"
+    },
+    {
+      "surah": 17,
+      "surah_name": "الإسراء",
+      "start_ayah": 36,
+      "end_ayah": 39,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 49.6,
+      "video_id": null,
+      "date": "2026-10-26 05:02:08"
     }
   ],
   "last_generated": null
