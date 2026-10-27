@@ -1,6 +1,6 @@
 {
-  "total_generated": 88,
-  "last_reciter_idx": 4,
+  "total_generated": 89,
+  "last_reciter_idx": 5,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -46,7 +46,8 @@
     "nature_017.jpg",
     "nature_127.jpg",
     "nature_154.jpg",
-    "nature_505.jpg"
+    "nature_505.jpg",
+    "nature_213.jpg"
   ],
   "history": [
     {
@@ -928,6 +929,16 @@
       "duration": 58.5,
       "video_id": null,
       "date": "2026-10-27 11:01:05"
+    },
+    {
+      "surah": 112,
+      "surah_name": "الإخلاص",
+      "start_ayah": 2,
+      "end_ayah": 4,
+      "reciter": "مشاري العفاسي",
+      "duration": 14.3,
+      "video_id": null,
+      "date": "2026-10-27 16:49:56"
     }
   ],
   "last_generated": null
