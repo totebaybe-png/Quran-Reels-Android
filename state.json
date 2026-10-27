@@ -1,6 +1,6 @@
 {
-  "total_generated": 86,
-  "last_reciter_idx": 2,
+  "total_generated": 87,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -44,7 +44,8 @@
     "nature_175.jpg",
     "nature_447.jpg",
     "nature_017.jpg",
-    "nature_127.jpg"
+    "nature_127.jpg",
+    "nature_154.jpg"
   ],
   "history": [
     {
@@ -906,6 +907,16 @@
       "duration": 32.4,
       "video_id": null,
       "date": "2026-10-26 21:42:54"
+    },
+    {
+      "surah": 82,
+      "surah_name": "الانفطار",
+      "start_ayah": 11,
+      "end_ayah": 17,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 49.5,
+      "video_id": null,
+      "date": "2026-10-27 05:19:55"
     }
   ],
   "last_generated": null
