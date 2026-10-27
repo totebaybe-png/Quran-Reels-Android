@@ -1,6 +1,6 @@
 {
-  "total_generated": 87,
-  "last_reciter_idx": 3,
+  "total_generated": 88,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -45,7 +45,8 @@
     "nature_447.jpg",
     "nature_017.jpg",
     "nature_127.jpg",
-    "nature_154.jpg"
+    "nature_154.jpg",
+    "nature_505.jpg"
   ],
   "history": [
     {
@@ -917,6 +918,16 @@
       "duration": 49.5,
       "video_id": null,
       "date": "2026-10-27 05:19:55"
+    },
+    {
+      "surah": 64,
+      "surah_name": "التغابن",
+      "start_ayah": 5,
+      "end_ayah": 6,
+      "reciter": "محمود خليل الحصري",
+      "duration": 58.5,
+      "video_id": null,
+      "date": "2026-10-27 11:01:05"
     }
   ],
   "last_generated": null
