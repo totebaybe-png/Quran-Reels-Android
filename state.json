@@ -1,6 +1,6 @@
 {
-  "total_generated": 91,
-  "last_reciter_idx": 7,
+  "total_generated": 92,
+  "last_reciter_idx": 8,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -49,7 +49,8 @@
     "nature_505.jpg",
     "nature_213.jpg",
     "nature_436.jpg",
-    "nature_054.jpg"
+    "nature_054.jpg",
+    "nature_304.jpg"
   ],
   "history": [
     {
@@ -961,6 +962,16 @@
       "duration": 54.2,
       "video_id": null,
       "date": "2026-10-28 06:00:29"
+    },
+    {
+      "surah": 101,
+      "surah_name": "القارعة",
+      "start_ayah": 6,
+      "end_ayah": 11,
+      "reciter": "عبدالرحمن السديس",
+      "duration": 43.8,
+      "video_id": null,
+      "date": "2026-10-28 11:41:57"
     }
   ],
   "last_generated": null
