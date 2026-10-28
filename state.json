@@ -1,6 +1,6 @@
 {
-  "total_generated": 93,
-  "last_reciter_idx": 9,
+  "total_generated": 94,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -51,7 +51,8 @@
     "nature_436.jpg",
     "nature_054.jpg",
     "nature_304.jpg",
-    "nature_199.jpg"
+    "nature_199.jpg",
+    "nature_330.jpg"
   ],
   "history": [
     {
@@ -983,6 +984,16 @@
       "duration": 60.3,
       "video_id": null,
       "date": "2026-10-28 17:21:42"
+    },
+    {
+      "surah": 94,
+      "surah_name": "الشرح",
+      "start_ayah": 2,
+      "end_ayah": 8,
+      "reciter": "ياسر الدوسري",
+      "duration": 28.4,
+      "video_id": null,
+      "date": "2026-10-28 21:46:22"
     }
   ],
   "last_generated": null
