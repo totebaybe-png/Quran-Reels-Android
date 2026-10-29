@@ -1,6 +1,6 @@
 {
-  "total_generated": 97,
-  "last_reciter_idx": 13,
+  "total_generated": 98,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -55,7 +55,8 @@
     "nature_330.jpg",
     "nature_122.jpg",
     "nature_019.jpg",
-    "nature_391.jpg"
+    "nature_391.jpg",
+    "nature_511.jpg"
   ],
   "history": [
     {
@@ -1027,6 +1028,16 @@
       "duration": 57.6,
       "video_id": null,
       "date": "2026-10-29 17:36:01"
+    },
+    {
+      "surah": 10,
+      "surah_name": "يونس",
+      "start_ayah": 23,
+      "end_ayah": 23,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 38.8,
+      "video_id": null,
+      "date": "2026-10-29 21:56:38"
     }
   ],
   "last_generated": null
