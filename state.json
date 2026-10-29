@@ -1,6 +1,6 @@
 {
-  "total_generated": 96,
-  "last_reciter_idx": 12,
+  "total_generated": 97,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -54,7 +54,8 @@
     "nature_199.jpg",
     "nature_330.jpg",
     "nature_122.jpg",
-    "nature_019.jpg"
+    "nature_019.jpg",
+    "nature_391.jpg"
   ],
   "history": [
     {
@@ -1016,6 +1017,16 @@
       "duration": 44.5,
       "video_id": null,
       "date": "2026-10-29 11:49:09"
+    },
+    {
+      "surah": 15,
+      "surah_name": "الحجر",
+      "start_ayah": 17,
+      "end_ayah": 21,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 57.6,
+      "video_id": null,
+      "date": "2026-10-29 17:36:01"
     }
   ],
   "last_generated": null
