@@ -1,6 +1,6 @@
 {
-  "total_generated": 95,
-  "last_reciter_idx": 11,
+  "total_generated": 96,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -53,7 +53,8 @@
     "nature_304.jpg",
     "nature_199.jpg",
     "nature_330.jpg",
-    "nature_122.jpg"
+    "nature_122.jpg",
+    "nature_019.jpg"
   ],
   "history": [
     {
@@ -1005,6 +1006,16 @@
       "duration": 40.0,
       "video_id": null,
       "date": "2026-10-29 06:03:13"
+    },
+    {
+      "surah": 93,
+      "surah_name": "الضحى",
+      "start_ayah": 3,
+      "end_ayah": 11,
+      "reciter": "أحمد العجمي",
+      "duration": 44.5,
+      "video_id": null,
+      "date": "2026-10-29 11:49:09"
     }
   ],
   "last_generated": null
