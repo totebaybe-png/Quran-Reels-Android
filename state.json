@@ -1,6 +1,6 @@
 {
-  "total_generated": 94,
-  "last_reciter_idx": 10,
+  "total_generated": 95,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -52,7 +52,8 @@
     "nature_054.jpg",
     "nature_304.jpg",
     "nature_199.jpg",
-    "nature_330.jpg"
+    "nature_330.jpg",
+    "nature_122.jpg"
   ],
   "history": [
     {
@@ -994,6 +995,16 @@
       "duration": 28.4,
       "video_id": null,
       "date": "2026-10-28 21:46:22"
+    },
+    {
+      "surah": 93,
+      "surah_name": "الضحى",
+      "start_ayah": 7,
+      "end_ayah": 11,
+      "reciter": "ناصر القطامي",
+      "duration": 40.0,
+      "video_id": null,
+      "date": "2026-10-29 06:03:13"
     }
   ],
   "last_generated": null
