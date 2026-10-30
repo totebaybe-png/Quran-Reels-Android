@@ -1,6 +1,6 @@
 {
-  "total_generated": 98,
-  "last_reciter_idx": 0,
+  "total_generated": 99,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -56,7 +56,8 @@
     "nature_122.jpg",
     "nature_019.jpg",
     "nature_391.jpg",
-    "nature_511.jpg"
+    "nature_511.jpg",
+    "nature_153.jpg"
   ],
   "history": [
     {
@@ -1038,6 +1039,16 @@
       "duration": 38.8,
       "video_id": null,
       "date": "2026-10-29 21:56:38"
+    },
+    {
+      "surah": 65,
+      "surah_name": "الطلاق",
+      "start_ayah": 7,
+      "end_ayah": 7,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 61.5,
+      "video_id": null,
+      "date": "2026-10-30 06:04:41"
     }
   ],
   "last_generated": null
