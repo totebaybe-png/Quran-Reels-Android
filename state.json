@@ -1,6 +1,6 @@
 {
-  "total_generated": 101,
-  "last_reciter_idx": 3,
+  "total_generated": 102,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -59,7 +59,8 @@
     "nature_511.jpg",
     "nature_153.jpg",
     "nature_128.jpg",
-    "nature_509.jpg"
+    "nature_509.jpg",
+    "nature_494.jpg"
   ],
   "history": [
     {
@@ -1071,6 +1072,16 @@
       "duration": 41.5,
       "video_id": null,
       "date": "2026-10-30 17:11:00"
+    },
+    {
+      "surah": 103,
+      "surah_name": "العصر",
+      "start_ayah": 1,
+      "end_ayah": 3,
+      "reciter": "محمود خليل الحصري",
+      "duration": 26.4,
+      "video_id": null,
+      "date": "2026-10-30 21:36:47"
     }
   ],
   "last_generated": null
