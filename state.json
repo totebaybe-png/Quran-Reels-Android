@@ -1,6 +1,6 @@
 {
-  "total_generated": 104,
-  "last_reciter_idx": 6,
+  "total_generated": 105,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -62,7 +62,8 @@
     "nature_509.jpg",
     "nature_494.jpg",
     "nature_376.jpg",
-    "nature_138.jpg"
+    "nature_138.jpg",
+    "nature_556.jpg"
   ],
   "history": [
     {
@@ -1104,6 +1105,16 @@
       "duration": 20.6,
       "video_id": null,
       "date": "2026-10-31 11:12:53"
+    },
+    {
+      "surah": 101,
+      "surah_name": "القارعة",
+      "start_ayah": 1,
+      "end_ayah": 11,
+      "reciter": "سعود الشريم",
+      "duration": 35.2,
+      "video_id": null,
+      "date": "2026-10-31 16:16:40"
     }
   ],
   "last_generated": null
