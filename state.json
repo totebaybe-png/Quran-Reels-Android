@@ -1,6 +1,6 @@
 {
-  "total_generated": 103,
-  "last_reciter_idx": 5,
+  "total_generated": 104,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -61,7 +61,8 @@
     "nature_128.jpg",
     "nature_509.jpg",
     "nature_494.jpg",
-    "nature_376.jpg"
+    "nature_376.jpg",
+    "nature_138.jpg"
   ],
   "history": [
     {
@@ -1093,6 +1094,16 @@
       "duration": 51.4,
       "video_id": null,
       "date": "2026-10-31 06:01:52"
+    },
+    {
+      "surah": 106,
+      "surah_name": "قريش",
+      "start_ayah": 1,
+      "end_ayah": 4,
+      "reciter": "ماهر المعيقلي",
+      "duration": 20.6,
+      "video_id": null,
+      "date": "2026-10-31 11:12:53"
     }
   ],
   "last_generated": null
