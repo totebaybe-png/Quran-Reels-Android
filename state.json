@@ -1,6 +1,6 @@
 {
-  "total_generated": 109,
-  "last_reciter_idx": 11,
+  "total_generated": 110,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -67,7 +67,8 @@
     "nature_230.jpg",
     "nature_201.jpg",
     "nature_010.jpg",
-    "nature_565.jpg"
+    "nature_565.jpg",
+    "nature_425.jpg"
   ],
   "history": [
     {
@@ -1159,6 +1160,16 @@
       "duration": 60.1,
       "video_id": null,
       "date": "2026-11-01 17:17:16"
+    },
+    {
+      "surah": 45,
+      "surah_name": "الجاثية",
+      "start_ayah": 37,
+      "end_ayah": 37,
+      "reciter": "أحمد العجمي",
+      "duration": 41.0,
+      "video_id": null,
+      "date": "2026-11-01 21:19:22"
     }
   ],
   "last_generated": null
