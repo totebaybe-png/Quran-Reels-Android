@@ -1,6 +1,6 @@
 {
-  "total_generated": 106,
-  "last_reciter_idx": 8,
+  "total_generated": 107,
+  "last_reciter_idx": 9,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -64,7 +64,8 @@
     "nature_376.jpg",
     "nature_138.jpg",
     "nature_556.jpg",
-    "nature_230.jpg"
+    "nature_230.jpg",
+    "nature_201.jpg"
   ],
   "history": [
     {
@@ -1126,6 +1127,16 @@
       "duration": 56.8,
       "video_id": null,
       "date": "2026-10-31 20:34:55"
+    },
+    {
+      "surah": 89,
+      "surah_name": "الفجر",
+      "start_ayah": 26,
+      "end_ayah": 30,
+      "reciter": "سعد الغامدي",
+      "duration": 50.9,
+      "video_id": null,
+      "date": "2026-11-01 06:28:25"
     }
   ],
   "last_generated": null
