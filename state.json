@@ -1,6 +1,6 @@
 {
-  "total_generated": 107,
-  "last_reciter_idx": 9,
+  "total_generated": 108,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -65,7 +65,8 @@
     "nature_138.jpg",
     "nature_556.jpg",
     "nature_230.jpg",
-    "nature_201.jpg"
+    "nature_201.jpg",
+    "nature_010.jpg"
   ],
   "history": [
     {
@@ -1137,6 +1138,16 @@
       "duration": 50.9,
       "video_id": null,
       "date": "2026-11-01 06:28:25"
+    },
+    {
+      "surah": 31,
+      "surah_name": "لقمان",
+      "start_ayah": 16,
+      "end_ayah": 17,
+      "reciter": "ياسر الدوسري",
+      "duration": 55.8,
+      "video_id": null,
+      "date": "2026-11-01 12:07:22"
     }
   ],
   "last_generated": null
