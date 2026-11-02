@@ -1,6 +1,6 @@
 {
-  "total_generated": 110,
-  "last_reciter_idx": 12,
+  "total_generated": 111,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -68,7 +68,8 @@
     "nature_201.jpg",
     "nature_010.jpg",
     "nature_565.jpg",
-    "nature_425.jpg"
+    "nature_425.jpg",
+    "nature_083.jpg"
   ],
   "history": [
     {
@@ -1170,6 +1171,16 @@
       "duration": 41.0,
       "video_id": null,
       "date": "2026-11-01 21:19:22"
+    },
+    {
+      "surah": 96,
+      "surah_name": "العلق",
+      "start_ayah": 8,
+      "end_ayah": 19,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 49.8,
+      "video_id": null,
+      "date": "2026-11-02 06:28:46"
     }
   ],
   "last_generated": null
