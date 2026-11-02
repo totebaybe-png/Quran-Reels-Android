@@ -1,6 +1,6 @@
 {
-  "total_generated": 113,
-  "last_reciter_idx": 1,
+  "total_generated": 114,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -71,7 +71,8 @@
     "nature_425.jpg",
     "nature_083.jpg",
     "nature_536.jpg",
-    "nature_007.jpg"
+    "nature_007.jpg",
+    "nature_488.jpg"
   ],
   "history": [
     {
@@ -1203,6 +1204,16 @@
       "duration": 75.3,
       "video_id": null,
       "date": "2026-11-02 21:00:43"
+    },
+    {
+      "surah": 56,
+      "surah_name": "الواقعة",
+      "start_ayah": 73,
+      "end_ayah": 82,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 61.2,
+      "video_id": null,
+      "date": "2026-11-02 23:59:56"
     }
   ],
   "last_generated": null
