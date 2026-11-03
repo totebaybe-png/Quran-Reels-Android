@@ -1,6 +1,6 @@
 {
-  "total_generated": 117,
-  "last_reciter_idx": 5,
+  "total_generated": 118,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -75,7 +75,8 @@
     "nature_488.jpg",
     "nature_392.jpg",
     "nature_472.jpg",
-    "nature_399.jpg"
+    "nature_399.jpg",
+    "nature_558.jpg"
   ],
   "history": [
     {
@@ -1247,6 +1248,16 @@
       "duration": 59.5,
       "video_id": null,
       "date": "2026-11-03 18:41:31"
+    },
+    {
+      "surah": 100,
+      "surah_name": "العاديات",
+      "start_ayah": 6,
+      "end_ayah": 11,
+      "reciter": "ماهر المعيقلي",
+      "duration": 40.9,
+      "video_id": null,
+      "date": "2026-11-03 22:26:27"
     }
   ],
   "last_generated": null
