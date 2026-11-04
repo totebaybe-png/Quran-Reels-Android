@@ -1,6 +1,6 @@
 {
-  "total_generated": 118,
-  "last_reciter_idx": 6,
+  "total_generated": 119,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -76,7 +76,8 @@
     "nature_392.jpg",
     "nature_472.jpg",
     "nature_399.jpg",
-    "nature_558.jpg"
+    "nature_558.jpg",
+    "nature_335.jpg"
   ],
   "history": [
     {
@@ -1258,6 +1259,16 @@
       "duration": 40.9,
       "video_id": null,
       "date": "2026-11-03 22:26:27"
+    },
+    {
+      "surah": 104,
+      "surah_name": "الهمزة",
+      "start_ayah": 2,
+      "end_ayah": 9,
+      "reciter": "سعود الشريم",
+      "duration": 31.8,
+      "video_id": null,
+      "date": "2026-11-04 06:42:43"
     }
   ],
   "last_generated": null
