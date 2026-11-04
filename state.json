@@ -1,6 +1,6 @@
 {
-  "total_generated": 121,
-  "last_reciter_idx": 9,
+  "total_generated": 122,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -79,7 +79,8 @@
     "nature_558.jpg",
     "nature_335.jpg",
     "nature_033.jpg",
-    "nature_386.jpg"
+    "nature_386.jpg",
+    "nature_574.jpg"
   ],
   "history": [
     {
@@ -1291,6 +1292,16 @@
       "duration": 30.4,
       "video_id": null,
       "date": "2026-11-04 18:48:49"
+    },
+    {
+      "surah": 88,
+      "surah_name": "الغاشية",
+      "start_ayah": 12,
+      "end_ayah": 24,
+      "reciter": "ياسر الدوسري",
+      "duration": 56.8,
+      "video_id": null,
+      "date": "2026-11-04 23:04:16"
     }
   ],
   "last_generated": null
