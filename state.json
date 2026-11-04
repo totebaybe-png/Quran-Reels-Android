@@ -1,6 +1,6 @@
 {
-  "total_generated": 120,
-  "last_reciter_idx": 8,
+  "total_generated": 121,
+  "last_reciter_idx": 9,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -78,7 +78,8 @@
     "nature_399.jpg",
     "nature_558.jpg",
     "nature_335.jpg",
-    "nature_033.jpg"
+    "nature_033.jpg",
+    "nature_386.jpg"
   ],
   "history": [
     {
@@ -1280,6 +1281,16 @@
       "duration": 39.1,
       "video_id": null,
       "date": "2026-11-04 13:17:49"
+    },
+    {
+      "surah": 114,
+      "surah_name": "الناس",
+      "start_ayah": 4,
+      "end_ayah": 6,
+      "reciter": "سعد الغامدي",
+      "duration": 30.4,
+      "video_id": null,
+      "date": "2026-11-04 18:48:49"
     }
   ],
   "last_generated": null
