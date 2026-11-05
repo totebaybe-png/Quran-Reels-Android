@@ -1,6 +1,6 @@
 {
-  "total_generated": 123,
-  "last_reciter_idx": 11,
+  "total_generated": 124,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -81,7 +81,8 @@
     "nature_033.jpg",
     "nature_386.jpg",
     "nature_574.jpg",
-    "nature_104.jpg"
+    "nature_104.jpg",
+    "nature_468.jpg"
   ],
   "history": [
     {
@@ -1313,6 +1314,16 @@
       "duration": 60.9,
       "video_id": null,
       "date": "2026-11-05 07:05:09"
+    },
+    {
+      "surah": 85,
+      "surah_name": "البروج",
+      "start_ayah": 9,
+      "end_ayah": 12,
+      "reciter": "أحمد العجمي",
+      "duration": 57.9,
+      "video_id": null,
+      "date": "2026-11-05 13:32:49"
     }
   ],
   "last_generated": null
