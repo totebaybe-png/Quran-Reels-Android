@@ -1,6 +1,6 @@
 {
-  "total_generated": 125,
-  "last_reciter_idx": 13,
+  "total_generated": 126,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -83,7 +83,8 @@
     "nature_574.jpg",
     "nature_104.jpg",
     "nature_468.jpg",
-    "nature_354.jpg"
+    "nature_354.jpg",
+    "nature_401.jpg"
   ],
   "history": [
     {
@@ -1335,6 +1336,16 @@
       "duration": 40.2,
       "video_id": null,
       "date": "2026-11-05 18:57:35"
+    },
+    {
+      "surah": 33,
+      "surah_name": "الأحزاب",
+      "start_ayah": 33,
+      "end_ayah": 34,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 45.0,
+      "video_id": null,
+      "date": "2026-11-05 22:45:27"
     }
   ],
   "last_generated": null
