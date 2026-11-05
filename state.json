@@ -1,6 +1,6 @@
 {
-  "total_generated": 122,
-  "last_reciter_idx": 10,
+  "total_generated": 123,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -80,7 +80,8 @@
     "nature_335.jpg",
     "nature_033.jpg",
     "nature_386.jpg",
-    "nature_574.jpg"
+    "nature_574.jpg",
+    "nature_104.jpg"
   ],
   "history": [
     {
@@ -1302,6 +1303,16 @@
       "duration": 56.8,
       "video_id": null,
       "date": "2026-11-04 23:04:16"
+    },
+    {
+      "surah": 90,
+      "surah_name": "البلد",
+      "start_ayah": 7,
+      "end_ayah": 19,
+      "reciter": "ناصر القطامي",
+      "duration": 60.9,
+      "video_id": null,
+      "date": "2026-11-05 07:05:09"
     }
   ],
   "last_generated": null
