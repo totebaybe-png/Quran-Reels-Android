@@ -1,6 +1,6 @@
 {
-  "total_generated": 124,
-  "last_reciter_idx": 12,
+  "total_generated": 125,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -82,7 +82,8 @@
     "nature_386.jpg",
     "nature_574.jpg",
     "nature_104.jpg",
-    "nature_468.jpg"
+    "nature_468.jpg",
+    "nature_354.jpg"
   ],
   "history": [
     {
@@ -1324,6 +1325,16 @@
       "duration": 57.9,
       "video_id": null,
       "date": "2026-11-05 13:32:49"
+    },
+    {
+      "surah": 93,
+      "surah_name": "الضحى",
+      "start_ayah": 5,
+      "end_ayah": 11,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 40.2,
+      "video_id": null,
+      "date": "2026-11-05 18:57:35"
     }
   ],
   "last_generated": null
