@@ -1,6 +1,6 @@
 {
-  "total_generated": 127,
-  "last_reciter_idx": 1,
+  "total_generated": 128,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -85,7 +85,8 @@
     "nature_468.jpg",
     "nature_354.jpg",
     "nature_401.jpg",
-    "nature_093.jpg"
+    "nature_093.jpg",
+    "nature_506.jpg"
   ],
   "history": [
     {
@@ -1357,6 +1358,16 @@
       "duration": 51.0,
       "video_id": null,
       "date": "2026-11-06 07:02:12"
+    },
+    {
+      "surah": 109,
+      "surah_name": "الكافرون",
+      "start_ayah": 4,
+      "end_ayah": 6,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 39.5,
+      "video_id": null,
+      "date": "2026-11-06 13:16:33"
     }
   ],
   "last_generated": null
