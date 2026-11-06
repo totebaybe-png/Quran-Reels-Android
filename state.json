@@ -1,6 +1,6 @@
 {
-  "total_generated": 126,
-  "last_reciter_idx": 0,
+  "total_generated": 127,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -84,7 +84,8 @@
     "nature_104.jpg",
     "nature_468.jpg",
     "nature_354.jpg",
-    "nature_401.jpg"
+    "nature_401.jpg",
+    "nature_093.jpg"
   ],
   "history": [
     {
@@ -1346,6 +1347,16 @@
       "duration": 45.0,
       "video_id": null,
       "date": "2026-11-05 22:45:27"
+    },
+    {
+      "surah": 109,
+      "surah_name": "الكافرون",
+      "start_ayah": 2,
+      "end_ayah": 6,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 51.0,
+      "video_id": null,
+      "date": "2026-11-06 07:02:12"
     }
   ],
   "last_generated": null
