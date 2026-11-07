@@ -1,6 +1,6 @@
 {
-  "total_generated": 132,
-  "last_reciter_idx": 6,
+  "total_generated": 133,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -90,7 +90,8 @@
     "nature_137.jpg",
     "nature_429.jpg",
     "nature_144.jpg",
-    "nature_485.jpg"
+    "nature_485.jpg",
+    "nature_205.jpg"
   ],
   "history": [
     {
@@ -1412,6 +1413,16 @@
       "duration": 23.9,
       "video_id": null,
       "date": "2026-11-07 11:56:28"
+    },
+    {
+      "surah": 28,
+      "surah_name": "القصص",
+      "start_ayah": 4,
+      "end_ayah": 7,
+      "reciter": "سعود الشريم",
+      "duration": 58.1,
+      "video_id": null,
+      "date": "2026-11-07 17:01:48"
     }
   ],
   "last_generated": null
