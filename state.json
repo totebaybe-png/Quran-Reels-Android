@@ -1,6 +1,6 @@
 {
-  "total_generated": 130,
-  "last_reciter_idx": 4,
+  "total_generated": 131,
+  "last_reciter_idx": 5,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -88,7 +88,8 @@
     "nature_093.jpg",
     "nature_506.jpg",
     "nature_137.jpg",
-    "nature_429.jpg"
+    "nature_429.jpg",
+    "nature_144.jpg"
   ],
   "history": [
     {
@@ -1390,6 +1391,16 @@
       "duration": 39.2,
       "video_id": null,
       "date": "2026-11-06 22:13:34"
+    },
+    {
+      "surah": 98,
+      "surah_name": "البينة",
+      "start_ayah": 1,
+      "end_ayah": 5,
+      "reciter": "مشاري العفاسي",
+      "duration": 56.0,
+      "video_id": null,
+      "date": "2026-11-07 06:20:30"
     }
   ],
   "last_generated": null
