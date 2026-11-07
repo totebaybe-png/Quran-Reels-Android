@@ -1,6 +1,6 @@
 {
-  "total_generated": 133,
-  "last_reciter_idx": 7,
+  "total_generated": 134,
+  "last_reciter_idx": 8,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -91,7 +91,8 @@
     "nature_429.jpg",
     "nature_144.jpg",
     "nature_485.jpg",
-    "nature_205.jpg"
+    "nature_205.jpg",
+    "nature_457.jpg"
   ],
   "history": [
     {
@@ -1423,6 +1424,16 @@
       "duration": 58.1,
       "video_id": null,
       "date": "2026-11-07 17:01:48"
+    },
+    {
+      "surah": 39,
+      "surah_name": "الزمر",
+      "start_ayah": 41,
+      "end_ayah": 43,
+      "reciter": "عبدالرحمن السديس",
+      "duration": 53.5,
+      "video_id": null,
+      "date": "2026-11-07 21:01:07"
     }
   ],
   "last_generated": null
