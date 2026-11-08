@@ -1,6 +1,6 @@
 {
-  "total_generated": 137,
-  "last_reciter_idx": 11,
+  "total_generated": 138,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -95,7 +95,8 @@
     "nature_457.jpg",
     "nature_324.jpg",
     "nature_167.jpg",
-    "nature_204.jpg"
+    "nature_204.jpg",
+    "nature_359.jpg"
   ],
   "history": [
     {
@@ -1467,6 +1468,16 @@
       "duration": 61.1,
       "video_id": null,
       "date": "2026-11-08 17:16:19"
+    },
+    {
+      "surah": 94,
+      "surah_name": "الشرح",
+      "start_ayah": 3,
+      "end_ayah": 8,
+      "reciter": "أحمد العجمي",
+      "duration": 31.5,
+      "video_id": null,
+      "date": "2026-11-08 21:17:03"
     }
   ],
   "last_generated": null
