@@ -1,6 +1,6 @@
 {
-  "total_generated": 136,
-  "last_reciter_idx": 10,
+  "total_generated": 137,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -94,7 +94,8 @@
     "nature_205.jpg",
     "nature_457.jpg",
     "nature_324.jpg",
-    "nature_167.jpg"
+    "nature_167.jpg",
+    "nature_204.jpg"
   ],
   "history": [
     {
@@ -1456,6 +1457,16 @@
       "duration": 41.0,
       "video_id": null,
       "date": "2026-11-08 12:13:44"
+    },
+    {
+      "surah": 77,
+      "surah_name": "المرسلات",
+      "start_ayah": 37,
+      "end_ayah": 45,
+      "reciter": "ناصر القطامي",
+      "duration": 61.1,
+      "video_id": null,
+      "date": "2026-11-08 17:16:19"
     }
   ],
   "last_generated": null
