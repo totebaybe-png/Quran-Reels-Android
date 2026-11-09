@@ -1,6 +1,6 @@
 {
-  "total_generated": 138,
-  "last_reciter_idx": 12,
+  "total_generated": 139,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -96,7 +96,8 @@
     "nature_324.jpg",
     "nature_167.jpg",
     "nature_204.jpg",
-    "nature_359.jpg"
+    "nature_359.jpg",
+    "nature_252.jpg"
   ],
   "history": [
     {
@@ -1478,6 +1479,16 @@
       "duration": 31.5,
       "video_id": null,
       "date": "2026-11-08 21:17:03"
+    },
+    {
+      "surah": 101,
+      "surah_name": "القارعة",
+      "start_ayah": 8,
+      "end_ayah": 11,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 38.9,
+      "video_id": null,
+      "date": "2026-11-09 06:53:57"
     }
   ],
   "last_generated": null
