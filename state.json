@@ -1,6 +1,6 @@
 {
-  "total_generated": 140,
-  "last_reciter_idx": 0,
+  "total_generated": 141,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -98,7 +98,8 @@
     "nature_204.jpg",
     "nature_359.jpg",
     "nature_252.jpg",
-    "nature_178.jpg"
+    "nature_178.jpg",
+    "nature_287.jpg"
   ],
   "history": [
     {
@@ -1500,6 +1501,16 @@
       "duration": 97.5,
       "video_id": null,
       "date": "2026-11-09 14:32:30"
+    },
+    {
+      "surah": 96,
+      "surah_name": "العلق",
+      "start_ayah": 16,
+      "end_ayah": 19,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 38.8,
+      "video_id": null,
+      "date": "2026-11-09 21:36:24"
     }
   ],
   "last_generated": null
