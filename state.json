@@ -1,6 +1,6 @@
 {
-  "total_generated": 144,
-  "last_reciter_idx": 4,
+  "total_generated": 145,
+  "last_reciter_idx": 5,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -102,7 +102,8 @@
     "nature_287.jpg",
     "nature_251.jpg",
     "nature_473.jpg",
-    "nature_058.jpg"
+    "nature_058.jpg",
+    "nature_084.jpg"
   ],
   "history": [
     {
@@ -1544,6 +1545,16 @@
       "duration": 47.2,
       "video_id": null,
       "date": "2026-11-10 13:49:30"
+    },
+    {
+      "surah": 25,
+      "surah_name": "الفرقان",
+      "start_ayah": 52,
+      "end_ayah": 55,
+      "reciter": "مشاري العفاسي",
+      "duration": 60.4,
+      "video_id": null,
+      "date": "2026-11-10 18:50:23"
     }
   ],
   "last_generated": null
