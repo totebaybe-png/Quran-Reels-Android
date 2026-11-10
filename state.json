@@ -1,6 +1,6 @@
 {
-  "total_generated": 141,
-  "last_reciter_idx": 1,
+  "total_generated": 142,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -99,7 +99,8 @@
     "nature_359.jpg",
     "nature_252.jpg",
     "nature_178.jpg",
-    "nature_287.jpg"
+    "nature_287.jpg",
+    "nature_251.jpg"
   ],
   "history": [
     {
@@ -1511,6 +1512,16 @@
       "duration": 38.8,
       "video_id": null,
       "date": "2026-11-09 21:36:24"
+    },
+    {
+      "surah": 99,
+      "surah_name": "الزلزلة",
+      "start_ayah": 3,
+      "end_ayah": 8,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 45.1,
+      "video_id": null,
+      "date": "2026-11-10 00:47:16"
     }
   ],
   "last_generated": null
