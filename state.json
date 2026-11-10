@@ -1,6 +1,6 @@
 {
-  "total_generated": 142,
-  "last_reciter_idx": 2,
+  "total_generated": 143,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -100,7 +100,8 @@
     "nature_252.jpg",
     "nature_178.jpg",
     "nature_287.jpg",
-    "nature_251.jpg"
+    "nature_251.jpg",
+    "nature_473.jpg"
   ],
   "history": [
     {
@@ -1522,6 +1523,16 @@
       "duration": 45.1,
       "video_id": null,
       "date": "2026-11-10 00:47:16"
+    },
+    {
+      "surah": 63,
+      "surah_name": "المنافقون",
+      "start_ayah": 1,
+      "end_ayah": 2,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 68.7,
+      "video_id": null,
+      "date": "2026-11-10 07:34:51"
     }
   ],
   "last_generated": null
