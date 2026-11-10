@@ -1,6 +1,6 @@
 {
-  "total_generated": 145,
-  "last_reciter_idx": 5,
+  "total_generated": 146,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -103,7 +103,8 @@
     "nature_251.jpg",
     "nature_473.jpg",
     "nature_058.jpg",
-    "nature_084.jpg"
+    "nature_084.jpg",
+    "nature_106.jpg"
   ],
   "history": [
     {
@@ -1555,6 +1556,16 @@
       "duration": 60.4,
       "video_id": null,
       "date": "2026-11-10 18:50:23"
+    },
+    {
+      "surah": 86,
+      "surah_name": "الطارق",
+      "start_ayah": 11,
+      "end_ayah": 17,
+      "reciter": "ماهر المعيقلي",
+      "duration": 40.5,
+      "video_id": null,
+      "date": "2026-11-10 22:28:25"
     }
   ],
   "last_generated": null
