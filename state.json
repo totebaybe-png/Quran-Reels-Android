@@ -1,6 +1,6 @@
 {
-  "total_generated": 149,
-  "last_reciter_idx": 9,
+  "total_generated": 150,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -107,7 +107,8 @@
     "nature_106.jpg",
     "nature_347.jpg",
     "nature_493.jpg",
-    "nature_544.jpg"
+    "nature_544.jpg",
+    "nature_233.jpg"
   ],
   "history": [
     {
@@ -1599,6 +1600,16 @@
       "duration": 60.8,
       "video_id": null,
       "date": "2026-11-11 18:54:58"
+    },
+    {
+      "surah": 86,
+      "surah_name": "الطارق",
+      "start_ayah": 7,
+      "end_ayah": 17,
+      "reciter": "ياسر الدوسري",
+      "duration": 44.5,
+      "video_id": null,
+      "date": "2026-11-11 23:33:05"
     }
   ],
   "last_generated": null
