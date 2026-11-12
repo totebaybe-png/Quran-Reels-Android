@@ -1,6 +1,6 @@
 {
-  "total_generated": 153,
-  "last_reciter_idx": 13,
+  "total_generated": 154,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -111,7 +111,8 @@
     "nature_233.jpg",
     "nature_323.jpg",
     "nature_433.jpg",
-    "nature_049.jpg"
+    "nature_049.jpg",
+    "nature_245.jpg"
   ],
   "history": [
     {
@@ -1643,6 +1644,16 @@
       "duration": 41.4,
       "video_id": null,
       "date": "2026-11-12 19:05:37"
+    },
+    {
+      "surah": 107,
+      "surah_name": "الماعون",
+      "start_ayah": 4,
+      "end_ayah": 7,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 31.6,
+      "video_id": null,
+      "date": "2026-11-12 22:49:50"
     }
   ],
   "last_generated": null
