@@ -1,6 +1,6 @@
 {
-  "total_generated": 152,
-  "last_reciter_idx": 12,
+  "total_generated": 153,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -110,7 +110,8 @@
     "nature_544.jpg",
     "nature_233.jpg",
     "nature_323.jpg",
-    "nature_433.jpg"
+    "nature_433.jpg",
+    "nature_049.jpg"
   ],
   "history": [
     {
@@ -1632,6 +1633,16 @@
       "duration": 31.2,
       "video_id": null,
       "date": "2026-11-12 14:00:19"
+    },
+    {
+      "surah": 63,
+      "surah_name": "المنافقون",
+      "start_ayah": 6,
+      "end_ayah": 7,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 41.4,
+      "video_id": null,
+      "date": "2026-11-12 19:05:37"
     }
   ],
   "last_generated": null
