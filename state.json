@@ -1,6 +1,6 @@
 {
-  "total_generated": 150,
-  "last_reciter_idx": 10,
+  "total_generated": 151,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -108,7 +108,8 @@
     "nature_347.jpg",
     "nature_493.jpg",
     "nature_544.jpg",
-    "nature_233.jpg"
+    "nature_233.jpg",
+    "nature_323.jpg"
   ],
   "history": [
     {
@@ -1610,6 +1611,16 @@
       "duration": 44.5,
       "video_id": null,
       "date": "2026-11-11 23:33:05"
+    },
+    {
+      "surah": 13,
+      "surah_name": "الرعد",
+      "start_ayah": 40,
+      "end_ayah": 42,
+      "reciter": "ناصر القطامي",
+      "duration": 57.8,
+      "video_id": null,
+      "date": "2026-11-12 07:29:36"
     }
   ],
   "last_generated": null
