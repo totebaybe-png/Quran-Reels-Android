@@ -1,6 +1,6 @@
 {
-  "total_generated": 157,
-  "last_reciter_idx": 3,
+  "total_generated": 158,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -115,7 +115,8 @@
     "nature_245.jpg",
     "nature_535.jpg",
     "nature_095.jpg",
-    "nature_185.jpg"
+    "nature_185.jpg",
+    "nature_428.jpg"
   ],
   "history": [
     {
@@ -1687,6 +1688,16 @@
       "duration": 57.8,
       "video_id": null,
       "date": "2026-11-13 18:44:31"
+    },
+    {
+      "surah": 18,
+      "surah_name": "الكهف",
+      "start_ayah": 77,
+      "end_ayah": 78,
+      "reciter": "محمود خليل الحصري",
+      "duration": 48.9,
+      "video_id": null,
+      "date": "2026-11-13 22:46:23"
     }
   ],
   "last_generated": null
