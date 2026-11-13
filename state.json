@@ -1,6 +1,6 @@
 {
-  "total_generated": 154,
-  "last_reciter_idx": 0,
+  "total_generated": 155,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -112,7 +112,8 @@
     "nature_323.jpg",
     "nature_433.jpg",
     "nature_049.jpg",
-    "nature_245.jpg"
+    "nature_245.jpg",
+    "nature_535.jpg"
   ],
   "history": [
     {
@@ -1654,6 +1655,16 @@
       "duration": 31.6,
       "video_id": null,
       "date": "2026-11-12 22:49:50"
+    },
+    {
+      "surah": 22,
+      "surah_name": "الحج",
+      "start_ayah": 77,
+      "end_ayah": 78,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 137.2,
+      "video_id": null,
+      "date": "2026-11-13 07:07:18"
     }
   ],
   "last_generated": null
