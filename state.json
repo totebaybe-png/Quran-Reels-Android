@@ -1,6 +1,6 @@
 {
-  "total_generated": 155,
-  "last_reciter_idx": 1,
+  "total_generated": 156,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -113,7 +113,8 @@
     "nature_433.jpg",
     "nature_049.jpg",
     "nature_245.jpg",
-    "nature_535.jpg"
+    "nature_535.jpg",
+    "nature_095.jpg"
   ],
   "history": [
     {
@@ -1665,6 +1666,16 @@
       "duration": 137.2,
       "video_id": null,
       "date": "2026-11-13 07:07:18"
+    },
+    {
+      "surah": 100,
+      "surah_name": "العاديات",
+      "start_ayah": 4,
+      "end_ayah": 11,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 46.6,
+      "video_id": null,
+      "date": "2026-11-13 13:31:13"
     }
   ],
   "last_generated": null
