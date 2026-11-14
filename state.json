@@ -1,6 +1,6 @@
 {
-  "total_generated": 160,
-  "last_reciter_idx": 6,
+  "total_generated": 161,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -118,7 +118,8 @@
     "nature_185.jpg",
     "nature_428.jpg",
     "nature_130.jpg",
-    "nature_228.jpg"
+    "nature_228.jpg",
+    "nature_239.jpg"
   ],
   "history": [
     {
@@ -1720,6 +1721,16 @@
       "duration": 60.0,
       "video_id": null,
       "date": "2026-11-14 12:33:42"
+    },
+    {
+      "surah": 83,
+      "surah_name": "المطففين",
+      "start_ayah": 10,
+      "end_ayah": 23,
+      "reciter": "سعود الشريم",
+      "duration": 58.4,
+      "video_id": null,
+      "date": "2026-11-14 17:20:53"
     }
   ],
   "last_generated": null
