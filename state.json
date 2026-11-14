@@ -1,6 +1,6 @@
 {
-  "total_generated": 161,
-  "last_reciter_idx": 7,
+  "total_generated": 162,
+  "last_reciter_idx": 8,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -119,7 +119,8 @@
     "nature_428.jpg",
     "nature_130.jpg",
     "nature_228.jpg",
-    "nature_239.jpg"
+    "nature_239.jpg",
+    "nature_032.jpg"
   ],
   "history": [
     {
@@ -1731,6 +1732,16 @@
       "duration": 58.4,
       "video_id": null,
       "date": "2026-11-14 17:20:53"
+    },
+    {
+      "surah": 95,
+      "surah_name": "التين",
+      "start_ayah": 5,
+      "end_ayah": 8,
+      "reciter": "عبدالرحمن السديس",
+      "duration": 36.4,
+      "video_id": null,
+      "date": "2026-11-14 21:37:40"
     }
   ],
   "last_generated": null
