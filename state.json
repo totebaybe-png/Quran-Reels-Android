@@ -1,6 +1,6 @@
 {
-  "total_generated": 158,
-  "last_reciter_idx": 4,
+  "total_generated": 159,
+  "last_reciter_idx": 5,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -116,7 +116,8 @@
     "nature_535.jpg",
     "nature_095.jpg",
     "nature_185.jpg",
-    "nature_428.jpg"
+    "nature_428.jpg",
+    "nature_130.jpg"
   ],
   "history": [
     {
@@ -1698,6 +1699,16 @@
       "duration": 48.9,
       "video_id": null,
       "date": "2026-11-13 22:46:23"
+    },
+    {
+      "surah": 81,
+      "surah_name": "التكوير",
+      "start_ayah": 16,
+      "end_ayah": 27,
+      "reciter": "مشاري العفاسي",
+      "duration": 54.1,
+      "video_id": null,
+      "date": "2026-11-14 06:47:34"
     }
   ],
   "last_generated": null
