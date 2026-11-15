@@ -1,6 +1,6 @@
 {
-  "total_generated": 163,
-  "last_reciter_idx": 9,
+  "total_generated": 164,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -121,7 +121,8 @@
     "nature_228.jpg",
     "nature_239.jpg",
     "nature_032.jpg",
-    "nature_278.jpg"
+    "nature_278.jpg",
+    "nature_288.jpg"
   ],
   "history": [
     {
@@ -1753,6 +1754,16 @@
       "duration": 61.3,
       "video_id": null,
       "date": "2026-11-15 06:52:47"
+    },
+    {
+      "surah": 40,
+      "surah_name": "غافر",
+      "start_ayah": 59,
+      "end_ayah": 61,
+      "reciter": "ياسر الدوسري",
+      "duration": 58.3,
+      "video_id": null,
+      "date": "2026-11-15 13:02:02"
     }
   ],
   "last_generated": null
