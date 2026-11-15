@@ -1,6 +1,6 @@
 {
-  "total_generated": 162,
-  "last_reciter_idx": 8,
+  "total_generated": 163,
+  "last_reciter_idx": 9,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -120,7 +120,8 @@
     "nature_130.jpg",
     "nature_228.jpg",
     "nature_239.jpg",
-    "nature_032.jpg"
+    "nature_032.jpg",
+    "nature_278.jpg"
   ],
   "history": [
     {
@@ -1742,6 +1743,16 @@
       "duration": 36.4,
       "video_id": null,
       "date": "2026-11-14 21:37:40"
+    },
+    {
+      "surah": 28,
+      "surah_name": "القصص",
+      "start_ayah": 80,
+      "end_ayah": 82,
+      "reciter": "سعد الغامدي",
+      "duration": 61.3,
+      "video_id": null,
+      "date": "2026-11-15 06:52:47"
     }
   ],
   "last_generated": null
