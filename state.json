@@ -1,6 +1,6 @@
 {
-  "total_generated": 164,
-  "last_reciter_idx": 10,
+  "total_generated": 165,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -122,7 +122,8 @@
     "nature_239.jpg",
     "nature_032.jpg",
     "nature_278.jpg",
-    "nature_288.jpg"
+    "nature_288.jpg",
+    "nature_360.jpg"
   ],
   "history": [
     {
@@ -1764,6 +1765,16 @@
       "duration": 58.3,
       "video_id": null,
       "date": "2026-11-15 13:02:02"
+    },
+    {
+      "surah": 4,
+      "surah_name": "النساء",
+      "start_ayah": 26,
+      "end_ayah": 28,
+      "reciter": "ناصر القطامي",
+      "duration": 40.9,
+      "video_id": null,
+      "date": "2026-11-15 17:57:56"
     }
   ],
   "last_generated": null
