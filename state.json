@@ -1,6 +1,6 @@
 {
-  "total_generated": 167,
-  "last_reciter_idx": 13,
+  "total_generated": 168,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -125,7 +125,8 @@
     "nature_288.jpg",
     "nature_360.jpg",
     "nature_554.jpg",
-    "nature_370.jpg"
+    "nature_370.jpg",
+    "nature_403.jpg"
   ],
   "history": [
     {
@@ -1797,6 +1798,16 @@
       "duration": 64.2,
       "video_id": null,
       "date": "2026-11-16 06:54:36"
+    },
+    {
+      "surah": 106,
+      "surah_name": "قريش",
+      "start_ayah": 2,
+      "end_ayah": 4,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 25.6,
+      "video_id": null,
+      "date": "2026-11-16 14:01:13"
     }
   ],
   "last_generated": null
