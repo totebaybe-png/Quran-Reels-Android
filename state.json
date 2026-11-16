@@ -1,6 +1,6 @@
 {
-  "total_generated": 166,
-  "last_reciter_idx": 12,
+  "total_generated": 167,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -124,7 +124,8 @@
     "nature_278.jpg",
     "nature_288.jpg",
     "nature_360.jpg",
-    "nature_554.jpg"
+    "nature_554.jpg",
+    "nature_370.jpg"
   ],
   "history": [
     {
@@ -1786,6 +1787,16 @@
       "duration": 41.8,
       "video_id": null,
       "date": "2026-11-15 21:57:49"
+    },
+    {
+      "surah": 48,
+      "surah_name": "الفتح",
+      "start_ayah": 16,
+      "end_ayah": 17,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 64.2,
+      "video_id": null,
+      "date": "2026-11-16 06:54:36"
     }
   ],
   "last_generated": null
