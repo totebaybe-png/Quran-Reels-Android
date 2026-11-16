@@ -1,6 +1,6 @@
 {
-  "total_generated": 168,
-  "last_reciter_idx": 0,
+  "total_generated": 169,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -126,7 +126,8 @@
     "nature_360.jpg",
     "nature_554.jpg",
     "nature_370.jpg",
-    "nature_403.jpg"
+    "nature_403.jpg",
+    "nature_303.jpg"
   ],
   "history": [
     {
@@ -1808,6 +1809,16 @@
       "duration": 25.6,
       "video_id": null,
       "date": "2026-11-16 14:01:13"
+    },
+    {
+      "surah": 102,
+      "surah_name": "التكاثر",
+      "start_ayah": 7,
+      "end_ayah": 8,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 42.2,
+      "video_id": null,
+      "date": "2026-11-16 21:13:05"
     }
   ],
   "last_generated": null
