@@ -1,6 +1,6 @@
 {
-  "total_generated": 170,
-  "last_reciter_idx": 2,
+  "total_generated": 171,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -128,7 +128,8 @@
     "nature_370.jpg",
     "nature_403.jpg",
     "nature_303.jpg",
-    "nature_195.jpg"
+    "nature_195.jpg",
+    "nature_255.jpg"
   ],
   "history": [
     {
@@ -1830,6 +1831,16 @@
       "duration": 60.7,
       "video_id": null,
       "date": "2026-11-17 00:56:14"
+    },
+    {
+      "surah": 31,
+      "surah_name": "لقمان",
+      "start_ayah": 26,
+      "end_ayah": 27,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 71.5,
+      "video_id": null,
+      "date": "2026-11-17 08:11:23"
     }
   ],
   "last_generated": null
