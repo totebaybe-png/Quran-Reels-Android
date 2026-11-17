@@ -1,6 +1,6 @@
 {
-  "total_generated": 169,
-  "last_reciter_idx": 1,
+  "total_generated": 170,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -127,7 +127,8 @@
     "nature_554.jpg",
     "nature_370.jpg",
     "nature_403.jpg",
-    "nature_303.jpg"
+    "nature_303.jpg",
+    "nature_195.jpg"
   ],
   "history": [
     {
@@ -1819,6 +1820,16 @@
       "duration": 42.2,
       "video_id": null,
       "date": "2026-11-16 21:13:05"
+    },
+    {
+      "surah": 80,
+      "surah_name": "عبس",
+      "start_ayah": 5,
+      "end_ayah": 18,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 60.7,
+      "video_id": null,
+      "date": "2026-11-17 00:56:14"
     }
   ],
   "last_generated": null
