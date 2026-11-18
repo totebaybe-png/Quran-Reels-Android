@@ -1,6 +1,6 @@
 {
-  "total_generated": 177,
-  "last_reciter_idx": 9,
+  "total_generated": 178,
+  "last_reciter_idx": 10,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -135,7 +135,8 @@
     "nature_051.jpg",
     "nature_540.jpg",
     "nature_497.jpg",
-    "nature_113.jpg"
+    "nature_113.jpg",
+    "nature_522.jpg"
   ],
   "history": [
     {
@@ -1907,6 +1908,16 @@
       "duration": 53.4,
       "video_id": null,
       "date": "2026-11-18 19:34:04"
+    },
+    {
+      "surah": 64,
+      "surah_name": "التغابن",
+      "start_ayah": 6,
+      "end_ayah": 8,
+      "reciter": "ياسر الدوسري",
+      "duration": 56.4,
+      "video_id": null,
+      "date": "2026-11-18 23:29:03"
     }
   ],
   "last_generated": null
