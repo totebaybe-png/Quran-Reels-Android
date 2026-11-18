@@ -1,6 +1,6 @@
 {
-  "total_generated": 176,
-  "last_reciter_idx": 8,
+  "total_generated": 177,
+  "last_reciter_idx": 9,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -134,7 +134,8 @@
     "nature_318.jpg",
     "nature_051.jpg",
     "nature_540.jpg",
-    "nature_497.jpg"
+    "nature_497.jpg",
+    "nature_113.jpg"
   ],
   "history": [
     {
@@ -1896,6 +1897,16 @@
       "duration": 40.0,
       "video_id": null,
       "date": "2026-11-18 14:34:56"
+    },
+    {
+      "surah": 83,
+      "surah_name": "المطففين",
+      "start_ayah": 23,
+      "end_ayah": 31,
+      "reciter": "سعد الغامدي",
+      "duration": 53.4,
+      "video_id": null,
+      "date": "2026-11-18 19:34:04"
     }
   ],
   "last_generated": null
