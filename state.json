@@ -1,6 +1,6 @@
 {
-  "total_generated": 174,
-  "last_reciter_idx": 6,
+  "total_generated": 175,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -132,7 +132,8 @@
     "nature_255.jpg",
     "nature_164.jpg",
     "nature_318.jpg",
-    "nature_051.jpg"
+    "nature_051.jpg",
+    "nature_540.jpg"
   ],
   "history": [
     {
@@ -1874,6 +1875,16 @@
       "duration": 54.2,
       "video_id": null,
       "date": "2026-11-17 23:56:35"
+    },
+    {
+      "surah": 71,
+      "surah_name": "نوح",
+      "start_ayah": 9,
+      "end_ayah": 19,
+      "reciter": "سعود الشريم",
+      "duration": 59.8,
+      "video_id": null,
+      "date": "2026-11-18 07:46:26"
     }
   ],
   "last_generated": null
