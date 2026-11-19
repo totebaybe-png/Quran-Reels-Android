@@ -1,6 +1,6 @@
 {
-  "total_generated": 178,
-  "last_reciter_idx": 10,
+  "total_generated": 179,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -136,7 +136,8 @@
     "nature_540.jpg",
     "nature_497.jpg",
     "nature_113.jpg",
-    "nature_522.jpg"
+    "nature_522.jpg",
+    "nature_026.jpg"
   ],
   "history": [
     {
@@ -1918,6 +1919,16 @@
       "duration": 56.4,
       "video_id": null,
       "date": "2026-11-18 23:29:03"
+    },
+    {
+      "surah": 110,
+      "surah_name": "النصر",
+      "start_ayah": 1,
+      "end_ayah": 3,
+      "reciter": "ناصر القطامي",
+      "duration": 21.4,
+      "video_id": null,
+      "date": "2026-11-19 07:41:19"
     }
   ],
   "last_generated": null
