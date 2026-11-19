@@ -1,6 +1,6 @@
 {
-  "total_generated": 181,
-  "last_reciter_idx": 13,
+  "total_generated": 182,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -139,7 +139,8 @@
     "nature_522.jpg",
     "nature_026.jpg",
     "nature_407.jpg",
-    "nature_268.jpg"
+    "nature_268.jpg",
+    "nature_283.jpg"
   ],
   "history": [
     {
@@ -1951,6 +1952,16 @@
       "duration": 40.2,
       "video_id": null,
       "date": "2026-11-19 19:38:23"
+    },
+    {
+      "surah": 67,
+      "surah_name": "الملك",
+      "start_ayah": 27,
+      "end_ayah": 29,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 54.7,
+      "video_id": null,
+      "date": "2026-11-19 23:42:06"
     }
   ],
   "last_generated": null
