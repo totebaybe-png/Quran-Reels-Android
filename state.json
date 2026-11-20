@@ -1,6 +1,6 @@
 {
-  "total_generated": 184,
-  "last_reciter_idx": 2,
+  "total_generated": 185,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -142,7 +142,8 @@
     "nature_268.jpg",
     "nature_283.jpg",
     "nature_064.jpg",
-    "nature_094.jpg"
+    "nature_094.jpg",
+    "nature_552.jpg"
   ],
   "history": [
     {
@@ -1984,6 +1985,16 @@
       "duration": 50.1,
       "video_id": null,
       "date": "2026-11-20 14:41:32"
+    },
+    {
+      "surah": 111,
+      "surah_name": "المسد",
+      "start_ayah": 1,
+      "end_ayah": 5,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 48.2,
+      "video_id": null,
+      "date": "2026-11-20 19:17:04"
     }
   ],
   "last_generated": null
