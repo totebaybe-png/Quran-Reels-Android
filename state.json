@@ -1,6 +1,6 @@
 {
-  "total_generated": 182,
-  "last_reciter_idx": 0,
+  "total_generated": 183,
+  "last_reciter_idx": 1,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -140,7 +140,8 @@
     "nature_026.jpg",
     "nature_407.jpg",
     "nature_268.jpg",
-    "nature_283.jpg"
+    "nature_283.jpg",
+    "nature_064.jpg"
   ],
   "history": [
     {
@@ -1962,6 +1963,16 @@
       "duration": 54.7,
       "video_id": null,
       "date": "2026-11-19 23:42:06"
+    },
+    {
+      "surah": 48,
+      "surah_name": "الفتح",
+      "start_ayah": 8,
+      "end_ayah": 9,
+      "reciter": "عبدالباسط عبدالصمد (مجود)",
+      "duration": 43.5,
+      "video_id": null,
+      "date": "2026-11-20 07:34:01"
     }
   ],
   "last_generated": null
