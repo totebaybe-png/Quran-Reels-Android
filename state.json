@@ -1,6 +1,6 @@
 {
-  "total_generated": 183,
-  "last_reciter_idx": 1,
+  "total_generated": 184,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -141,7 +141,8 @@
     "nature_407.jpg",
     "nature_268.jpg",
     "nature_283.jpg",
-    "nature_064.jpg"
+    "nature_064.jpg",
+    "nature_094.jpg"
   ],
   "history": [
     {
@@ -1973,6 +1974,16 @@
       "duration": 43.5,
       "video_id": null,
       "date": "2026-11-20 07:34:01"
+    },
+    {
+      "surah": 92,
+      "surah_name": "الليل",
+      "start_ayah": 14,
+      "end_ayah": 21,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 50.1,
+      "video_id": null,
+      "date": "2026-11-20 14:41:32"
     }
   ],
   "last_generated": null
