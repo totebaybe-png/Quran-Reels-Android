@@ -1,6 +1,6 @@
 {
-  "total_generated": 185,
-  "last_reciter_idx": 3,
+  "total_generated": 186,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -143,7 +143,8 @@
     "nature_283.jpg",
     "nature_064.jpg",
     "nature_094.jpg",
-    "nature_552.jpg"
+    "nature_552.jpg",
+    "nature_063.jpg"
   ],
   "history": [
     {
@@ -1995,6 +1996,16 @@
       "duration": 48.2,
       "video_id": null,
       "date": "2026-11-20 19:17:04"
+    },
+    {
+      "surah": 69,
+      "surah_name": "الحاقة",
+      "start_ayah": 3,
+      "end_ayah": 9,
+      "reciter": "محمود خليل الحصري",
+      "duration": 55.9,
+      "video_id": null,
+      "date": "2026-11-20 23:14:34"
     }
   ],
   "last_generated": null
