@@ -1,6 +1,6 @@
 {
-  "total_generated": 189,
-  "last_reciter_idx": 7,
+  "total_generated": 190,
+  "last_reciter_idx": 8,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -147,7 +147,8 @@
     "nature_063.jpg",
     "nature_116.jpg",
     "nature_109.jpg",
-    "nature_285.jpg"
+    "nature_285.jpg",
+    "nature_170.jpg"
   ],
   "history": [
     {
@@ -2039,6 +2040,16 @@
       "duration": 32.2,
       "video_id": null,
       "date": "2026-11-21 18:11:32"
+    },
+    {
+      "surah": 18,
+      "surah_name": "الكهف",
+      "start_ayah": 40,
+      "end_ayah": 43,
+      "reciter": "عبدالرحمن السديس",
+      "duration": 50.7,
+      "video_id": null,
+      "date": "2026-11-21 22:19:29"
     }
   ],
   "last_generated": null
