@@ -1,6 +1,6 @@
 {
-  "total_generated": 187,
-  "last_reciter_idx": 5,
+  "total_generated": 188,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -145,7 +145,8 @@
     "nature_094.jpg",
     "nature_552.jpg",
     "nature_063.jpg",
-    "nature_116.jpg"
+    "nature_116.jpg",
+    "nature_109.jpg"
   ],
   "history": [
     {
@@ -2017,6 +2018,16 @@
       "duration": 43.6,
       "video_id": null,
       "date": "2026-11-21 07:28:31"
+    },
+    {
+      "surah": 107,
+      "surah_name": "الماعون",
+      "start_ayah": 2,
+      "end_ayah": 7,
+      "reciter": "ماهر المعيقلي",
+      "duration": 26.8,
+      "video_id": null,
+      "date": "2026-11-21 13:43:06"
     }
   ],
   "last_generated": null
