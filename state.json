@@ -1,6 +1,6 @@
 {
-  "total_generated": 188,
-  "last_reciter_idx": 6,
+  "total_generated": 189,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -146,7 +146,8 @@
     "nature_552.jpg",
     "nature_063.jpg",
     "nature_116.jpg",
-    "nature_109.jpg"
+    "nature_109.jpg",
+    "nature_285.jpg"
   ],
   "history": [
     {
@@ -2028,6 +2029,16 @@
       "duration": 26.8,
       "video_id": null,
       "date": "2026-11-21 13:43:06"
+    },
+    {
+      "surah": 95,
+      "surah_name": "التين",
+      "start_ayah": 1,
+      "end_ayah": 8,
+      "reciter": "سعود الشريم",
+      "duration": 32.2,
+      "video_id": null,
+      "date": "2026-11-21 18:11:32"
     }
   ],
   "last_generated": null
