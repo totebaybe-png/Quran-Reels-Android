@@ -1,6 +1,6 @@
 {
-  "total_generated": 186,
-  "last_reciter_idx": 4,
+  "total_generated": 187,
+  "last_reciter_idx": 5,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -144,7 +144,8 @@
     "nature_064.jpg",
     "nature_094.jpg",
     "nature_552.jpg",
-    "nature_063.jpg"
+    "nature_063.jpg",
+    "nature_116.jpg"
   ],
   "history": [
     {
@@ -2006,6 +2007,16 @@
       "duration": 55.9,
       "video_id": null,
       "date": "2026-11-20 23:14:34"
+    },
+    {
+      "surah": 99,
+      "surah_name": "الزلزلة",
+      "start_ayah": 2,
+      "end_ayah": 8,
+      "reciter": "مشاري العفاسي",
+      "duration": 43.6,
+      "video_id": null,
+      "date": "2026-11-21 07:28:31"
     }
   ],
   "last_generated": null
