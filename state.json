@@ -1,6 +1,6 @@
 {
-  "total_generated": 192,
-  "last_reciter_idx": 10,
+  "total_generated": 193,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -150,7 +150,8 @@
     "nature_285.jpg",
     "nature_170.jpg",
     "nature_067.jpg",
-    "nature_191.jpg"
+    "nature_191.jpg",
+    "nature_152.jpg"
   ],
   "history": [
     {
@@ -2072,6 +2073,16 @@
       "duration": 59.6,
       "video_id": null,
       "date": "2026-11-22 13:39:33"
+    },
+    {
+      "surah": 10,
+      "surah_name": "يونس",
+      "start_ayah": 51,
+      "end_ayah": 53,
+      "reciter": "ناصر القطامي",
+      "duration": 49.0,
+      "video_id": null,
+      "date": "2026-11-22 18:42:13"
     }
   ],
   "last_generated": null
