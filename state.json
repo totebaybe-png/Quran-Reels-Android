@@ -1,6 +1,6 @@
 {
-  "total_generated": 193,
-  "last_reciter_idx": 11,
+  "total_generated": 194,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -151,7 +151,8 @@
     "nature_170.jpg",
     "nature_067.jpg",
     "nature_191.jpg",
-    "nature_152.jpg"
+    "nature_152.jpg",
+    "nature_004.jpg"
   ],
   "history": [
     {
@@ -2083,6 +2084,16 @@
       "duration": 49.0,
       "video_id": null,
       "date": "2026-11-22 18:42:13"
+    },
+    {
+      "surah": 92,
+      "surah_name": "الليل",
+      "start_ayah": 15,
+      "end_ayah": 21,
+      "reciter": "أحمد العجمي",
+      "duration": 38.6,
+      "video_id": null,
+      "date": "2026-11-22 22:35:30"
     }
   ],
   "last_generated": null
