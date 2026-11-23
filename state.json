@@ -1,6 +1,6 @@
 {
-  "total_generated": 194,
-  "last_reciter_idx": 12,
+  "total_generated": 195,
+  "last_reciter_idx": 13,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -152,7 +152,8 @@
     "nature_067.jpg",
     "nature_191.jpg",
     "nature_152.jpg",
-    "nature_004.jpg"
+    "nature_004.jpg",
+    "nature_364.jpg"
   ],
   "history": [
     {
@@ -2094,6 +2095,16 @@
       "duration": 38.6,
       "video_id": null,
       "date": "2026-11-22 22:35:30"
+    },
+    {
+      "surah": 82,
+      "surah_name": "الانفطار",
+      "start_ayah": 1,
+      "end_ayah": 11,
+      "reciter": "أبو بكر الشاطري",
+      "duration": 59.6,
+      "video_id": null,
+      "date": "2026-11-23 07:57:52"
     }
   ],
   "last_generated": null
