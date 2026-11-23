@@ -1,6 +1,6 @@
 {
-  "total_generated": 195,
-  "last_reciter_idx": 13,
+  "total_generated": 196,
+  "last_reciter_idx": 0,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -153,7 +153,8 @@
     "nature_191.jpg",
     "nature_152.jpg",
     "nature_004.jpg",
-    "nature_364.jpg"
+    "nature_364.jpg",
+    "nature_490.jpg"
   ],
   "history": [
     {
@@ -2105,6 +2106,16 @@
       "duration": 59.6,
       "video_id": null,
       "date": "2026-11-23 07:57:52"
+    },
+    {
+      "surah": 99,
+      "surah_name": "الزلزلة",
+      "start_ayah": 5,
+      "end_ayah": 8,
+      "reciter": "عبدالباسط عبدالصمد (مرتل)",
+      "duration": 41.8,
+      "video_id": null,
+      "date": "2026-11-23 16:29:37"
     }
   ],
   "last_generated": null
