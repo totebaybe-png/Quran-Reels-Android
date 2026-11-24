@@ -1,6 +1,6 @@
 {
-  "total_generated": 197,
-  "last_reciter_idx": 1,
+  "total_generated": 198,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -155,7 +155,8 @@
     "nature_004.jpg",
     "nature_364.jpg",
     "nature_490.jpg",
-    "nature_491.jpg"
+    "nature_491.jpg",
+    "nature_470.jpg"
   ],
   "history": [
     {
@@ -2127,6 +2128,16 @@
       "duration": 33.3,
       "video_id": null,
       "date": "2026-11-23 22:53:40"
+    },
+    {
+      "surah": 98,
+      "surah_name": "البينة",
+      "start_ayah": 3,
+      "end_ayah": 5,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 50.9,
+      "video_id": null,
+      "date": "2026-11-24 03:25:45"
     }
   ],
   "last_generated": null
