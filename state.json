@@ -1,6 +1,6 @@
 {
-  "total_generated": 198,
-  "last_reciter_idx": 2,
+  "total_generated": 199,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -156,7 +156,8 @@
     "nature_364.jpg",
     "nature_490.jpg",
     "nature_491.jpg",
-    "nature_470.jpg"
+    "nature_470.jpg",
+    "nature_258.jpg"
   ],
   "history": [
     {
@@ -2138,6 +2139,16 @@
       "duration": 50.9,
       "video_id": null,
       "date": "2026-11-24 03:25:45"
+    },
+    {
+      "surah": 97,
+      "surah_name": "القدر",
+      "start_ayah": 1,
+      "end_ayah": 5,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 56.7,
+      "video_id": null,
+      "date": "2026-11-24 10:10:03"
     }
   ],
   "last_generated": null
