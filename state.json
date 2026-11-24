@@ -1,6 +1,6 @@
 {
-  "total_generated": 199,
-  "last_reciter_idx": 3,
+  "total_generated": 200,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -157,7 +157,8 @@
     "nature_490.jpg",
     "nature_491.jpg",
     "nature_470.jpg",
-    "nature_258.jpg"
+    "nature_258.jpg",
+    "nature_342.jpg"
   ],
   "history": [
     {
@@ -2149,6 +2150,16 @@
       "duration": 56.7,
       "video_id": null,
       "date": "2026-11-24 10:10:03"
+    },
+    {
+      "surah": 55,
+      "surah_name": "الرحمن",
+      "start_ayah": 73,
+      "end_ayah": 76,
+      "reciter": "محمود خليل الحصري",
+      "duration": 51.9,
+      "video_id": null,
+      "date": "2026-11-24 16:25:38"
     }
   ],
   "last_generated": null
