@@ -1,6 +1,6 @@
 {
-  "total_generated": 201,
-  "last_reciter_idx": 5,
+  "total_generated": 202,
+  "last_reciter_idx": 6,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -159,7 +159,8 @@
     "nature_470.jpg",
     "nature_258.jpg",
     "nature_342.jpg",
-    "nature_467.jpg"
+    "nature_467.jpg",
+    "nature_394.jpg"
   ],
   "history": [
     {
@@ -2171,6 +2172,16 @@
       "duration": 40.3,
       "video_id": null,
       "date": "2026-11-24 21:30:41"
+    },
+    {
+      "surah": 63,
+      "surah_name": "المنافقون",
+      "start_ayah": 2,
+      "end_ayah": 5,
+      "reciter": "ماهر المعيقلي",
+      "duration": 53.7,
+      "video_id": null,
+      "date": "2026-11-25 01:32:19"
     }
   ],
   "last_generated": null
