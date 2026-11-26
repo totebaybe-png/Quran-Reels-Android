@@ -1,6 +1,6 @@
 {
-  "total_generated": 207,
-  "last_reciter_idx": 11,
+  "total_generated": 208,
+  "last_reciter_idx": 12,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -165,7 +165,8 @@
     "nature_274.jpg",
     "nature_226.jpg",
     "nature_181.jpg",
-    "nature_379.jpg"
+    "nature_379.jpg",
+    "nature_459.jpg"
   ],
   "history": [
     {
@@ -2237,6 +2238,16 @@
       "duration": 51.5,
       "video_id": null,
       "date": "2026-11-26 08:40:45"
+    },
+    {
+      "surah": 90,
+      "surah_name": "البلد",
+      "start_ayah": 10,
+      "end_ayah": 20,
+      "reciter": "أحمد العجمي",
+      "duration": 50.9,
+      "video_id": null,
+      "date": "2026-11-26 15:47:31"
     }
   ],
   "last_generated": null
