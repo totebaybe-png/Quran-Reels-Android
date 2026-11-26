@@ -1,6 +1,6 @@
 {
-  "total_generated": 206,
-  "last_reciter_idx": 10,
+  "total_generated": 207,
+  "last_reciter_idx": 11,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -164,7 +164,8 @@
     "nature_383.jpg",
     "nature_274.jpg",
     "nature_226.jpg",
-    "nature_181.jpg"
+    "nature_181.jpg",
+    "nature_379.jpg"
   ],
   "history": [
     {
@@ -2226,6 +2227,16 @@
       "duration": 40.4,
       "video_id": null,
       "date": "2026-11-26 01:04:56"
+    },
+    {
+      "surah": 18,
+      "surah_name": "الكهف",
+      "start_ayah": 41,
+      "end_ayah": 43,
+      "reciter": "ناصر القطامي",
+      "duration": 51.5,
+      "video_id": null,
+      "date": "2026-11-26 08:40:45"
     }
   ],
   "last_generated": null
