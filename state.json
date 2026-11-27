@@ -1,6 +1,6 @@
 {
-  "total_generated": 212,
-  "last_reciter_idx": 2,
+  "total_generated": 213,
+  "last_reciter_idx": 3,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -170,7 +170,8 @@
     "nature_157.jpg",
     "nature_334.jpg",
     "nature_339.jpg",
-    "nature_169.jpg"
+    "nature_169.jpg",
+    "nature_502.jpg"
   ],
   "history": [
     {
@@ -2292,6 +2293,16 @@
       "duration": 25.7,
       "video_id": null,
       "date": "2026-11-27 15:34:17"
+    },
+    {
+      "surah": 76,
+      "surah_name": "الإنسان",
+      "start_ayah": 12,
+      "end_ayah": 14,
+      "reciter": "محمد صديق المنشاوي (مجود)",
+      "duration": 47.4,
+      "video_id": null,
+      "date": "2026-11-27 20:14:03"
     }
   ],
   "last_generated": null
