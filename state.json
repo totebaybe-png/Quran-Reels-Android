@@ -1,6 +1,6 @@
 {
-  "total_generated": 211,
-  "last_reciter_idx": 1,
+  "total_generated": 212,
+  "last_reciter_idx": 2,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -169,7 +169,8 @@
     "nature_459.jpg",
     "nature_157.jpg",
     "nature_334.jpg",
-    "nature_339.jpg"
+    "nature_339.jpg",
+    "nature_169.jpg"
   ],
   "history": [
     {
@@ -2281,6 +2282,16 @@
       "duration": 62.2,
       "video_id": null,
       "date": "2026-11-27 08:52:34"
+    },
+    {
+      "surah": 113,
+      "surah_name": "الفلق",
+      "start_ayah": 1,
+      "end_ayah": 5,
+      "reciter": "محمد صديق المنشاوي (مرتل)",
+      "duration": 25.7,
+      "video_id": null,
+      "date": "2026-11-27 15:34:17"
     }
   ],
   "last_generated": null
