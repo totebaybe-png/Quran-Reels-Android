@@ -1,6 +1,6 @@
 {
-  "total_generated": 216,
-  "last_reciter_idx": 6,
+  "total_generated": 217,
+  "last_reciter_idx": 7,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -174,7 +174,8 @@
     "nature_502.jpg",
     "nature_308.jpg",
     "nature_384.jpg",
-    "nature_053.jpg"
+    "nature_053.jpg",
+    "nature_192.jpg"
   ],
   "history": [
     {
@@ -2336,6 +2337,16 @@
       "duration": 25.2,
       "video_id": null,
       "date": "2026-11-28 14:31:16"
+    },
+    {
+      "surah": 79,
+      "surah_name": "النازعات",
+      "start_ayah": 36,
+      "end_ayah": 46,
+      "reciter": "سعود الشريم",
+      "duration": 47.0,
+      "video_id": null,
+      "date": "2026-11-28 19:07:58"
     }
   ],
   "last_generated": null
