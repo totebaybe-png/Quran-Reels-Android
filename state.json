@@ -1,6 +1,6 @@
 {
-  "total_generated": 213,
-  "last_reciter_idx": 3,
+  "total_generated": 214,
+  "last_reciter_idx": 4,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -171,7 +171,8 @@
     "nature_334.jpg",
     "nature_339.jpg",
     "nature_169.jpg",
-    "nature_502.jpg"
+    "nature_502.jpg",
+    "nature_308.jpg"
   ],
   "history": [
     {
@@ -2303,6 +2304,16 @@
       "duration": 47.4,
       "video_id": null,
       "date": "2026-11-27 20:14:03"
+    },
+    {
+      "surah": 108,
+      "surah_name": "الكوثر",
+      "start_ayah": 1,
+      "end_ayah": 3,
+      "reciter": "محمود خليل الحصري",
+      "duration": 21.1,
+      "video_id": null,
+      "date": "2026-11-28 00:37:16"
     }
   ],
   "last_generated": null
