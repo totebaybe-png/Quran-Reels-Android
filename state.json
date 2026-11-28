@@ -1,6 +1,6 @@
 {
-  "total_generated": 214,
-  "last_reciter_idx": 4,
+  "total_generated": 215,
+  "last_reciter_idx": 5,
   "last_surah": 1,
   "last_ayah": 0,
   "uploads_today": 0,
@@ -172,7 +172,8 @@
     "nature_339.jpg",
     "nature_169.jpg",
     "nature_502.jpg",
-    "nature_308.jpg"
+    "nature_308.jpg",
+    "nature_384.jpg"
   ],
   "history": [
     {
@@ -2314,6 +2315,16 @@
       "duration": 21.1,
       "video_id": null,
       "date": "2026-11-28 00:37:16"
+    },
+    {
+      "surah": 104,
+      "surah_name": "الهمزة",
+      "start_ayah": 6,
+      "end_ayah": 9,
+      "reciter": "مشاري العفاسي",
+      "duration": 40.7,
+      "video_id": null,
+      "date": "2026-11-28 08:06:57"
     }
   ],
   "last_generated": null
